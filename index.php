@@ -6,34 +6,12 @@
     <title>GEREESC - Sistema de Gerenciamento de Estoque Escolar</title>
 </head>
 <body>
+    <h1>GEREESC Sistema de Gerenciamento de Estoque</h1>
 
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
-                    /
-                </div>
-                <div class="col-8">
-                    <h1 id="Titulo">GEREESC <br> Sistema de Gerenciamento de Estoque</h1>
-                </div>
-                <div class="col-2">
-                    
-                </div>
-            </div>
-        </div>
-        </header>
-        <section>
-            <div id="Login">
-                    <div id="avatar"></div>
-                    <h4>Usuário</h4>
-                    <input type="texto" name="usuario">
-                    <br><br>
-                    <h4>Senha</h4>
-                    <input type="texto" name="senha">
-                    <br><br>
-                    <button type="submit" name="login">Logar</button>
-
-            </div>
-        </section>
+        <form method="post" action="login/verificacao.php">
+            Login <input type="text" name="login" required maxlenght="64">
+            Senha <input type="password" name="senha" required maxlength="64">
+                <input type="submit" value="Logar">
+        </form>
 </body>
 </html>
