@@ -1,0 +1,49 @@
+body{
+    background: url("https://www.foccoerp.com.br/wp-content/uploads/2017/11/controle-de-estoque-2.jpg") no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+  }
+  #Login{
+    background: white center;
+    opacity: 0.5;
+    width: 280px;
+    height: 390px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    position: relative;
+    border: solid 3px rgb(26, 26, 26);
+    
+  }
+  #Login>input, #Login>h4{
+    margin-left: 42px;
+  }
+
+  #Login>button{
+    margin-left: 38%;
+  }
+  
+  #avatar{
+    background: url("https://image.flaticon.com/icons/png/128/149/149452.png") no-repeat;
+    width: 150px;
+    height: 150px;
+    margin-top: 17px;
+    margin-left: 27%;
+    
+  }
+  header{
+    background-color: #323A45;
+    opacity: 0.8;
+  }
+  #Titulo{
+    text-align: center;
+    color: White;
+  }
+  .container{
+    text-align: left;
+    font-family: Times New Roman, Sans-serif;
+    font-size: 28px;
+  }
