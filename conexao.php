@@ -1,2 +1,2 @@
 <?php
-    $conexao = mysqli_connect("localhost", "root", "ifsc", "gereesc");
+    $conexao = mysqli_connect("localhost", "root", "", "gereesc");

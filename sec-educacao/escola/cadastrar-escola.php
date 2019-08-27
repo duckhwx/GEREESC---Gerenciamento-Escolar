@@ -1,36 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Cadastrar Escolas</title>
-</head>
-<body>
-    <!--NAV BAR SEM ESTILO-->
-                    <a href="">Escola</a>
+<?php
+require_once("../../funcoes-de-cabecalho.php");
+cabecalhoSecEdu("Cadastrar Escola", "index.php", "../usuarios", "../produto", "../cardapio");
 
-                    <a href="">Usuários</a>     
+?>
+<br>
+<form method="post" action="verificar-escola.php?acao=cadastrar"><br>
+    Nome <input type="text" required maxlength="100" name="nomeEscola"><br>
+    Endereco <input type="text" required maxlength="255" name="enderecoEscola"><br>
+    Numero <input type="text" required maxlength="8" name="numeroEscola"><br>
+    CNPJ <input type="text" required maxlength="12" name="cnpjEscola"><br>
+    E-mail <input type="email" required maxlength="255" name="emailEscola"><br>
+    Telefone <input type="text" required maxlength="12" name="telefoneEscola"><br>
+    Numero de Alunos: <br>
+    Ensino Infantil <input type="number" maxlength="4" name="alunosEnsInfantil"><br>
+    Ensino Fundamental <input type="number" maxlength="4" name="alunosEnsFundamental"><br>
+    <input type="submit" value="Cadastrar Escola">
+</form>
+<br>
 
-                    <a href="">Produtos</a> 
-
-                    <a href="">Cardápio</a> 
-
-                    <img src="">
-    
-    <!-- DESCONSIDERAR OS <BRS> TESTE -->
-    <br><br><br><br>
-
-    <!--FORMULARIO DO CADASTRO DE ESCOLAS-->
-    <form method="post" action="cadastrar.php">
-
-        Nome: <input type="text" name="nome" maxlegth="" required><br>
-        Endereço: <input type="text" name="endereco" maxlegth="" requered>
-        Número: <input type="text" name="numero" maxlegth="" requered><br>
-        CNPJ: <input type="text" name="cnpj"maxlegth="" requered><br>
-        E-Mail: <input type="text" name="email" maxlegth="" requered><br>
-        Telefone: <input type="text" name="telefone" maxlegth="" requered><br>
-        <br>
-        <input type="submit" value="Cadastrar">
-
-    </form>
-</body>
-</html>
+<a href="index.php">Voltar</a>
+<?php 
+rodape();
