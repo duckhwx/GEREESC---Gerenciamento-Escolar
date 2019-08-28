@@ -5,7 +5,7 @@ require_once "../../../conexao.php";
 
 if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
     
-    $nome = $_POST['nome'];
+    $nome = $_POST['nome']; 
     $cpf = $_POST['cpf'];
     $rg = $_POST['rg'];
     $endereco = $_POST['endereco'];
