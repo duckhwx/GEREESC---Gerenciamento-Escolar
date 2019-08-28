@@ -14,9 +14,8 @@
 //Pagina do Secretário da Educação
     $login = tipoLogin($conexao, "select * from secedu where login='$login' and senha='$senha'");
     if($login != null){
-        //um teste de exibição
         logar($login['login'], $login['nome'], $login['id']);
-        echo "Bem vindo ".$login['nome'];
+        header("Location: ../sec-educacao");
     } 
     
 //Página do Nutricionista
