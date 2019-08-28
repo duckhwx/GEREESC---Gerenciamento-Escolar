@@ -2,7 +2,6 @@
 
 require_once "../../conexao.php";
 
-$id = $_GET['id'];
 
 if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
     
@@ -30,6 +29,8 @@ $alunosEnsFundamental = $_POST["alunosEnsFundamental"];
         }
         
     else if($_GET['acao'] == 'atualizar'){
+
+        $id = $_GET['id'];
         
        $update = "update escola set nome='$nome', "
                . "endereco='$endereco', "
@@ -51,6 +52,9 @@ $alunosEnsFundamental = $_POST["alunosEnsFundamental"];
     }
 
     else if($_GET['acao'] == 'excluir'){
+
+        $id = $_GET['id'];
+
         $delete = "delete from escola where id=$id";
         
         $query = mysqli_query($conexao, $delete);
