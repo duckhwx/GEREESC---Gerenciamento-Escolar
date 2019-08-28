@@ -62,33 +62,3 @@ $alunosEnsFundamental = $_POST["alunosEnsFundamental"];
         }
         
     }
-    
-    
-    
-    
-//    $valores = array("nome" => $nome, 
-//                 "endereco" => $endereco, 
-//                 "cnpj" => $cnpj, 
-//                 "email" => $email, 
-//                 "numero" => $numero, 
-//                 "telefone" => $telefone);
-  // perguntar ao professor se... é nescessario fazer essa verificação de cada dado
-    //ver se ele se repete no banco para impossibilitar o cadastro de algo...
-    
-//     $select = "select * from escola where nome='$nome' and "
-//                . "endereco='$endereco' and "
-//                . "cnpj='$cnpj' and "
-//                . "email='$email' and "
-//                . "numero='$numero' and "
-//                . "telefone='$telefone'";
-//    
-//    //função que identifica se ja existe uma escola já cadastrada no sistema.
-//    function escolasCadastradas($conexao, $string){
-//        $query = mysqli_query($conexao, $string);
-//        
-//        if(mysqli_num_rows($query) >= 1){
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
