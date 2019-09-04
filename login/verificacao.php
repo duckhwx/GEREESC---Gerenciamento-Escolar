@@ -7,7 +7,7 @@
     $senha = $_POST["senha"];
 
     if(empty($login) or empty($senha)){
-        header("Location: Login.php");
+        header("Location: ../index.php");
     } else {
         if(strlen($login) <= 64 and strlen($senha) <= 64){
 
@@ -24,19 +24,19 @@
     } 
     
     else if(tipoLogin($conexao, "select * from secesc where login='$login' and senha='$senha'") != null){
-        //Página do Secretário da Escola
+//Página do Secretário da Escola
     } 
     
     else if(tipoLogin($conexao, "select * from aluno where login='$login' and senha='$senha'") != null){
-        //Página do Aluno
+//Página do Aluno
     } 
     
     else {
-        header("Location: Login.php");
+        header("Location: ../index.php");
     } 
 
     } else {
-        header("Location: Login.php");
+        header("Location: ../index.php");
         }
     }
         

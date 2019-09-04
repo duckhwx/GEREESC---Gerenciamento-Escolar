@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>GEREESC</h1>
-    
+        
     <form method="post" action="login/verificacao.php">
         Usuário <input type="text" required maxlength="64" name="login">
         Senha <input type="password" required maxlength="64" name="senha">

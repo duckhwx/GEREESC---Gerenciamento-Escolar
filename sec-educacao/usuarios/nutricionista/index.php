@@ -17,7 +17,7 @@ $nascimento = $table['dataDeNascimento'];
 $numero = $table['numero'];
 $celular = $table['celular'];
 
-cabecalhoSecEdu("Nutricionista", "../../escola", "../index.php", "../../produto", "../../cardapio");
+cabecalhoSecEdu("Nutricionista", "../../escola", "../cadastrar-usuarios.php", "../../produto", "../../cardapio");
 ?>
 <br>
 <p>Nome: <?=$nome?></p>

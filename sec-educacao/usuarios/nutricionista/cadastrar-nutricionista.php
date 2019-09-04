@@ -1,7 +1,7 @@
 <?php
 require_once '../../../funcoes-de-cabecalho.php';
 
-cabecalhoSecEdu("Cadastrar Nutricionista", "../../escola", "../index.php", "../../produto", "../../cardapio");
+cabecalhoSecEdu("Cadastrar Nutricionista", "../../escola", "../cadastrar-usuarios.php", "../../produto", "../../cardapio");
 ?>
 
 <form method="post" action="validar-nutricionista.php?acao=cadastrar">

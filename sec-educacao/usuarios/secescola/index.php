@@ -5,7 +5,7 @@ require_once '../../../conexao.php';
 $select = 'select * from secesc';
 $query = mysqli_query($conexao, $select);
 
-cabecalhoSecEdu("Secretário da Escola", "../../escola", "../index.php", "../../produto", "../../cardapio");
+cabecalhoSecEdu("Secretário da Escola", "../../escola", "../cadastrar-usuarios.php", "../../produto", "../../cardapio");
 
 
 echo "<table> 

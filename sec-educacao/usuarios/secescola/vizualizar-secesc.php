@@ -20,7 +20,6 @@ $dataNascimento = $table['dataDeNascimento'];
 $numero = $table['numero'];
 $celular = $table['celular'];
 
-cabecalhoSecEdu($nome, "index.php", "../usuarios", "../produto", "../cardapio");
 ?>
 
                 <p>Nome: <?=$nome?></p>
@@ -45,8 +44,3 @@ cabecalhoSecEdu($nome, "index.php", "../usuarios", "../produto", "../cardapio");
 <?php
 rodape();
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */

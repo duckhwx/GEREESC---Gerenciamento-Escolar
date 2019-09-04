@@ -2,44 +2,14 @@
 require_once '../../../funcoes-de-cabecalho.php';
 require_once '../../../conexao.php';
 
-//cabecalhoSecEdu("Cadastrar Secretário da Escola", "../../escola", "../index.php", "../../produto", "../../cardapio");
+cabecalhoSecEdu("Cadastrar Secretário da Escola", "../../escola", "../cadastrar-usuarios.php", "../../produto", "../../cardapio");
 
 $select = "select * from escola";
 
 $query = mysqli_query($conexao, $select);
 
 ?>
-
-<!DOCTYPE html>
-    <html>
-    <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../../../estilo/styleCadastro.css"/>
-    <meta charset='UTF-8'>
-    <title>Cadastrar Secretário da Escola</title>
-    </head>
-    <body>
-        <header>
-            <div class='container'>
-                <div class='row'>
-                    <div class='col'>
-                        <a href=''></a>
-                    </div>
-                    <div class='col'>
-                        <a href='../../escola'>Escolas</a>
-                    </div>
-                    <div class='col'>
-                        <a href='../../produto'>Produtos</a>
-                    </div>
-                    <div class='col'>
-                        <a href='../../cardapio'>Cardápio</a>
-                    </div>
-                </div>
-            </div>
-        </header>   
-        <section>
-            <div id='Cadastro'>
-                <form method="post" action="validar-nutricionista.php?acao=cadastrar">
+                <form method="post" action="validar-secesc.php?acao=cadastrar">
                     Nome <input type="text" required maxlength="64" name="nome"><br>
                     CPF <input type="text" required maxlength="11" name="cpf"><br>
                     RG <input type="text" required maxlength="11" name="rg"><br>
@@ -62,11 +32,6 @@ $query = mysqli_query($conexao, $select);
                     Senha <input type="text" required maxlength="64" name="senha"><br><br>
                     <input type="submit" value="Cadastrar Secretário da Escola">
                 </form>
-            </div>
-        </section>
-
-
-
 <br>
 <a href="index.php">Voltar</a>
 
