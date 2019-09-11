@@ -10,8 +10,8 @@ if($_GET['acao'] == 'alocar'){
     
     $id_produto = $_POST['produto'];
     $quantidade = $_POST['quantidade'];
-    
-    $insert = "insert into Estoque values ($id, $id_produto, $quantidade, 'Adicionado')";
+        
+    $insert = "insert into Estoque values (default, $id, $id_produto, $quantidade, 'Adicionado')";
     
     $query = mysqli_query($conexao, $insert);
     

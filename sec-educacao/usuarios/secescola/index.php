@@ -35,7 +35,7 @@ while($table = mysqli_fetch_array($query)){
 echo "<tr>
       <td>$nome<td>
       <td>$nomeEscola</td>
-      <td><a href='vizualizar-secesc.php?id=$id'>Vizualizar</a></td>
+      <td><a href='visualizar-secesc.php?id=$id'>Visualizar</a></td>
       <td><a href='atualizar-secesc.php?acao=atualizar&id=$id'>Atualizar</a></td>
       <td><a href='validar-secesc.php?acao=excluir&id=$id'>Excluir</a></td>
       </tr>";

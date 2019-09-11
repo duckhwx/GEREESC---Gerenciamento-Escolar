@@ -1,12 +1,19 @@
 <?php
     require_once "../../../funcoes-de-cabecalho.php";
     require_once "../../../conexao.php";
+    session_start();
     
     cabecalhoSecEdu("Estoque", "../", "../../usuarios/cadastrar-usuarios.php", "../../produto", "../../cardapio");
     
-    $id = $_GET['id'];
-    
-    $selectEstoque = "select * from Estoque where escola_id=$id and status='Adicionado'";
+    if($_SESSION["idEscola"] == NULL){
+        $_SESSION["idEscola"] = $_GET['id'];
+    }
+  
+    $selectEstoque = "select Estoque.id, Produto.nomeProduto, TipoDeProduto.nomeTipoProduto, Produto.marca, Produto.peso, TipoDePeso.nomeTipoPeso, Estoque.quantidade from Estoque " 
+                    ."inner join Produto on Estoque.produto_id = Produto.id "
+                    ."inner join TipoDePeso on Produto.tipoDePeso_id = TipoDePeso.id "
+                    ."inner join TipoDeProduto on Produto.tipoDeProduto_id = TipoDeProduto.id "
+                    ."where escola_id =".$_SESSION["idEscola"]." and status='Adicionado'";
     
     $queryEstoque = mysqli_query($conexao, $selectEstoque);
     
@@ -19,31 +26,20 @@
             . "<th>Quantidade</th>"
     . "</tr>";
     
-    while($tableEstoque = mysqli_fetch_array($queryEstoque)){
-        $idEstoque = $tableEstoque['id'];
-        $produtoId = $tableEstoque['produto_id'];
-        $quantidade = $tableEstoque['quantidade'];
-        
-        $selectProduto = "select * from Produto where id=$produtoId";
-        $queryProduto = mysqli_query($conexao, $selectProduto);
-        if($tableProduto = mysqli_fetch_array($queryProduto)){
-            $nomeProduto = $tableProduto['nome'];
-            $marcaProduto = $tableProduto['marca'];
-            $pesoProduto = $tableProduto['peso'];
-            $idTipoProduto = $tableProduto['tipoDeProduto_id'];
+    while($table = mysqli_fetch_array($queryEstoque)){
+        $idEstoque = $table['id'];
+        $nomeProduto = $table['nomeProduto'];
+        $nomeTipoProduto = $table['nomeTipoProduto'];
+        $marca = $table['marca'];
+        $peso = $table['peso'];
+        $nomeTipoPeso = $table['nomeTipoPeso'];
+        $quantidade = $table['quantidade'];
             
-            $selectTipoProduto = "select * from TipoDeProduto where id=$idTipoProduto";
-            $queryTipoProduto = mysqli_query($conexao, $selectTipoProduto);
-            if($tableTipoProduto = mysqli_fetch_array($queryTipoProduto)){
-                $nomeTipoProduto = $tableTipoProduto['nome'];
-            }
-        }
-        
         echo "<tr>"
            . "<td>$nomeProduto</td>"
            . "<td>$nomeTipoProduto</td>"
-           . "<td>$marcaProduto</td>"
-           . "<td>$pesoProduto</td>"
+           . "<td>$marca</td>"
+           . "<td>$peso $nomeTipoPeso</td>"
            . "<td>$quantidade</td>"
            . "<td><a href='alterar-estoque.php?idEstoque=$idEstoque'>Alterar</a></td>"
            . "</tr>";
@@ -51,10 +47,9 @@
     }
     
     echo "</table>";
-    
 ?>
 
-<a href="alocar-produto.php?id=<?=$id?>">Alocar Produto</a>
+<a href="alocar-produto.php?id=<?=$_SESSION["idEscola"]?>">Alocar Produto</a>
 
 <?php
 rodape();

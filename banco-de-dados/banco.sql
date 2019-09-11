@@ -67,6 +67,7 @@ create table AnoEscolar (
 );
 
 create table Estoque (
+    id int primary key auto_increment,
     escola_id int references Escola(id),
     produto_id int references Produto(id),
     quantidade int,
@@ -75,15 +76,21 @@ create table Estoque (
 
 create table Produto (
     id int primary key auto_increment,
-    nome varchar(64),
+    nomeProduto varchar(64),
     marca varchar(64),
     peso decimal,
+    tipoDePeso_id int references TipoDePeso(id),
     tipoDeProduto_id int references TipoDeProduto(id)
+);
+
+create table TipoDePeso(
+    id int primary key auto_increment,
+    nomeTipoPeso varchar(64)
 );
 
 create table TipoDeProduto(
     id int primary key auto_increment,
-    nome varchar(64)
+    nomeTipoProduto varchar(64)
 );
 
 -- Referente ao Cardapio etc... ---
@@ -121,3 +128,19 @@ create table Itens (
 );
 
 -- Inserts e afins --
+
+insert into TipoDePeso values(default, "g");
+insert into TipoDePeso values(default, "kg");
+insert into TipoDePeso values(default, "ml");
+insert into TipoDePeso values(default, "L");
+
+select Estoque.id, Estoque.escola_id, Produto.nomeProduto, TipoDeProduto.nomeTipoProduto, Produto.marca, Produto.peso, TipoDePeso.nomeTipoPeso, Estoque.quantidade from Estoque 
+inner join Produto on Estoque.produto_id = Produto.id
+inner join TipoDePeso on Produto.tipoDePeso_id = TipoDePeso.id
+inner join TipoDeProduto on Produto.tipoDeProduto_id = TipoDeProduto.id where escola_id = 2;
+
+select Estoque.id, Produto.nomeProduto, TipoDeProduto.nomeTipoProduto, Produto.marca, Produto.peso, TipoDePeso.nomeTipoPeso, Estoque.quantidade from Estoque 
+inner join Produto on Estoque.produto_id = Produto.id 
+inner join TipoDePeso on Produto.tipoDePeso_id = TipoDePeso.id 
+inner join TipoDeProduto on Produto.tipoDeProduto_id = TipoDeProduto.id 
+where escola_id=2 and status='Adicionado';
