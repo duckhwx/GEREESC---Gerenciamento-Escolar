@@ -6,9 +6,9 @@
     
     $idEstoque = $_GET['idEstoque'];
     
+//Requisição dos dados ao banco
     $select = "select Produto.nomeProduto from Estoque inner join Produto on "
             . "Estoque.produto_id = Produto.id where Estoque.estoque_id = ".$idEstoque;
-    
     $query = mysqli_query($conexao, $select);
     $tbl = mysqli_fetch_array($query);
     
