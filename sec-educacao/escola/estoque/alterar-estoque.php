@@ -6,23 +6,19 @@
     
     $idEstoque = $_GET['idEstoque'];
     
-    $selectEstoque = "select * from Estoque where id=$idEstoque";
-    $queryEstoque = mysqli_query($conexao, $selectEstoque);
-    $tableEstoque = mysqli_fetch_array($queryEstoque);
+    $select = "select Produto.nomeProduto from Estoque inner join Produto on "
+            . "Estoque.produto_id = Produto.id where Estoque.estoque_id = ".$idEstoque;
     
-    $idProduto = $tableEstoque['produto_id'];
+    $query = mysqli_query($conexao, $select);
+    $tbl = mysqli_fetch_array($query);
     
-    $selectProduto = "select * from Produto where id=$idProduto";
-    $queryProduto = mysqli_query($conexao, $selectProduto);
-    $tableProduto = mysqli_fetch_array($queryProduto);
-    
-    $nomeProduto = $tableProduto['nome'];
+    $produto = $tbl['nomeProduto'];
     
        
 ?>
 <br><br>
 <form method="post" action="validar-estoque.php?acao=alterar&idEstoque=<?=$idEstoque?>">
-    Produto <?php echo"$nomeProduto"; ?><br>
+    Produto <?php echo"$produto"; ?><br>
     Quantidade <input type="number" name="quantidade" required><br>
                <input type="submit" value="Alocar">
 </form>

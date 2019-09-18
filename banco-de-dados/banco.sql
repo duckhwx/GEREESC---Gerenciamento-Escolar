@@ -67,7 +67,7 @@ create table AnoEscolar (
 );
 
 create table Estoque (
-    id int primary key auto_increment,
+    estoque_id int primary key auto_increment,
     escola_id int references Escola(id),
     produto_id int references Produto(id),
     quantidade int,
@@ -95,15 +95,10 @@ create table TipoDeProduto(
 
 -- Referente ao Cardapio etc... ---
 
-create table Cardapio (
+create table Cardapio_Refeicao (
     id int primary key auto_increment,
-    mes date,
-    nutricionista_id int references Nutricionista(id),
-    anoEscolar_id int references AnoEscolar(id)
-);
-
-create table Cardapio_has_Refeicao (
-    cardapio_id int references Cardapio(id),
+    data date,
+    anoEscolar_id int references AnoEscolar(id),
     refeicao_id int references Refeicao(id)
 );
 
@@ -134,13 +129,20 @@ insert into TipoDePeso values(default, "kg");
 insert into TipoDePeso values(default, "ml");
 insert into TipoDePeso values(default, "L");
 
-select Estoque.id, Estoque.escola_id, Produto.nomeProduto, TipoDeProduto.nomeTipoProduto, Produto.marca, Produto.peso, TipoDePeso.nomeTipoPeso, Estoque.quantidade from Estoque 
-inner join Produto on Estoque.produto_id = Produto.id
-inner join TipoDePeso on Produto.tipoDePeso_id = TipoDePeso.id
-inner join TipoDeProduto on Produto.tipoDeProduto_id = TipoDeProduto.id where escola_id = 2;
+insert into Refeicao values
+(default, "Ref01"),
+(default, "Ref02"),
+(default, "Ref03"),
+(default, "Ref04");
 
-select Estoque.id, Produto.nomeProduto, TipoDeProduto.nomeTipoProduto, Produto.marca, Produto.peso, TipoDePeso.nomeTipoPeso, Estoque.quantidade from Estoque 
-inner join Produto on Estoque.produto_id = Produto.id 
-inner join TipoDePeso on Produto.tipoDePeso_id = TipoDePeso.id 
-inner join TipoDeProduto on Produto.tipoDeProduto_id = TipoDeProduto.id 
-where escola_id=2 and status='Adicionado';
+insert into anoescolar values
+(default, "Ensino Infantil"),
+(default, "Ensino Fundamental");
+
+insert into cardapio_refeicao values 
+(default, '2019-09-10', 1, 1),
+(default, '2019-09-10', 1, 2),
+(default, '2019-09-11', 1, 3),
+(default, '2019-09-12', 1, 4),
+(default, '2019-09-18', 2, 2),
+(default, '2019-09-01', 2, 3);

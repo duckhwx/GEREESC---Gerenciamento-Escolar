@@ -6,23 +6,33 @@
  
     $id = $_GET['id'];
     
-    $select = "select * from Produto";
+    $selectEstoque = "select produto_id from estoque where estoque.escola_id = ".$id;
+    $queryEstoque = mysqli_query($conexao, $selectEstoque);
+    $produtosEstoque = [];
     
-    $query = mysqli_query($conexao, $select);
-       
+    while($tableEstoque = mysqli_fetch_array($queryEstoque)){
+        $produto_id = $tableEstoque['produto_id'];
+        
+        $produtosEstoque[] = $produto_id;
+    }
+    
+    $selectProduto = "select id, nomeProduto from Produto";
+    $queryProduto = mysqli_query($conexao, $selectProduto);
+    
 ?>
 <br><br>
 <form method="post" action="validar-estoque.php?acao=alocar&id=<?=$id?>">
-    Produto <?php
-                echo "<select name='produto'>";
-                    while($table = mysqli_fetch_array($query)){
-                        $id = $table['id'];
-                        $nome = $table['nome'];
-                        
+        Produto <?php
+            echo "<select name='produto'>";
+        //Os produtos pegos no banco com o codigo acima são exibidos por essa estrutura While em forma de <select>
+                while ($tableProduto = mysqli_fetch_array($queryProduto)) {
+                    $id = $tableProduto['id'];
+                    $nome = $tableProduto['nomeProduto'];
+
                         echo "<option value='$id'>$nome</option>";
-                    }
-                echo "</select>"
-            ?><br>
+                }
+            echo "</select>"
+        ?><br>
     Quantidade <input type="number" name="quantidade" required><br>
                <input type="submit" value="Alocar">
 </form>
