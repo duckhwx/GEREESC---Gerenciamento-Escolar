@@ -2,7 +2,8 @@
 
 require_once "../../conexao.php";
 
-
+//Condição que indica se o tipo de ação é cadastrar ou Atualizar, é nescessario pois apenas estas funções tem dados
+//a serem pegos por POST
 if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
     
 $nome = $_POST["nomeEscola"];
@@ -15,23 +16,25 @@ $alunosEnsInfantil = $_POST["alunosEnsInfantil"];
 $alunosEnsFundamental = $_POST["alunosEnsFundamental"];
 
         if(empty($nome) or empty($endereco) or empty($numero) or empty($cnpj) or empty($email) or empty($telefone)){
-            header("Location: cadastrar-escola");
+            header("Location: cadastrar-escola.php");
         }
+        //Condição selecionada caso foi selecionado o cadastro de uma escola
          else if($_GET['acao'] == 'cadastrar'){
-                 $insert = "insert into Escola values(default, '$nome', '$endereco', '$cnpj', '$email', '$numero', '$telefone', $alunosEnsInfantil, $alunosEnsFundamental)";
-
+                //submissão dos dados ao banco
+                $insert = "insert into Escola values(default, '$nome', '$endereco', '$cnpj', '$email', '$numero', '$telefone', $alunosEnsInfantil, $alunosEnsFundamental)";
                 $query = mysqli_query($conexao, $insert);
+                
                 if($query){
                     header("Location: index.php");
                 } else {
                     header("Location: cadastrar-escola.php");
                 }
         }
-        
+    
+    //Condição selecionada caso foi selecionado a atualização de uma escola
     else if($_GET['acao'] == 'atualizar'){
-
-        $id = $_GET['id'];
-        
+       //Submissão dos dados atualizados para a escola selecionada
+       $id = $_GET['id'];
        $update = "update escola set nome='$nome', "
                . "endereco='$endereco', "
                . "cnpj='$cnpj', "
@@ -40,7 +43,6 @@ $alunosEnsFundamental = $_POST["alunosEnsFundamental"];
                . "telefone='$telefone', "
                . "alunosEnsInfantil=$alunosEnsInfantil, "
                . "alunosEnsFundamental=$alunosEnsFundamental where id=$id";
-       
        $query = mysqli_query($conexao, $update);
        
        if($query){
@@ -50,13 +52,12 @@ $alunosEnsFundamental = $_POST["alunosEnsFundamental"];
            }
       }
     }
-
+    
+    //Condição selecionada caso foi selecionado a exclusão de uma escola
     else if($_GET['acao'] == 'excluir'){
-
+        //Submissão da exclusão da escola ao banco
         $id = $_GET['id'];
-
         $delete = "delete from escola where id=$id";
-        
         $query = mysqli_query($conexao, $delete);
         
         if($query){
@@ -66,33 +67,3 @@ $alunosEnsFundamental = $_POST["alunosEnsFundamental"];
         }
         
     }
-    
-    
-    
-    
-//    $valores = array("nome" => $nome, 
-//                 "endereco" => $endereco, 
-//                 "cnpj" => $cnpj, 
-//                 "email" => $email, 
-//                 "numero" => $numero, 
-//                 "telefone" => $telefone);
-  // perguntar ao professor se... é nescessario fazer essa verificação de cada dado
-    //ver se ele se repete no banco para impossibilitar o cadastro de algo...
-    
-//     $select = "select * from escola where nome='$nome' and "
-//                . "endereco='$endereco' and "
-//                . "cnpj='$cnpj' and "
-//                . "email='$email' and "
-//                . "numero='$numero' and "
-//                . "telefone='$telefone'";
-//    
-//    //função que identifica se ja existe uma escola já cadastrada no sistema.
-//    function escolasCadastradas($conexao, $string){
-//        $query = mysqli_query($conexao, $string);
-//        
-//        if(mysqli_num_rows($query) >= 1){
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
