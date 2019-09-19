@@ -146,9 +146,3 @@ insert into cardapio_refeicao values
 (default, '2019-09-12', 1, 4),
 (default, '2019-09-18', 2, 2),
 (default, '2019-09-01', 2, 3);
-
-
-insert into produto values
-(default, "Pozinho Magico", "dragonEnterprise", "30", 1, 1),
-(default, "Pedrinha Filosofal", "dragonEnterprise", "1", 2, 1),
-(default, "Suquinho Amiguinho", "dragonEnterprise", "20", 1, 1);
