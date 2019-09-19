@@ -17,6 +17,7 @@
         
         $produtosEstoque[] = $produtoEstoque_id;
     }
+
 //Requisição de todos os produtos cadastrados
     $selectProduto = "select id, nomeProduto from Produto";
     $queryProduto = mysqli_query($conexao, $selectProduto);
@@ -32,6 +33,7 @@
             'nome' => $nomeProduto
         ];
     }
+
 
     $produtosVerificados = [];
 //Estrutura que indentifica quais produtos já existe no estoque da escola, para que nao sejam exibidos
@@ -51,20 +53,11 @@
         Produto <?php
             echo "<select name='produto'>";
 //Geração dinamica dos produtos que podem ser cadastrados a uma tag select
-            if(empty($produtosEstoque)){
-                foreach ($produtos as $produto) {
-                    $id = $produto['id'];
-                    $nome = $produto['nome'];
-
-                    echo "<option value='$id'>$nome</option>";
-                }
-            } else {
-                foreach ($produtosVerificados as $produto) {
-                    $id = $produto['id'];
-                    $nome = $produto['nome'];
-
-                    echo "<option value='$id'>$nome</option>";
-                }
+            foreach ($produtosVerificados as $produto) {
+                $id = $produto['id'];
+                $nome = $produto['nome'];
+                
+                echo "<option value='$id'>$nome</option>";
             }
             echo "</select>"
         ?><br>
