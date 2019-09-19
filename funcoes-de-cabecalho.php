@@ -1,5 +1,8 @@
 <?php
 
+//Página responsavel por trazer as funções que geram dinamicamente os cabeçalhos e rodapés das páginas em HMTL
+//cada tipo de usuário terá sua propia função.
+
 function cabecalhoSecEdu($title = NULL, $linkEscola = NULL, $linkUsuarios = NULL, $linkProduto = NULL, $linkCardapio = NULL){
     echo "<!DOCTYPE html>"
     . "<html>"

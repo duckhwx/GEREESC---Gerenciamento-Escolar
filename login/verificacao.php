@@ -6,6 +6,7 @@
     $login = $_POST["login"];
     $senha = $_POST["senha"];
 
+//Vefiricação dos dados 
     if(empty($login) or empty($senha)){
         header("Location: ../index.php");
     } else {

@@ -1,6 +1,7 @@
 <?php
 require_once "../../funcoes-de-cabecalho.php";
 require_once "../../conexao.php";
+
 session_start();
 $_SESSION["idEscola"] = NULL;
 
@@ -8,10 +9,13 @@ $_SESSION["idEscola"] = NULL;
 cabecalhoSecEdu("Escolas", "#", "../usuarios/cadastrar-usuarios.php", "../produto", "../cardapio");
 ?>
 <br><br>
-<?php 
+<?php
+
+//Seleção de todas as escolas cadastradas
 $select = "select * from Escola";
 $query = mysqli_query($conexao, $select);
 
+//Exibição dinamica de todas as escolas
     while($table = mysqli_fetch_array($query)){
         $id = $table['id'];
         $nome = $table['nome'];
