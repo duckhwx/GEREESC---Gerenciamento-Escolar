@@ -38,12 +38,18 @@
     $produtosVerificados = [];
 //Estrutura que indentifica quais produtos já existe no estoque da escola, para que nao sejam exibidos
 //novamente para serem cadastrados, para evitar repetição de produtos.
-    foreach($produtos as $produto){
-        for ($i = 0; $i < count($produtosEstoque); $i++) {
-            if($produtosEstoque[$i] == $produto['id']){
-                break;
-            } else if($i == count($produtosEstoque) - 1){
-                $produtosVerificados[] = $produto;
+    if(empty($produtosEstoque)){
+        foreach($produtos as $produto){
+            $produtosVerificados[] = $produto;
+        }
+    } else {
+        foreach($produtos as $produto){
+            for ($i = 0; $i < count($produtosEstoque); $i++) {
+                if($produtosEstoque[$i] == $produto['id']){
+                    break;
+                } else if($i == count($produtosEstoque) - 1){
+                    $produtosVerificados[] = $produto;
+                }
             }
         }
     }
