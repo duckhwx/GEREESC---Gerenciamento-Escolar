@@ -3,7 +3,7 @@ require_once '../../../conexao.php';
 require_once '../../../funcoes-de-cabecalho.php';
 
 $id = $_GET['id'];
-cabecalhoNutricionista("Usuários", "../../escola", "../../relatorio", "../../produto", "../index.php");
+cabecalhoNutricionista("Usuários", "../../escola", "../../relatorio", "../../produto", "../index.php", "../../../login/deslogar");
 ?>
 <br>
   

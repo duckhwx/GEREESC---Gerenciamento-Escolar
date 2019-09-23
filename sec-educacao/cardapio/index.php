@@ -3,7 +3,7 @@ require_once '../../conexao.php';
 require_once '../../funcoes-de-cabecalho.php';
 
 
-cabecalhoNutricionista("Usuários", "../escola", "..relatorio", "../produto", "#");
+cabecalhoSecEdu("Usuários", "../escola", "../usuarios/cadastrar-usuarios.php", "../produto", "#", "../../login/deslogar");
 ?>
 <br>
     <a href="calendario.php?id=1">Ensino Infantil</a>
@@ -11,4 +11,5 @@ cabecalhoNutricionista("Usuários", "../escola", "..relatorio", "../produto", "#
 
 <?php
 
-rodape();
+rodape();	 
+	

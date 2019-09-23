@@ -4,7 +4,7 @@ session_start();
 
 $_SESSION['id_anoEscolar'] = null;
 
-cabecalhoNutricionista("Usuários", "../escola", "..relatorio", "../produto", "#");
+cabecalhoNutricionista("Usuários", "../escola", "..relatorio", "../produto", "#", "../../login/deslogar.php");
 ?>
     <br>
         <a href="calendario.php?id=1">Ensino Infantil</a>

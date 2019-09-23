@@ -124,10 +124,13 @@ create table Itens (
 
 -- Inserts e afins --
 
-insert into TipoDePeso values(default, "g");
-insert into TipoDePeso values(default, "kg");
-insert into TipoDePeso values(default, "ml");
-insert into TipoDePeso values(default, "L");
+insert into secedu values(default, "adm", "adm", "123");
+
+insert into TipoDePeso values
+(default, "g"),
+(default, "kg"),
+(default, "ml"),
+(default, "L");
 
 insert into Refeicao values
 (default, "Ref01"),
@@ -143,7 +146,5 @@ insert into cardapio_refeicao values
 (default, '2019-09-10', 1, 1),
 (default, '2019-09-10', 1, 2),
 (default, '2019-09-11', 1, 3),
-(default, '2019-09-12', 1, 4),
 (default, '2019-09-18', 2, 2),
 (default, '2019-09-01', 2, 3);
-

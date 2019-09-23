@@ -5,7 +5,7 @@ require_once '../../funcoes-de-cabecalho.php';
 session_start();
     $_SESSION['id_anoEscolar'] = $_GET['id'];
 
-cabecalhoNutricionista("Usuários", "../escola", "..relatorio", "../produto", "index.php");
+cabecalhoNutricionista("Usuários", "../escola", "..relatorio", "../produto", "index.php", "../../login/deslogar.php");
 ?>
 <!--FullCalendar Links -->
 <link href='../../FullCalendar/css/core/main.min.css' rel='stylesheet' />

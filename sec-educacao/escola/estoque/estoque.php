@@ -3,7 +3,7 @@
     require_once "../../../conexao.php";
     session_start();
     
-    cabecalhoSecEdu("Estoque", "../", "../../usuarios/cadastrar-usuarios.php", "../../produto", "../../cardapio");
+    cabecalhoSecEdu("Estoque", "../", "../../usuarios/cadastrar-usuarios.php", "../../produto", "../../cardapio", "../../../login/deslogar.php");
     
 //Session que pega o id da escola selecionada na página anterior.
     if($_SESSION["idEscola"] == NULL){

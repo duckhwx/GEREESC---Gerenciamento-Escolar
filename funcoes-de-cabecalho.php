@@ -3,7 +3,7 @@
 //Página responsavel por trazer as funções que geram dinamicamente os cabeçalhos e rodapés das páginas em HMTL
 //cada tipo de usuário terá sua propia função.
 
-function cabecalhoSecEdu($title = NULL, $linkEscola = NULL, $linkUsuarios = NULL, $linkProduto = NULL, $linkCardapio = NULL){
+function cabecalhoSecEdu($title = NULL, $linkEscola = NULL, $linkUsuarios = NULL, $linkProduto = NULL, $linkCardapio = NULL, $linkLogOut = NULL){
     echo "<!DOCTYPE html>"
     . "<html>"
     . "<head>"
@@ -14,10 +14,11 @@ function cabecalhoSecEdu($title = NULL, $linkEscola = NULL, $linkUsuarios = NULL
     . "<a href='$linkEscola'>Escolas</a>"
     . "<a href='$linkUsuarios'>Usuários</a>"
     . "<a href='$linkProduto'>Produtos</a>"
-    . "<a href='$linkCardapio'>Cardápio</a>";
+    . "<a href='$linkCardapio'>Cardápio</a>"
+    . "<a href='$linkLogOut'>LogOut</a>";
 }
 
-function cabecalhoNutricionista($title = NULL, $linkEscola = NULL, $linkRelatorio = NULL, $linkProduto = NULL, $linkCardapio = NULL){
+function cabecalhoNutricionista($title = NULL, $linkEscola = NULL, $linkRelatorio = NULL, $linkProduto = NULL, $linkCardapio = NULL, $linkLogOut = NULL){
     echo "<!DOCTYPE html>"
     . "<html>"
     . "<head>"
@@ -28,7 +29,8 @@ function cabecalhoNutricionista($title = NULL, $linkEscola = NULL, $linkRelatori
     . "<a href='$linkEscola'>Escolas</a>"
     . "<a href='$linkRelatorio'>Relatório</a>"
     . "<a href='$linkProduto'>Produtos</a>"
-    . "<a href='$linkCardapio'>Cardápio</a>";
+    . "<a href='$linkCardapio'>Cardápio</a>"
+    . "<a href='$linkLogOut'>LogOut</a>";
 }
 
 

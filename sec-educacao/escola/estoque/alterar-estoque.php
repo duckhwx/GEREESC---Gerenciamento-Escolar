@@ -2,7 +2,7 @@
     require_once "../../../funcoes-de-cabecalho.php";
     require_once "../../../conexao.php";
     
-    cabecalhoSecEdu("Estoque", "../", "../../usuarios/cadastrar-usuarios.php", "../../produto", "../../cardapio");
+    cabecalhoSecEdu("Estoque", "../", "../../usuarios/cadastrar-usuarios.php", "../../produto", "../../cardapio", "../../../login/deslogar.php");
     
     $idEstoque = $_GET['idEstoque'];
     
