@@ -1,6 +1,6 @@
 <?php
 require_once("../../funcoes-de-cabecalho.php");
-cabecalhoSecEdu("Atualizar Escola", "index.php", "../usuarios/cadastrar-usuarios.php", "../produto", "../cardapio");
+cabecalhoSecEdu("Atualizar Escola", "index.php", "../usuarios/cadastrar-usuarios.php", "../produto", "../cardapio", "../../login/deslogar");
 
 $id = $_GET['id'];
 ?>

@@ -2,7 +2,7 @@
 require_once '../../../funcoes-de-cabecalho.php';
 require_once "../../../conexao.php";
 
-cabecalhoSecEdu("Atualizar Secretário da Escola", "../../escola", "../cadastrar-usuarios.php", "../../produto", "../../cardapio");
+cabecalhoSecEdu("Atualizar Secretário da Escola", "../../escola", "../cadastrar-usuarios.php", "../../produto", "../../cardapio", "../../../login/deslogar.php");
 
     $id = $_GET['id'];
 

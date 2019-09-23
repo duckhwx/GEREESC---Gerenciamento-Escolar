@@ -17,7 +17,7 @@ $telefone = $table['telefone'];
 $alunosEnsInfantil = $table['alunosEnsInfantil'];
 $alunosEnsFundamental = $table['alunosEnsFundamental'];
 
-cabecalhoSecEdu($nome, "index.php", "../usuarios", "../produto", "../cardapio");
+cabecalhoSecEdu($nome, "index.php", "../usuarios/cadastrar-usuarios.php", "../produto", "../cardapio", "../../login/deslogar");
 ?>
                 <p>Nome: <?=$nome?></p>
                 <p>Endereço: <?=$endereco?></p>

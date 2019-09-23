@@ -1,6 +1,6 @@
 <?php
 require_once("../../funcoes-de-cabecalho.php");
-cabecalhoSecEdu("Cadastrar Escola", "index.php", "../usuarios", "../produto", "../cardapio");
+cabecalhoSecEdu("Cadastrar Escola", "index.php", "../usuarios", "../produto", "../cardapio", "../../login/deslogar");
 
 ?>
 <br>

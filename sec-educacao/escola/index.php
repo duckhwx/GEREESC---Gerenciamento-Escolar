@@ -6,7 +6,7 @@ session_start();
 $_SESSION["idEscola"] = NULL;
 
 
-cabecalhoSecEdu("Escolas", "#", "../usuarios/cadastrar-usuarios.php", "../produto", "../cardapio");
+cabecalhoSecEdu("Escolas", "#", "../usuarios/cadastrar-usuarios.php", "../produto", "../cardapio", "../../login/deslogar");
 ?>
 <br><br>
 <?php

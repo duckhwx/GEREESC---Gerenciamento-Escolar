@@ -20,6 +20,7 @@ $dataNascimento = $table['dataDeNascimento'];
 $numero = $table['numero'];
 $celular = $table['celular'];
 
+cabecalhoSecEdu("Atualizar Secretário da Escola", "../../escola", "../cadastrar-usuarios.php", "../../produto", "../../cardapio", "../../../login/deslogar.php");
 ?>
 
                 <p>Nome: <?=$nome?></p>
