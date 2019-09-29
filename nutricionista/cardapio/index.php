@@ -4,11 +4,12 @@ session_start();
 
 $_SESSION['id_anoEscolar'] = null;
 
-cabecalhoNutricionista("Usuários", "../escola", "..relatorio", "../produto", "#", "../../login/deslogar.php");
+cabecalhoNutricionista('../../estilo/style.css', 'Cardápio', '../escola', '../relatorio', '../produto', '../cardapio','../../login/logOut.php');
+sectionTop();
 ?>
     <br>
         <a href="calendario.php?id=1">Ensino Infantil</a>
         <a href="calendario.php?id=2">Ensino Fundamental</a>
 <?php
-
+sectionBaixo();
 rodape();

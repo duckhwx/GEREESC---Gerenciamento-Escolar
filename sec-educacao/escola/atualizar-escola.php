@@ -1,6 +1,8 @@
 <?php
 require_once("../../funcoes-de-cabecalho.php");
-cabecalhoSecEdu("Atualizar Escola", "index.php", "../usuarios/cadastrar-usuarios.php", "../produto", "../cardapio", "../../login/deslogar");
+cabecalhoSecEdu('../../estilo/style.css', 'Atualizar Escola', '../escola', '../usuarios/cadastrar-usuarios.php', '../produto', '../cardapio','../../login/logOut.php');
+    
+sectionTop();
 
 $id = $_GET['id'];
 ?>
@@ -16,16 +18,14 @@ $id = $_GET['id'];
                     Ensino Infantil <input type="number" maxlength="4" name="alunosEnsInfantil"><br>
                     Ensino Fundamental <input type="number" maxlength="4" name="alunosEnsFundamental">
                     <br><br>
-                    <input type="submit" value="Atualizar Escola">
+                    <input type="submit" class="btn btn-dark" value="Atualizar Escola"/>
                 </form>
-            </div>
-        </section>
-
 
 
 <br>
 <a href="index.php">Voltar</a>
 <br>
 <?php 
+sectionBaixo();
 rodape();
 

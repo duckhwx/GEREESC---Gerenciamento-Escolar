@@ -33,7 +33,12 @@
     function username(){
         return $_SESSION["nome"];
     }
-   
+    
+//Função que retorna o id do usuário logado
+    function userid(){
+        return $_SESSION["id"];
+    }
+    
 //Função de deslogar
     function deslogar(){
         session_destroy();
@@ -55,4 +60,3 @@
         $array = mysqli_fetch_array($query);
         return $array;
     }
-

@@ -17,7 +17,9 @@ $telefone = $table['telefone'];
 $alunosEnsInfantil = $table['alunosEnsInfantil'];
 $alunosEnsFundamental = $table['alunosEnsFundamental'];
 
-cabecalhoSecEdu($nome, "index.php", "../usuarios/cadastrar-usuarios.php", "../produto", "../cardapio", "../../login/deslogar");
+cabecalhoSecEdu('../../estilo/style.css', 'Escola: '.$nome, '../escola', '../usuarios/cadastrar-usuarios.php', '../produto', '../cardapio','../../login/logOut.php');
+    
+sectionTop();
 ?>
                 <p>Nome: <?=$nome?></p>
                 <p>Endereço: <?=$endereco?></p>
@@ -30,8 +32,9 @@ cabecalhoSecEdu($nome, "index.php", "../usuarios/cadastrar-usuarios.php", "../pr
                 <p>Ensino Fundamental: <?=$alunosEnsFundamental?></p>
                 <br><br>
 
-<a href="index.php">Voltar</a>
+                <a href="index.php" class="btn btn-dark">Voltar</a>
 <?php 
+sectionBaixo();
 rodape();
 ?>
 

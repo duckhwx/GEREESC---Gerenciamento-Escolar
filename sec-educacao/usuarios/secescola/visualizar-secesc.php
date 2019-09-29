@@ -20,7 +20,8 @@ $dataNascimento = $table['dataDeNascimento'];
 $numero = $table['numero'];
 $celular = $table['celular'];
 
-cabecalhoSecEdu("Atualizar Secretário da Escola", "../../escola", "../cadastrar-usuarios.php", "../../produto", "../../cardapio", "../../../login/deslogar.php");
+cabecalhoSecEdu('../../../estilo/style.css', 'Secretario '.$nome, '../../escola', '../cadastrar-usuarios.php', '../../produto', '../../cardapio','../../../../login/logOut.php');
+sectionTop();
 ?>
 
                 <p>Nome: <?=$nome?></p>
@@ -34,14 +35,15 @@ cabecalhoSecEdu("Atualizar Secretário da Escola", "../../escola", "../cadastrar
                 <p>Numero: <?=$numero?></p>
                 <p>Celular: <?=$celular?></p>
                 <br><br>
-                <input type="submit" value="Atualizar Secretario da Escola">
-            </div>
-        </section>
+                <!--<a type="submit" href="atualizar-secesc.php">Atualizar Secretario da </a>-->
+                <br>
+                <a href="index.php" class="btn btn-dark">Voltar</a>
 
 
 
 
-<a href="index.php">Voltar</a>
+
 <?php
+sectionBaixo();
 rodape();
 

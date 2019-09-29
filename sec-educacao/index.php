@@ -1,6 +1,8 @@
 <?php
 require_once("../funcoes-de-cabecalho.php");
-cabecalhoSecEdu("Secretário Da Educação", "escola/", "usuarios/cadastrar-usuarios.php", "produto/", "cardapio/", "../login/deslogar");
+cabecalhoSecEdu("../estilo/style.css","Inicio", "escola/", "usuarios/cadastrar-usuarios.php", "produto/", "cardapio/", "../login/logOut.php");
+
+
 ?>
 
 <?php 

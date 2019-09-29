@@ -1,0 +1,39 @@
+body{
+    background: url('imagem.jpg') no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position:  relative;
+    text-align-last: center;
+  }
+  
+#Cadastro{
+    background: white center;
+    opacity: 0.6;
+    width: 800px;
+    height: auto;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    position: relative;
+    border: solid 3px rgb(26, 26, 26);
+    
+}
+
+
+form{
+    margin-top: 17px;
+    margin-left: 7%
+}
+
+  header{
+    background-color: #323A45;
+    opacity: 0.8;
+  }
+
+  .container{
+    text-align: left;
+    font-family: Times New Roman, Sans-serif;
+    font-size: 28px;
+  }

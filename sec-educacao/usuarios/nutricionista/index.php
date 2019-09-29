@@ -17,7 +17,9 @@ $nascimento = $table['dataDeNascimento'];
 $numero = $table['numero'];
 $celular = $table['celular'];
 
-cabecalhoSecEdu("Nutricionista", "../../escola", "../cadastrar-usuarios.php", "../../produto", "../../cardapio", "../../../login/deslogar.php");
+cabecalhoSecEdu('../../../estilo/style.css', 'Nutricionista', '../../escola', '../cadastrar-usuarios.php', '../../produto', '../../cardapio');
+    
+    sectionTop();
 ?>
 <br>
 <p>Nome: <?=$nome?></p>
@@ -35,5 +37,5 @@ cabecalhoSecEdu("Nutricionista", "../../escola", "../cadastrar-usuarios.php", ".
 <a href="validar-nutricionista.php?id=<?=$id?>&acao=excluir">Excluir</a>
 
 <?php 
-
+sectionBaixo();
 rodape();

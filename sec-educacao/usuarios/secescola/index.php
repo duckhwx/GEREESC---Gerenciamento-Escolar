@@ -5,8 +5,8 @@ require_once '../../../conexao.php';
 $select = 'select * from secesc';
 $query = mysqli_query($conexao, $select);
 
-cabecalhoSecEdu("Secretário da Escola", "../../escola", "../cadastrar-usuarios.php", "../../produto", "../../cardapio", "../../../login/deslogar.php");
-
+cabecalhoSecEdu('../../../estilo/style.css', 'Secretários das Escolas', '../../escola', '../cadastrar-usuarios.php', '../../produto', '../../cardapio','../../../login/logOut.php');
+sectionTop();
 
 echo "<table> 
       <tr>
@@ -44,8 +44,8 @@ echo "<tr>
 echo "</table>";
 ?>
 
-<a href="cadastrar-secesc.php">Cadastrar</a>
+<a href="cadastrar-secesc.php" class="btn btn-dark">Cadastrar</a>
 
 <?php 
-
+sectionBaixo();
 rodape();

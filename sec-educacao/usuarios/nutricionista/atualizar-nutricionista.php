@@ -1,7 +1,8 @@
 <?php
 require_once '../../../funcoes-de-cabecalho.php';
 
-cabecalhoSecEdu("Atualizar Nutricionista", "../../escola", "../cadastrar-usuarios.php", "../../produto", "../../cardapio", "../../../login/deslogar.php");
+cabecalhoSecEdu('../../../estilo/style.css', 'Atualizar Nutricionista', '../../escola', '../cadastrar-usuarios.php', '../../produto', '../../cardapio','../../../login/logOut.php');
+sectionTop();
 ?>
 
 <form method="post" action="validar-nutricionista.php?acao=atualizar">
@@ -15,12 +16,12 @@ cabecalhoSecEdu("Atualizar Nutricionista", "../../escola", "../cadastrar-usuario
     Celular <input type="text" required maxlength="15" name="celular"><br>
     Login <input type="text" required maxlength="64" name="login"><br>
     Senha <input type="text" required maxlength="64" name="senha"><br>
-    <input type="submit" value="Atualizar Nutricionista">
+    <input type="submit" class="btn btn-dark" value="Atualizar Nutricionista">
 </form>
 
 <br>
 <a href="index.php">Voltar</a>
 
 <?php 
-
+sectionBaixo();
 rodape();

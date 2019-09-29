@@ -5,7 +5,8 @@ require_once '../../funcoes-de-cabecalho.php';
 session_start();
     $_SESSION['id_anoEscolar'] = $_GET['id'];
 
-cabecalhoNutricionista("Usuários", "../escola", "..relatorio", "../produto", "index.php", "../../login/deslogar");
+    cabecalhoSecEdu('../../estilo/style.css', 'Cardápio', '../escola', '../usuarios/cadastrar-usuarios.php', '../produto', '../cardapio','../../login/logOut.php');
+    
 ?>
 <!--FullCalendar Links -->
 <link href='../../FullCalendar/css/core/main.min.css' rel='stylesheet' />
@@ -31,4 +32,5 @@ cabecalhoNutricionista("Usuários", "../escola", "..relatorio", "../produto", "i
         <div id='calendar'></div>
         
 <?php
+
 rodape();

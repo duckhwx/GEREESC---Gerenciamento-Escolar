@@ -42,7 +42,6 @@ create table Aluno (
     login varchar(64),
     senha varchar(64),
     dataDeNascimento date,
-    secEsc_id int references SecEsc(id),
     anoEscolar_id int references AnoEscolar(id),
     escola_id int references Escola(id)
 );

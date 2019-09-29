@@ -2,7 +2,9 @@
     require_once "../../../funcoes-de-cabecalho.php";
     require_once "../../../conexao.php";
 
-    cabecalhoSecEdu("Estoque", "../", "../../usuarios/cadastrar-usuarios.php", "../../produto", "../../cardapio", "../../../login/deslogar.php");
+    cabecalhoSecEdu('../../../estilo/style.css', 'Estoque', '../../escola', '../../usuarios/cadastrar-usuarios.php', '../../produto', '../../cardapio','../../../login/logOut.php');
+    
+    sectionTop();
  
     $id = $_GET['id'];
     
@@ -38,18 +40,12 @@
     $produtosVerificados = [];
 //Estrutura que indentifica quais produtos já existe no estoque da escola, para que nao sejam exibidos
 //novamente para serem cadastrados, para evitar repetição de produtos.
-    if(empty($produtosEstoque)){
-        foreach($produtos as $produto){
-            $produtosVerificados[] = $produto;
-        }
-    } else {
-        foreach($produtos as $produto){
-            for ($i = 0; $i < count($produtosEstoque); $i++) {
-                if($produtosEstoque[$i] == $produto['id']){
-                    break;
-                } else if($i == count($produtosEstoque) - 1){
-                    $produtosVerificados[] = $produto;
-                }
+    foreach($produtos as $produto){
+        for ($i = 0; $i < count($produtosEstoque); $i++) {
+            if($produtosEstoque[$i] == $produto['id']){
+                break;
+            } else if($i == count($produtosEstoque) - 1){
+                $produtosVerificados[] = $produto;
             }
         }
     }
@@ -68,11 +64,12 @@
             echo "</select>"
         ?><br>
     Quantidade <input type="number" name="quantidade" required><br>
-               <input type="submit" value="Alocar">
+    <input type="submit" class="btn btn-dark" value="Alocar">
 </form>
 
 
 
 <?php
+        sectionBaixo();
 rodape();
 

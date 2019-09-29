@@ -1,7 +1,8 @@
 <?php
 require_once("../../funcoes-de-cabecalho.php");
-cabecalhoSecEdu("Cadastrar Escola", "index.php", "../usuarios", "../produto", "../cardapio", "../../login/deslogar");
-
+cabecalhoSecEdu('../../estilo/style.css', 'Cadastrar Escola', '../escola', '../usuarios/cadastrar-usuarios.php', '../produto', '../cardapio','../../login/logOut.php');
+    
+sectionTop();
 ?>
 <br>
 <form method="post" action="verificar-escola.php?acao=cadastrar"><br>
@@ -14,10 +15,11 @@ cabecalhoSecEdu("Cadastrar Escola", "index.php", "../usuarios", "../produto", ".
     Numero de Alunos: <br>
     Ensino Infantil <input type="number" maxlength="4" name="alunosEnsInfantil"><br>
     Ensino Fundamental <input type="number" maxlength="4" name="alunosEnsFundamental"><br>
-    <input type="submit" value="Cadastrar Escola">
+    <input type="submit" class="btn btn-dark" value="Cadastrar Escola">
 </form>
 <br>
 
 <a href="index.php">Voltar</a>
 <?php 
+sectionBaixo();
 rodape();

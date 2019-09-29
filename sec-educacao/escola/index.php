@@ -6,8 +6,9 @@ session_start();
 $_SESSION["idEscola"] = NULL;
 
 
-cabecalhoSecEdu("Escolas", "#", "../usuarios/cadastrar-usuarios.php", "../produto", "../cardapio", "../../login/deslogar");
-?>
+cabecalhoSecEdu('../../estilo/style.css', 'Escolas', '../escola', '../usuarios/cadastrar-usuarios.php', '../produto', '../cardapio','../../login/logOut.php');
+    
+sectionTop();?>
 <br><br>
 <?php
 
@@ -32,8 +33,9 @@ echo "</table>";
 ?>
 
 <br>
-<a href="cadastrar-escola.php?acao=cadastrar">Cadastrar Escola</a>
+<a href="cadastrar-escola.php?acao=cadastrar" class="btn btn-dark">Cadastrar Escola</a>
 <br>
 
 <?php 
+sectionBaixo();
 rodape();

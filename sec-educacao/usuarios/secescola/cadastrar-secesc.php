@@ -2,7 +2,8 @@
 require_once '../../../funcoes-de-cabecalho.php';
 require_once '../../../conexao.php';
 
-cabecalhoSecEdu("Cadastrar Secretário da Escola", "../../escola", "../cadastrar-usuarios.php", "../../produto", "../../cardapio", "../../../login/deslogar.php");
+cabecalhoSecEdu('../../../estilo/style.css', 'Cadastrar Secretário da Escola', '../../escola', '../cadastrar-usuarios.php', '../../produto', '../../cardapio','../../../login/logOut.php');
+sectionTop();
 
 $select = "select * from escola";
 
@@ -30,11 +31,11 @@ $query = mysqli_query($conexao, $select);
                              ?><br>
                     Login <input type="text" required maxlength="64" name="login"><br>
                     Senha <input type="text" required maxlength="64" name="senha"><br><br>
-                    <input type="submit" value="Cadastrar Secretário da Escola">
+                    <input type="submit" class="btn btn-dark" value="Cadastrar Secretário da Escola">
                 </form>
 <br>
 <a href="index.php">Voltar</a>
 
 <?php 
-
+sectionBaixo();
 rodape();

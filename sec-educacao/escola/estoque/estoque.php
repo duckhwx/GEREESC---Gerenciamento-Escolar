@@ -3,7 +3,9 @@
     require_once "../../../conexao.php";
     session_start();
     
-    cabecalhoSecEdu("Estoque", "../", "../../usuarios/cadastrar-usuarios.php", "../../produto", "../../cardapio", "../../../login/deslogar.php");
+    cabecalhoSecEdu('../../../estilo/style.css', 'Estoque', '../../escola', '../../usuarios/cadastrar-usuarios.php', '../../produto', '../../cardapio','../../../login/logOut.php');
+    
+    sectionTop();
     
 //Session que pega o id da escola selecionada na página anterior.
     if($_SESSION["idEscola"] == NULL){
@@ -51,7 +53,8 @@
     echo "</table>";
 ?>
 
-<a href="alocar-produto.php?id=<?=$_SESSION["idEscola"]?>">Alocar Produto</a>
+<a href="alocar-produto.php?id=<?=$_SESSION["idEscola"]?>" class="btn btn-dark">Alocar Produto</a>
 
 <?php
+sectionBaixo();
 rodape();

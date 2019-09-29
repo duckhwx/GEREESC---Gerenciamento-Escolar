@@ -3,7 +3,9 @@
     require_once "../../../conexao.php";
     session_start();
     
-    cabecalhoSecEdu("Estoque", "../", "../../usuarios/cadastrar-usuarios.php", "../../produto", "../../cardapio", "../../../login/deslogar.php");
+    cabecalhoSecEdu('../../../estilo/style.css', 'Estoque', '../../escola', '../../usuarios/cadastrar-usuarios.php', '../../produto', '../../cardapio','../../../login/logOut.php');
+    
+    sectionTop();
 
     $idEstoque = $_GET['idEstoque'];
     $quantidade = $_GET['quantidade'];
@@ -39,8 +41,9 @@
     echo "</select>";
     ?><br>
     Quantidade <input type="number" name="quantidade" max="<?=$quantidade?>"><br>
-    <input type="submit" value="Transferir">
+    <input type="submit" class="btn btn-dark" value="Transferir">
 </form>
 
 <?php
+    sectionBaixo();
 rodape();
