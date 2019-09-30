@@ -37,9 +37,4 @@
             </div>
         </section>
 </body>
-<<<<<<< HEAD
-</html>
-=======
-
->>>>>>> origin/estilo
 </html>
