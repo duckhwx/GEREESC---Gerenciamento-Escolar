@@ -3,7 +3,7 @@
     require_once "../../../conexao.php";
     session_start();
     
-    cabecalhoSecEdu("Estoque", "../", "../../usuarios/cadastrar-usuarios.php", "../../produto", "../../cardapio");
+    cabecalhoSecEdu("Estoque", "../", "../../usuarios/cadastrar-usuarios.php", "../../produto", "../../refeicao", "../../cardapio");
 
     $idEstoque = $_GET['idEstoque'];
     $quantidade = $_GET['quantidade'];

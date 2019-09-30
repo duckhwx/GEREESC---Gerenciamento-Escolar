@@ -124,6 +124,8 @@ create table Itens (
 
 -- Inserts e afins --
 
+insert into SecEdu(default, "adm", "adm", 123);
+
 insert into TipoDePeso values(default, "g");
 insert into TipoDePeso values(default, "kg");
 insert into TipoDePeso values(default, "ml");
