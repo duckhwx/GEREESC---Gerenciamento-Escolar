@@ -12,7 +12,6 @@ require_once '../../funcoes-de-cabecalho.php';
     $query1 = mysqli_query($conexao, "select * from aluno where id='$id'");
     $table1 = mysqli_fetch_array($query1);
     $escola_id = $table1['escola_id'];
-    var_dump($escola_id);
     
     //Seleção dos dados da escola selecionada no index
     $query = mysqli_query($conexao, "select * from Escola where id='$escola_id'");

@@ -1,7 +1,7 @@
 <?php
 require_once '../../funcoes-de-cabecalho.php';
 
-cabecalhoSecEdu('../../estilo/style.css', 'Usuarios', '../escola', 'cadastrar-usuarios.php', '../produto', '../cardapio','../../../login/logOut.php');
+cabecalhoSecEdu('../../estilo/style.css', 'Usuarios', '../escola', 'cadastrar-usuarios.php', '../produto', '../cardapio', '../../login/logOut.php');
 sectionTop();
 ?>
 <br>

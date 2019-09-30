@@ -27,9 +27,8 @@ if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
             //header("Location: cadastrar-aluno.php");
         }
     } else if($_GET['acao'] == 'atualizar'){
-        $id_secesc = $_GET['id_secesc'];
-        $id_anoEscolar = $_GET['anoEscolar'];
-        $id_escola = $_GET['escola'];
+        $id_anoEscolar = $_POST['anoEscolar'];
+        $id_escola = $_POST['escola'];
         
         $update = "update aluno set nome='$nome',"
                 . " login='$login',"

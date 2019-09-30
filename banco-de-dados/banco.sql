@@ -137,6 +137,11 @@ insert into Refeicao values
 (default, "Ref03"),
 (default, "Ref04");
 
+insert into tipodeproduto values
+(default, "tipo01"),
+(default, "tipo02"),
+(default, "tipo03");
+
 insert into anoescolar values
 (default, "Ensino Infantil"),
 (default, "Ensino Fundamental");

@@ -12,34 +12,37 @@
     } else {
         if(strlen($login) <= 64 and strlen($senha) <= 64){
 //Pagina do Secretário da Educação
-    //$login = tipoLogin($conexao, "select * from secedu where login='$login' and senha='$senha'");
-    if(tipoLogin($conexao, "select * from secedu where login='$login' and senha='$senha'") != null){
-        logar($login['login'], $login['nome'], $login['id']);
+    $loginInfo = tipoLogin($conexao, "select * from secedu where login='$login' and senha='$senha'");
+    if($loginInfo != null){
+        logar($loginInfo['login'], $loginInfo['nome'], $loginInfo['id']);
         header("Location: ../sec-educacao");
     } 
     
 //Página do Nutricionista
-    else if(tipoLogin($conexao, "select * from nutricionista where login='$login' and senha='$senha'") != null){
-         logar($login['login'], $login['nome'], $login['id']);
+    $loginInfo = tipoLogin($conexao, "select * from nutricionista where login='$login' and senha='$senha'");
+    if($loginInfo != null){
+         logar($loginInfo['login'], $loginInfo['nome'], $loginInfo['id']);
          header("Location: ../nutricionista");
     } 
     
 //Página do Secretário da Escola   
-    else if(tipoLogin($conexao, "select * from secesc where login='$login' and senha='$senha'") != null){
-         logar($login['login'], $login['nome'], $login['id']);
+    $loginInfo = tipoLogin($conexao, "select * from secesc where login='$login' and senha='$senha'");
+    if($loginInfo != null){
+         logar($loginInfo['login'], $loginInfo['nome'], $loginInfo['id']);
          header("Location: ../sec-escola");
     } 
     
 //Página do Aluno    
-    else if(tipoLogin($conexao, "select * from aluno where login='$login' and senha='$senha'") != null){
-         logar($login['login'], $login['nome'], $login['id']);
+    $loginInfo = tipoLogin($conexao, "select * from aluno where login='$login' and senha='$senha'");
+    if($loginInfo != null){
+         logar($loginInfo['login'], $loginInfo['nome'], $loginInfo['id']);
          header("Location: ../aluno");
     } 
     
-    else {
+    if(empty($_SESSION['login'])){
         header("Location: ../index.php");
-    } 
-
+    }
+    
     } else {
         header("Location: ../index.php");
         }

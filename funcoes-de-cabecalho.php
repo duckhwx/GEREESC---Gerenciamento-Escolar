@@ -45,7 +45,6 @@ function cabecalhoSecEsc($estilo = null, $title = NULL,  $linkAluno = NULL, $lin
         . "<title>$title</title>"
         . "</head>"
         . "<body>"
-
         . "<header>"
         .    "<div class='container'>"
         .        "<div class='row'>"

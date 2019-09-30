@@ -23,7 +23,7 @@
                                 echo "<select name='tipoDePeso'>";
                                     while($table = mysqli_fetch_array($query)){
                                         $id = $table['id'];
-                                        $nome = $table['nome'];
+                                        $nome = $table['nomeTipoPeso'];
 
                                         echo "<option value=$id>$nome</option>";
                                     }
@@ -33,7 +33,7 @@
                                 echo "<select name='tipoDeProduto'>";
                                     while($table = mysqli_fetch_array($query1)){
                                         $id = $table['id'];
-                                        $nome = $table['nome'];
+                                        $nome = $table['nomeTipoProduto'];
 
                                         echo "<option value=$id>$nome</option>";
                                     }

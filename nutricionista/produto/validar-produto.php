@@ -5,7 +5,7 @@ require_once "../../conexao.php";
 
 if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
     
-$nome = $_POST["nomeProduto"];
+$nome = $_POST["nome"];
 $marca = $_POST["marca"];
 $peso = $_POST["peso"];
 $tipoDePeso = $_POST["tipoDePeso"];

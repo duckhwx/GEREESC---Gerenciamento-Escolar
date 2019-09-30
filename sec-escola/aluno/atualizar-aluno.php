@@ -11,7 +11,6 @@ sectionTop();
     $select2 = "select * from AnoEscolar";
     $select3 = "select * from escola";
 
-    $query1 = mysqli_query($conexao, $select1);
     $query2 = mysqli_query($conexao, $select2);
     $query3 = mysqli_query($conexao, $select3);
 
@@ -21,18 +20,8 @@ sectionTop();
         Login <input type="text" required maxlength="64" name="login"><br>
         Senha <input type="text" required maxlength="64" name="senha"><br>
         Data de Nascimento <input type="date" required  name="nascimento"><br>
-        Secretário da Escola  <?php
-            echo "<select name='secesc'>";
-                while($table = mysqli_fetch_array($query1)){
-                    $id = $table['id_secesc'];
-                    $nome = $table['nome'];
-
-                    echo "<option value=$id>$nome</option>";
-                }
-            echo "</select>";
-        ?><br>
         <br>
-        Ano Escolar  <?php
+        Ano Escolar<?php
             echo "<select name='anoEscolar'>";
                 while($table = mysqli_fetch_array($query2)){
                     $id = $table['id_anoEscolar'];
