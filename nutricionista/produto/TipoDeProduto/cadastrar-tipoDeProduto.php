@@ -3,7 +3,7 @@
     require_once '../../../funcoes-de-cabecalho.php';
     require_once '../../../conexao.php';
     
-    cabecalhoNutricionista('../../../estilo/style.css', 'Cadastrar Tipo de Produto', '../../escola', '../../relatorio', '../../produto', '../../refeicao', '../../cardapio','../../../login/logOut.php');
+    cabecalhoNutricionista('../../../estilo/style.css', 'Cadastrar Tipo de Produto', '../../escola/', '../../relatorio/', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
     
     sectionTop();
     

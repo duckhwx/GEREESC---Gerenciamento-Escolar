@@ -4,12 +4,12 @@ require_once '../../login/funcoesdelogin.php';
 require_once '../../funcoes-de-cabecalho.php';
 
 
-    cabecalhoAluno('../../estilo/style.css', 'Escola', '../escola', '../cardapio/calendario.php','../../login/logOut.php');
+    cabecalhoAluno('../../estilo/style.css', 'Escola', '../escola/', '../cardapio/calendario.php','../../login/logOut.php');
     sectionTop();
     
     $id = $_SESSION['id'];
    
-    $query1 = mysqli_query($conexao, "select * from aluno where id='$id'");
+    $query1 = mysqli_query($conexao, "select * from Aluno where id='$id'");
     $table1 = mysqli_fetch_array($query1);
     $escola_id = $table1['escola_id'];
     

@@ -2,14 +2,14 @@
     require_once "../../../funcoes-de-cabecalho.php";
     require_once "../../../conexao.php";
 
-    cabecalhoSecEdu('../../../estilo/style.css', 'Estoque', '../../escola', '../../usuarios/cadastrar-usuarios.php', '../../produto', '../../refeicao', '../../cardapio','../../../login/logOut.php');
+    cabecalhoSecEdu('../../../estilo/style.css', 'Estoque', '../../escola/', '../../usuarios/cadastrar-usuarios.php', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
     
     sectionTop();
  
     $id = $_GET['id'];
     
 //Requisição de todos os produtos cadastrados no estoque da escola selecionada
-    $selectEstoque = "select produto_id from estoque where estoque.escola_id = ".$id;
+    $selectEstoque = "select produto_id from Estoque where Estoque.escola_id = ".$id;
     $queryEstoque = mysqli_query($conexao, $selectEstoque);
     $produtosEstoque = [];
 

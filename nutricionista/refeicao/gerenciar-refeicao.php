@@ -5,13 +5,13 @@ $acao = $_POST['acao'];
 
 if($acao == 'cadastrar'){
     $nome = $_POST['nome'];
-    $insert = 'insert into refeicao values(default, "'.$nome.'")';
+    $insert = 'insert into Refeicao values(default, "'.$nome.'")';
     $query = mysqli_query($conexao, $insert);
 } 
 else if($acao == 'getById'){
     $id = $_POST['id'];
 
-    $select = "select * from refeicao where id = $id";
+    $select = "select * from Refeicao where id = $id";
     $query = mysqli_query($conexao, $select);
     $fetch = mysqli_fetch_array($query);
     

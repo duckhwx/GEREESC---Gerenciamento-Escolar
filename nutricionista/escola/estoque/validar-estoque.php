@@ -26,7 +26,7 @@ if($_GET['acao'] == 'alocar'){
     $quantidade = $_POST['quantidade'];
 
 //Dados atualizados submetidos ao Banco da dados
-    $update = "update Estoque set quantidade=$quantidade where estoque.estoque_id=$idEstoque";
+    $update = "update Estoque set quantidade=$quantidade where Estoque.estoque_id=$idEstoque";
     $query = mysqli_query($conexao, $update);
     
     if($query){
@@ -48,11 +48,11 @@ if($_GET['acao'] == 'alocar'){
     $quantidade -= $quantidadeTrasnferida;
 
 //Dados atualizados da escola que envia os produtos submetidos ao Banco da dados
-    $updateEsc = "update Estoque set quantidade=$quantidade where estoque.estoque_id=$idEstoque";
+    $updateEsc = "update Estoque set quantidade=$quantidade where Estoque.estoque_id=$idEstoque";
     mysqli_query($conexao, $updateEsc);
 
 //Seleção do estoque da escola alvo, que trabalha com o tipo de produto selecionado
-    $selectEstoqueAlvo = "select estoque.estoque_id from estoque where estoque.escola_id = $idEscAlvo and estoque.produto_id = $idProduto";
+    $selectEstoqueAlvo = "select Estoque.estoque_id from estoque where Estoque.escola_id = $idEscAlvo and Estoque.produto_id = $idProduto";
     $queryEstoqueAlvo = mysqli_query($conexao, $selectEstoqueAlvo);
        
 //Identificação que verifica se esse estoque especifico do produto já existe na escola alvo
@@ -61,7 +61,7 @@ if($_GET['acao'] == 'alocar'){
             $tableEstoqueAlvo = mysqli_fetch_array($queryEstoqueAlvo);
             $idEstoqueAlvo = $tableEstoqueAlvo['estoque_id'];
             
-            $updateEscAlvo = "update Estoque set quantidade= quantidade + $quantidadeTrasnferida where estoque.estoque_id = ".$idEstoqueAlvo;
+            $updateEscAlvo = "update Estoque set quantidade= quantidade + $quantidadeTrasnferida where Estoque.estoque_id = ".$idEstoqueAlvo;
             $queryUpdate = mysqli_query($conexao, $updateEscAlvo);
             if($queryUpdate){
                 header("Location: estoque.php");

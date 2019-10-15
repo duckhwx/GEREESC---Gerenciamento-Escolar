@@ -15,7 +15,7 @@ if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
     $senha = $_POST['senha'];
     
     if($_GET['acao'] == 'cadastrar'){
-        $insert = "insert into secesc values (default, "
+        $insert = "insert into SecEsc values (default, "
                 . "'$nome', "
                 . "'$login', "
                 . "'$senha', "
@@ -37,7 +37,7 @@ if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
         }
     } else if($_GET['acao'] == 'atualizar'){
         $id = $_GET['id'];
-        $update = "update secesc set nome='$nome',"
+        $update = "update SecEsc set nome='$nome',"
                 . " login='$login',"
                 . " senha='$senha',"
                 . " cpf='$cpf',"
@@ -61,7 +61,7 @@ if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
 } else if($_GET['acao'] == 'excluir'){
     
         $id = $_GET['id'];
-        $delete = "delete from secesc where id=$id";
+        $delete = "delete from SecEsc where id=$id";
         $query = mysqli_query($conexao, $delete);
         if($query){
             header("Location: index.php");

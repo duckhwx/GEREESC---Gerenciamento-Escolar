@@ -2,7 +2,7 @@
     require_once "../../../funcoes-de-cabecalho.php";
     require_once "../../../conexao.php";
     
-    cabecalhoNutricionista('../../../estilo/style.css', 'Estoque', '../../escola', '../../relatorio', '../../produto', '../../cardapio','../../../login/logOut.php');
+    cabecalhoNutricionista('../../../estilo/style.css', 'Estoque', '../', '../../relatorio/', '../../produto/', '../../refeicao/', '../../cardapio', '../../../login/logOut.php');
     
     sectionTop();
     
