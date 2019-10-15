@@ -2,7 +2,7 @@
 require_once '../../conexao.php';
 require_once '../../funcoes-de-cabecalho.php';
 
-cabecalhoNutricionista("../../estilo/style.css", "Refeições", "../escola", "../relatorio", "../produto", "#", "../index.php", "../../login/logOut.php");
+cabecalhoNutricionista('../../estilo/style.css', 'Refeições', '../escola', '../relatorio', '../produto', '#', '../cardapio', '../../login/logOut.php');
 
 $select = "select * from refeicao";
 $query = mysqli_query($conexao, $select);
@@ -23,12 +23,12 @@ sectionTop();
         . "</td>"
         . "<td>"
         . "<button class='btn btn-light button-atualizar' value='" . $tbl['id'] . "'>"
-        . "<img src='update.png' height='27px'>"
+        . "<img src='' height='27px'>"
         . "</button>"
         . "</td>"
         . "<td>"
         . "<button class='btn btn-light button-excluir' value='" . $tbl['id'] . "'>"
-        . "<img src='excluir.png' height='27px'>"
+        . "<img src='' height='27px'>"
         . "</button>"
         . "</td>"
         . "</tr>";
@@ -38,7 +38,7 @@ sectionTop();
 </table>
 
 <script src="requisicao-ajax.js"></script>
-<button class="btn btn-dark" id="button-cadastro">Cadastrar Refeição</button>
+<button class="btn btn-dark mb-3" id="button-cadastro">Cadastrar Refeição</button>
 
 <?php 
 sectionBaixo();
