@@ -3,7 +3,7 @@
     require_once "../../../conexao.php";
     session_start();
     
-    cabecalhoNutricionista('../../../estilo/style.css', 'Estoque', '../../escola', '../../relatorio', '../../produto', '../../cardapio','../../../login/logOut.php');
+    cabecalhoNutricionista('../../../estilo/styleNutricionista.css', 'Estoque', '../../escola', '../../relatorio', '../../produto', '../../cardapio','../../../login/logOut.php');
     
     sectionTop();
     
@@ -15,7 +15,9 @@
     $id = $_SESSION['idEscola'];
     
 //Requisição dos dados do estoque ao Banco de Dados
-    $selectEstoque = "select * from estoque where escola_id ='$id'";
+    $selectEstoque = "Produto.id, Produto.nomeProduto, TipoDeProduto.nomeTipoProduto, Produto.marca, Produto.peso, TipoDePeso.nomeTipoPeso, from Produto " 
+                    ."inner join TipoDePeso on Produto.tipoDePeso_id = TipoDePeso.id "
+                    ."inner join TipoDeProduto on Produto.tipoDeProduto_id = TipoDeProduto.id";
     $queryEstoque = mysqli_query($conexao, $selectEstoque);
     
     echo "<table>"
@@ -51,7 +53,7 @@
     echo "</table>";
 ?>
 
-<a href="alocar-produto.php?id=<?=$_SESSION["idEscola"]?>" class="btn btn-dark">Alocar Produto</a>
+<a href="alocar-produto.php?id=<?=$_SESSION["idEscola"]?>" class="btn btn-dark m-2">Alocar Produto</a>
 
 <?php
 sectionBaixo();

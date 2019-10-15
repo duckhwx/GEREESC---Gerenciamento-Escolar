@@ -41,7 +41,7 @@
     echo "</select>";
     ?><br>
     Quantidade <input type="number" name="quantidade" max="<?=$quantidade?>"><br>
-    <input type="submit" class="btn btn-dark" value="Transferir">
+    <input type="submit" class="btn btn-dark m-2" value="Transferir">
 </form>
 
 <?php

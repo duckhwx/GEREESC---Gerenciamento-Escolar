@@ -15,7 +15,7 @@ sectionTop();
     Numero de Alunos: <br>
     Ensino Infantil <input type="number" maxlength="4" name="alunosEnsInfantil"><br>
     Ensino Fundamental <input type="number" maxlength="4" name="alunosEnsFundamental"><br>
-    <input type="submit" class="btn btn-dark" value="Cadastrar Escola">
+    <input type="submit" class="btn btn-dark m-2" value="Cadastrar Escola">
 </form>
 <br>
 

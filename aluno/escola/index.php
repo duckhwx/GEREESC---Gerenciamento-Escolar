@@ -4,7 +4,7 @@ require_once '../../login/funcoesdelogin.php';
 require_once '../../funcoes-de-cabecalho.php';
 
 
-    cabecalhoAluno('../../estilo/style.css', 'Escola', '../escola', '../cardapio/calendario.php','../../login/logOut.php');
+    cabecalhoAluno('../../estilo/styleAluno.css', 'Escola', '../escola', '../cardapio/calendario.php','../../login/logOut.php');
     sectionTop();
     
     $id = $_SESSION['id'];
@@ -39,7 +39,7 @@ require_once '../../funcoes-de-cabecalho.php';
                 <p>Ensino Fundamental: <?=$alunosEnsFundamental?></p>
                 <br><br>
 
-                <a href="../index.php" class="btn btn-dark">Voltar</a>
+                <a href="../index.php" class="btn btn-dark m-2">Voltar</a>
     
     
     

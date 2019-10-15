@@ -33,7 +33,7 @@ echo "</table>";
 ?>
 
 <br>
-<a href="cadastrar-escola.php?acao=cadastrar" class="btn btn-dark">Cadastrar Escola</a>
+<a href="cadastrar-escola.php?acao=cadastrar" class="btn btn-dark m-2">Cadastrar Escola</a>
 <br>
 
 <?php 

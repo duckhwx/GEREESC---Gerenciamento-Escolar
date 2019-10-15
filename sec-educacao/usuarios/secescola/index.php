@@ -44,7 +44,7 @@ echo "<tr>
 echo "</table>";
 ?>
 
-<a href="cadastrar-secesc.php" class="btn btn-dark">Cadastrar</a>
+<a href="cadastrar-secesc.php" class="btn btn-dark m-2">Cadastrar</a>
 
 <?php 
 sectionBaixo();

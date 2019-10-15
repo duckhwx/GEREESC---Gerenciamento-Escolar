@@ -5,7 +5,7 @@ require_once '../../funcoes-de-cabecalho.php';
 session_start();
    // $_SESSION['id_anoEscolar'] = $_GET['id'];
 
-    cabecalhoAluno('../../estilo/style.css', 'Cardápio', '../escola', '../cardapio/calendario.php','../../login/logOut.php');
+    cabecalhoAluno('../../estilo/styleAluno.css', 'Cardápio', '../escola', '../cardapio/calendario.php','../../login/logOut.php');
 
 ?>
 <!--FullCalendar Links -->

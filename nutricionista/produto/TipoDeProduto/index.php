@@ -2,7 +2,7 @@
     require_once '../../../funcoes-de-cabecalho.php';
     require_once '../../../conexao.php';
     
-    cabecalhoNutricionista('../../../estilo/style.css', 'Tipo de Produtos', '../../escola', '../../relatorio', '../../produto', '../../cardapio','../../../login/logOut.php');
+    cabecalhoNutricionista('../../../estilo/styleNutricionista.css', 'Tipo de Produtos', '../../escola', '../../relatorio', '../../produto', '../../cardapio','../../../login/logOut.php');
     sectionTop();
     
     $select = "select * from produto";
@@ -27,7 +27,7 @@
     
     
 
-<a href="cadastrar-tipoDeProduto.php" class="btn btn-dark">Cadastrar Tipo de Produto</a>
+<a href="cadastrar-tipoDeProduto.php" class="btn btn-dark m-2">Cadastrar Tipo de Produto</a>
     
     
     <?php

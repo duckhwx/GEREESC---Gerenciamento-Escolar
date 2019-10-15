@@ -4,7 +4,7 @@ require_once '../../login/funcoesdelogin.php';
 require_once '../../funcoes-de-cabecalho.php';
 
 
-    cabecalhoSecEsc('../../estilo/style.css', 'Escola', '../aluno', '../escola', '../estoque', '../cardapio','../../login/logOut.php');
+    cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Escola', '../aluno', '../escola', '../estoque', '../cardapio','../../login/logOut.php');
     sectionTop();
     
     //PEGANDO O ID DO USUARIO LOGADO
@@ -42,7 +42,7 @@ require_once '../../funcoes-de-cabecalho.php';
                 <p>Ensino Fundamental: <?=$alunosEnsFundamental?></p>
                 <br><br>
 
-                <a href="../index.php" class="btn btn-dark">Voltar</a>
+                <a href="../index.php" class="btn btn-dark m-2">Voltar</a>
     
     
     

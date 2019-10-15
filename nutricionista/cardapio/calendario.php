@@ -5,7 +5,7 @@ require_once '../../funcoes-de-cabecalho.php';
 session_start();
     $_SESSION['id_anoEscolar'] = $_GET['id'];
 
-    cabecalhoNutricionista('../../estilo/style.css', 'Cardápio', '../escola', '../relatorio', '../produto', '../cardapio','../../login/logOut.php');
+    cabecalhoNutricionista('../../estilo/styleNutricionista.css', 'Cardápio', '../escola', '../relatorio', '../produto', '../cardapio','../../login/logOut.php');
     
 ?>
 <!--FullCalendar Links -->
@@ -32,7 +32,7 @@ session_start();
         <div id='calendar'></div>
         
         <!-- Modal De cadastro...-->
-        <div class="modal fade" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
