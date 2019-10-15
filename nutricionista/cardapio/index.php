@@ -4,7 +4,7 @@ session_start();
 
 $_SESSION['id_anoEscolar'] = null;
 
-cabecalhoNutricionista('../../estilo/style.css', 'Cardápio', '../escola', '../relatorio', '../produto', '../cardapio','../../login/logOut.php');
+cabecalhoNutricionista('../../estilo/style.css', 'Cardápio', '../escola', '../relatorio', '../produto', '../refeicao', '../cardapio','../../login/logOut.php');
 sectionTop();
 ?>
     <br>

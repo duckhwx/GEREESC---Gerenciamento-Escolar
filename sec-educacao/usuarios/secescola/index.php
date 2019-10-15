@@ -5,7 +5,7 @@ require_once '../../../conexao.php';
 $select = 'select * from secesc';
 $query = mysqli_query($conexao, $select);
 
-cabecalhoSecEdu('../../../estilo/style.css', 'Secretários das Escolas', '../../escola', '../cadastrar-usuarios.php', '../../produto', '../../cardapio','../../../login/logOut.php');
+cabecalhoSecEdu('../../../estilo/style.css', 'Secretários das Escolas', '../../escola', '../cadastrar-usuarios.php', '../../produto', '../../refeicao', '../../cardapio','../../../login/logOut.php');
 sectionTop();
 
 echo "<table> 

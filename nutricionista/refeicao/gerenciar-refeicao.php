@@ -1,38 +1,33 @@
 <?php
 require_once '../../conexao.php';
-require_once '../../funcoes-de-cabecalho.php';
 
+$acao = $_POST['acao'];
 
-if($_GET['acao'] == "cadastrar"){
-$acao = "Cadastrar";
-} else if($_GET['acao'] == "atualizar"){
-$acao = "Atualizar";
-$id = $_GET['id'];
+if($acao == 'cadastrar'){
+    $nome = $_POST['nome'];
+    $insert = 'insert into refeicao values(default, "'.$nome.'")';
+    $query = mysqli_query($conexao, $insert);
+} 
+else if($acao == 'getById'){
+    $id = $_POST['id'];
 
-$select = "select * from Refeicao where id = $id";
-$query = mysqli_query($conexao, $select);
-$tbl = mysqli_fetch_array($query);
+    $select = "select * from refeicao where id = $id";
+    $query = mysqli_query($conexao, $select);
+    $fetch = mysqli_fetch_array($query);
+    
+    echo json_encode($fetch);
+}
+else if($acao == 'atualizar'){
+    $id = $_POST['id'];
+    $nome = $_POST['nome'];
+    
+    $insert = "update Refeicao set nome='$nome' where id= $id";
+    $query = mysqli_query($conexao, $insert);  
+} 
+else if($acao == 'excluir'){
+    $id = $_POST['id'];
+    
+    $delete = "delete from Refeicao where id=$id";
+    $query = mysqli_query($conexao, $delete);
 }
 
-cabecalhoNutricionista("$acao Refeição", "../../escola", "../../relatorio", "../../produto", "../index.php", "../../../login/deslogar");
-?>
-<br>
-  
-<form method="post" action="validar-refeicao.php?acao=<?php echo $_GET['acao']; 
-            if($acao == "Atualizar"){
-                echo "&id=$id";
-            }
-        ?>">
-    Nome <input type="text" required name="nome" maxlength="64" value='<?php
-        if(isset($acao) and $acao == "Atualizar"){
-            echo $tbl['nome'];
-        }
-    ?>'>
-    <input type="submit" value="<?=$acao?>">
-</form>
-
-<a href="index.php">Voltar</a>
-
- <?php
- 
- rodape();

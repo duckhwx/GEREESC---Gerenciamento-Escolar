@@ -17,7 +17,7 @@ $telefone = $table['telefone'];
 $alunosEnsInfantil = $table['alunosEnsInfantil'];
 $alunosEnsFundamental = $table['alunosEnsFundamental'];
 
-cabecalhoSecEdu('../../estilo/style.css', 'Escola: '.$nome, '../escola', '../usuarios/cadastrar-usuarios.php', '../produto', '../cardapio','../../login/logOut.php');
+cabecalhoSecEdu('../../estilo/style.css', 'Escola: '.$nome, '../escola', '../usuarios/cadastrar-usuarios.php', '../produto', '../refeicao', '../cardapio','../../login/logOut.php');
     
 sectionTop();
 ?>

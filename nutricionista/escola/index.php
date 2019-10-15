@@ -6,7 +6,7 @@ session_start();
 $_SESSION["idEscola"] = NULL;
 
 
-cabecalhoNutricionista('../../estilo/style.css', 'Escola', '../escola', '../relatorio', '../produto', '../cardapio','../../login/logOut.php');
+cabecalhoNutricionista('../../estilo/style.css', 'Escola', '../escola', '../relatorio', '../produto', '../refeicao', '../cardapio','../../login/logOut.php');
     
 sectionTop();?>
 <br><br>
