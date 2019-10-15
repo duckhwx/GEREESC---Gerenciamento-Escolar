@@ -3,7 +3,7 @@
     require_once "../../../conexao.php";
     session_start();
     
-    cabecalhoNutricionista('../../../estilo/style.css', 'Estoque', '../../escola', '../../relatorio', '../../produto', '../../cardapio','../../../login/logOut.php');
+    cabecalhoNutricionista('../../../estilo/style.css', 'Estoque', '../', '../../relatorio/', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
     
     sectionTop();
     
@@ -15,7 +15,7 @@
     $id = $_SESSION['idEscola'];
     
 //Requisição dos dados do estoque ao Banco de Dados
-    $selectEstoque = "select * from estoque where escola_id ='$id'";
+    $selectEstoque = "select * from Estoque where escola_id ='$id'";
     $queryEstoque = mysqli_query($conexao, $selectEstoque);
     
     echo "<table>"

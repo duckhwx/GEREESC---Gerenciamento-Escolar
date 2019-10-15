@@ -2,10 +2,10 @@
 require_once '../../../funcoes-de-cabecalho.php';
 require_once '../../../conexao.php';
 
-$select = 'select * from secesc';
+$select = 'select * from SecEsc';
 $query = mysqli_query($conexao, $select);
 
-cabecalhoSecEdu('../../../estilo/style.css', 'Secretários das Escolas', '../../escola', '../cadastrar-usuarios.php', '../../produto', '../../refeicao', '../../cardapio','../../../login/logOut.php');
+cabecalhoSecEdu('../../../estilo/style.css', 'Secretários das Escolas', '../../escola/', '../cadastrar-usuarios.php', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
 sectionTop();
 
 echo "<table> 

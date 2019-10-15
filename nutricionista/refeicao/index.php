@@ -2,9 +2,9 @@
 require_once '../../conexao.php';
 require_once '../../funcoes-de-cabecalho.php';
 
-cabecalhoNutricionista("../../estilo/style.css", "Refeições", "../escola", "../relatorio", "../produto", "#", "../index.php", "../../login/logOut.php");
+cabecalhoNutricionista("../../estilo/style.css", "Refeições", "../escola/", "../relatorio/", "../produto/", ".", "../cardapio/", "../../login/logOut.php");
 
-$select = "select * from refeicao";
+$select = "select * from Refeicao";
 $query = mysqli_query($conexao, $select);
 
 sectionTop();

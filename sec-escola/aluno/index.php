@@ -2,7 +2,7 @@
 require_once '../../funcoes-de-cabecalho.php';
 require_once '../../conexao.php';
 
-cabecalhoSecEsc('../../estilo/style.css', 'Alunos', '../aluno', '../escola', '../estoque', '../cardapio', '../../login/logOut.php');
+cabecalhoSecEsc('../../estilo/style.css', 'Alunos', '.', '../escola/', '../estoque/', '../cardapio/', '../../login/logOut.php');
 
 sectionTop();
 

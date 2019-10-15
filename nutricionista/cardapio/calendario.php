@@ -5,7 +5,7 @@ require_once '../../funcoes-de-cabecalho.php';
 session_start();
     $_SESSION['id_anoEscolar'] = $_GET['id'];
 
-    cabecalhoNutricionista('../../estilo/style.css', 'Cardápio', '../escola', '../relatorio', '../produto', '../refeicao', '../cardapio','../../login/logOut.php');
+    cabecalhoNutricionista('../../estilo/style.css', 'Cardápio', '../escola/', '../relatorio/', '../produto/', '../refeicao/', 'index.php','../../login/logOut.php');
     
 ?>
 <!--FullCalendar Links -->
@@ -50,7 +50,7 @@ session_start();
                                 <div class="col-sm-10">
                                     <?php 
 //metodo que pega os dados da classe Refeição e os exibe em um select HTML
-                                        $select = "select * from refeicao";
+                                        $select = "select * from Refeicao";
                                         $query = mysqli_query($conexao, $select);
                                     echo "<select name='refeicoes'>";
                                         while($tbl = mysqli_fetch_array($query)){

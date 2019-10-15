@@ -16,7 +16,7 @@ $tipoDeProduto = $_POST["tipoDeProduto"];
             header("Location: cadastrar-produto.php");
         }
          else if($_GET['acao'] == 'cadastrar'){
-                 $insert = "insert into produto values(default, '$nome', '$marca', '$peso', '$tipoDePeso', '$tipoDeProduto')";
+                 $insert = "insert into Produto values(default, '$nome', '$marca', '$peso', '$tipoDePeso', '$tipoDeProduto')";
 
                 $query = mysqli_query($conexao, $insert);
                 if($query){
@@ -31,7 +31,7 @@ $tipoDeProduto = $_POST["tipoDeProduto"];
         $id_tipoDePeso = $_GET['tipoDePeso'];
         $id_tipoDeProduto = $_GET['tipoDeProduto'];
         
-       $update = "update produto set nomeProduto='$nome', "
+       $update = "update Produto set nomeProduto='$nome', "
                . "marca='$marca', "
                . "peso='$peso', "
                . "email='$email', "
@@ -52,7 +52,7 @@ $tipoDeProduto = $_POST["tipoDeProduto"];
 
         $id = $_GET['id'];
 
-        $delete = "delete from produto where id=$id";
+        $delete = "delete from Produto where id=$id";
         
         $query = mysqli_query($conexao, $delete);
         

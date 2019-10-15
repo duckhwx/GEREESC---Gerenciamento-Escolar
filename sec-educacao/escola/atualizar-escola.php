@@ -1,6 +1,6 @@
 <?php
 require_once("../../funcoes-de-cabecalho.php");
-cabecalhoSecEdu('../../estilo/style.css', 'Atualizar Escola', '../escola', '../usuarios/cadastrar-usuarios.php', '../produto', '../refeicao', '../cardapio','../../login/logOut.php');
+cabecalhoSecEdu('../../estilo/style.css', 'Atualizar Escola', '../escola/', '../usuarios/cadastrar-usuarios.php', '../produto/', '../refeicao/', '../cardapio/', '../../login/logOut.php');
     
 sectionTop();
 

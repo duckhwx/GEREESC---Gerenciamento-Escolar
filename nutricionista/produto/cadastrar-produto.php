@@ -3,7 +3,7 @@
     require_once '../../funcoes-de-cabecalho.php';
     require_once '../../conexao.php';
     
-    cabecalhoNutricionista('../../estilo/style.css', 'Cadastrar Produtos', '../escola', '../relatorio', '../produto', '../refeicao', '../cardapio','../../login/logOut.php');
+    cabecalhoNutricionista('../../estilo/style.css', 'Cadastrar Produto', '../escola/', '../relatorio/', 'index.php', '../refeicao/', '../cardapio/', '../../login/logOut.php');
     
     $select = "select * from TipoDePeso";
     $select1 = "select * from TipoDeProduto";

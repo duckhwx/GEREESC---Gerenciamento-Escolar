@@ -22,7 +22,7 @@ $query2 = mysqli_query($conexao, "select * from Escola where id='$escola_id'");
    $table = mysqli_fetch_array($query2);   
    $nomeEscola = $table['nome'];
 
-cabecalhoSecEsc('../../estilo/style.css','Secretário da Escola - Alunos', 'index.php', '../escola/', '../estoque/', '../cardapio/','../../login/logOut.php');
+cabecalhoSecEsc('../../estilo/style.css', 'Alunos', '.', '../escola/', '../estoque/', '../cardapio/', '../../login/logOut.php');
 sectionTop();
 ?>
 

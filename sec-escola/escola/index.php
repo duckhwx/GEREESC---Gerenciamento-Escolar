@@ -4,7 +4,7 @@ require_once '../../login/funcoesdelogin.php';
 require_once '../../funcoes-de-cabecalho.php';
 
 
-    cabecalhoSecEsc('../../estilo/style.css', 'Escola', '../aluno', '../escola', '../estoque', '../cardapio','../../login/logOut.php');
+    cabecalhoSecEsc('../../estilo/style.css', 'Escola', '../aluno/', '.', '../estoque/', '../cardapio/','../../login/logOut.php');
     sectionTop();
     
     //PEGANDO O ID DO USUARIO LOGADO
