@@ -2,9 +2,7 @@ body{
     background: url('secedu.jpg') no-repeat;
     background-size: auto;
     position:  relative;
-    
-    /*background: rgb(18,30, 49) ;*/
-    
+    background: rgb(18,30, 49);
     text-align-last: center;
   }
   

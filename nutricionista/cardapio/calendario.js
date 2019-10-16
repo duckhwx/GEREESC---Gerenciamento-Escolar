@@ -28,7 +28,21 @@
                         $('#cadastrar').modal('show');
                     },
                     eventClick: function (info) {
-                        console.log(info);
+                        $('#ref').html(info.event.title);
+                        
+                        $('#excluir').modal('show');
+                        $('#buttonExcluir').on('click', function(){
+                           $.ajax({
+                             method: 'post',
+                             url: 'excluir-refeicao.php',
+                             data:{
+                                 id: info.event.id
+                             },
+                             success: function(){
+                                 location.reload();
+                             }
+                           });
+                        });
                     }
                 });
 

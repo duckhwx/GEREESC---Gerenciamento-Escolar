@@ -141,4 +141,5 @@ insert into AnoEscolar values
 (default, "Ensino Infantil"),
 (default, "Ensino Fundamental");
 
-insert into Aluno values(default, "roor", "aluno1", "123", "2001-07-07", 1, 2);
+select Cardapio_Refeicao.id, Refeicao.nome, Cardapio_Refeicao.data from Cardapio_Refeicao inner join Refeicao
+on Cardapio_Refeicao.refeicao_id = Refeicao.id where Cardapio_Refeicao.anoEscolar_id = 1;

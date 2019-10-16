@@ -23,12 +23,12 @@ sectionTop();
         . "</td>"
         . "<td>"
         . "<button class='btn btn-light button-atualizar' value='" . $tbl['id'] . "'>"
-        . "<img src='update.png' height='27px'>"
+        . "<img src='https://image.flaticon.com/icons/svg/1001/1001371.svg' height='27px'>"
         . "</button>"
         . "</td>"
         . "<td>"
         . "<button class='btn btn-light button-excluir' value='" . $tbl['id'] . "'>"
-        . "<img src='excluir.png' height='27px'>"
+        . "<img src='https://image.flaticon.com/icons/svg/32/32178.svg' height='27px'>"
         . "</button>"
         . "</td>"
         . "</tr>";
@@ -38,7 +38,7 @@ sectionTop();
 </table>
 
 <script src="requisicao-ajax.js"></script>
-<button class="btn btn-dark" id="button-cadastro">Cadastrar Refeição</button>
+<button class="btn btn-dark m-2" id="button-cadastro">Cadastrar Refeição</button>
 
 <?php 
 sectionBaixo();
