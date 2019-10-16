@@ -2,10 +2,9 @@
 require_once '../../funcoes-de-cabecalho.php';
 require_once '../../conexao.php';
 
-cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Alunos', '../aluno', '../escola', '../estoque', '../cardapio', '../../login/logOut.php');
+cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Alunos', '.', '../escola/', '../estoque/', '../cardapio/', '../../login/logOut.php');
 
 sectionTop();
-
 
 //Seleção de todas os Alunos cadastradas
 $select = "select * from Aluno";

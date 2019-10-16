@@ -3,8 +3,8 @@ require_once '../../conexao.php';
 session_start();
 
 //string e função seleciona as refeições de um ano escolar no banco de dados
-$select = 'select refeicao.nome, cardapio_refeicao.data from cardapio_refeicao inner join refeicao
-on cardapio_refeicao.refeicao_id = refeicao.id where cardapio_refeicao.anoEscolar_id = '.$_SESSION['id_anoEscolar'];
+$select = 'select Refeicao.nome, Cardapio_refeicao.data from Cardapio_Refeicao inner join Refeicao
+on Rardapio_Refeicao.refeicao_id = Refeicao.id where Cardapio_Refeicao.anoEscolar_id = '.$_SESSION['anoEscolar_id'];
 $query = mysqli_query($conexao, $select);
 
 $refeicoes = [];

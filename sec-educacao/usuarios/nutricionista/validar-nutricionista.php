@@ -17,7 +17,7 @@ if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
     
     if($_GET['acao'] == 'cadastrar'){
         
-        $insert = "insert into nutricionista values (default, "
+        $insert = "insert into Nutricionista values (default, "
                 . "'$nome', "
                 . "'$login', "
                 . "'$senha', "
@@ -37,7 +37,7 @@ if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
             header("Location: cadastrar-nutricionista.php");
         }
     } else if($_GET['acao'] == 'atualizar'){
-        $update = "update nutricionista set nome='$nome',"
+        $update = "update Nutricionista set nome='$nome',"
                 . " login='$login',"
                 . " senha='$senha',"
                 . " cpf='$cpf',"
@@ -58,7 +58,7 @@ if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
     }
     
 } else if($_GET['acao'] == 'excluir'){
-    $delete = "delete from nutricionista where id =1";
+    $delete = "delete from Nutricionista where id =1";
 
     $query = mysqli_query($conexao, $delete);
 

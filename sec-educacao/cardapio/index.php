@@ -3,7 +3,7 @@ require_once '../../conexao.php';
 require_once '../../funcoes-de-cabecalho.php';
 
 
-cabecalhoSecEdu('../../estilo/style.css', 'Cardápio', '../escola', '../usuarios/cadastrar-usuarios.php', '../produto', '../cardapio','../../login/logOut.php');
+cabecalhoSecEdu('../../estilo/style.css', 'Cardápio', '../escola/', '../usuarios/cadastrar-usuarios.php', '../produto/', '../refeicao/', '.', '../../login/logOut.php');
 sectionTop();
 ?>
 <br>

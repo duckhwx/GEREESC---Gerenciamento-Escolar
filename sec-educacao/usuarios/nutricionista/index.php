@@ -2,7 +2,7 @@
 require_once '../../../funcoes-de-cabecalho.php';
 require_once '../../../conexao.php';
 
-$select = 'select * from nutricionista';
+$select = 'select * from Nutricionista';
 $query = mysqli_query($conexao, $select);
 
 $table = mysqli_fetch_array($query);
@@ -17,7 +17,7 @@ $nascimento = $table['dataDeNascimento'];
 $numero = $table['numero'];
 $celular = $table['celular'];
 
-cabecalhoSecEdu('../../../estilo/style.css', 'Nutricionista', '../../escola', '../cadastrar-usuarios.php', '../../produto', '../../cardapio', '../../../login/logOut.php');
+cabecalhoSecEdu('../../../estilo/style.css', 'Nutricionista', '../../escola/', '../cadastrar-usuarios.php', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
     
     sectionTop();
 ?>

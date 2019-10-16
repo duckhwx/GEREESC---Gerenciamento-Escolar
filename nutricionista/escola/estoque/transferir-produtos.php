@@ -3,6 +3,7 @@
     require_once "../../../conexao.php";
     session_start();
     
+    cabecalhoNutricionista('../../../estilo/style.css', 'Estoque', '../', '../../relatorio/', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
     cabecalhoNutricionista('../../../estilo/styleNutricionista.css', 'Estoque', '../../escola', '../../relatorio', '../../produto', '../../cardapio','../../../login/logOut.php');
     
     sectionTop();
@@ -16,13 +17,13 @@
     }
     
 //Requisição dos dados da escola "A que envia-rá os produtos" ao Banco de dados
-    $selectEscola = 'select escola.nome from escola where id = '.$_SESSION['idEscola'];
+    $selectEscola = 'select Escola.nome from Escola where id = '.$_SESSION['idEscola'];
     $queryEscola = mysqli_query($conexao, $selectEscola);
     $tableEscola = mysqli_fetch_array($queryEscola);
     $nomeEscola = $tableEscola['nome'];
 
 //Requisição dos dados da escola alvo "a que receberá os produtos" ao Banco de dados
-    $selectEscAlvo = 'select escola.id, escola.nome from escola where escola.id <> '.$_SESSION['idEscola'];
+    $selectEscAlvo = 'select Escola.id, Escola.nome from Escola where Escola.id <> '.$_SESSION['idEscola'];
     $queryEscAlvo = mysqli_query($conexao, $selectEscAlvo);
     
 ?>

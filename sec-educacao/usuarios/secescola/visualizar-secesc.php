@@ -20,7 +20,7 @@ $dataNascimento = $table['dataDeNascimento'];
 $numero = $table['numero'];
 $celular = $table['celular'];
 
-cabecalhoSecEdu('../../../estilo/style.css', 'Secretario '.$nome, '../../escola', '../cadastrar-usuarios.php', '../../produto', '../../cardapio','../../../../login/logOut.php');
+cabecalhoSecEdu('../../../estilo/style.css', 'Secretario '.$nome, '../../escola/', '../cadastrar-usuarios.php', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
 sectionTop();
 ?>
 

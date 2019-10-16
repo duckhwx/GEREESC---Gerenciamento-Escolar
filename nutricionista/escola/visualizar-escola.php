@@ -17,7 +17,7 @@ $telefone = $table['telefone'];
 $alunosEnsInfantil = $table['alunosEnsInfantil'];
 $alunosEnsFundamental = $table['alunosEnsFundamental'];
 
-cabecalhoNutricionista('../../estilo/styleNutricionista.css', 'Cadastrar Produtos', '../escola', '../relatorio', '../produto', '../cardapio','../../login/logOut.php');
+cabecalhoNutricionista('../../estilo/styleNutricionista.css', 'Cadastrar Produtos', 'index.php', '../relatorio/', '../produto/', '../refeicao/', '../cardapio/', '../../login/logOut.php');
     
 sectionTop();
 ?>

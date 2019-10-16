@@ -2,14 +2,14 @@
     require_once "../../../funcoes-de-cabecalho.php";
     require_once "../../../conexao.php";
 
-    cabecalhoNutricionista('../../../estilo/styleNutricionista.css', 'Estoque', '../../escola', '../../relatorio', '../../produto', '../../cardapio','../../../login/logOut.php');
+    cabecalhoNutricionista('../../../estilo/styleNutricionista.css', 'Estoque', '../', '../../relatorio/', '../../produto/', '../../refeicao/', '../../cardapio', '../../../login/logOut.php');
     
     sectionTop();
  
     $id = $_GET['id'];
     
 //Requisição de todos os produtos cadastrados no estoque da escola selecionada
-    $selectEstoque = "select produto_id from estoque where estoque.escola_id = ".$id;
+    $selectEstoque = "select Produto_id from Estoque where Estoque.escola_id = ".$id;
     $queryEstoque = mysqli_query($conexao, $selectEstoque);
     $produtosEstoque = [];
 

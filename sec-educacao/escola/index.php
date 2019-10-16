@@ -6,7 +6,7 @@ session_start();
 $_SESSION["idEscola"] = NULL;
 
 
-cabecalhoSecEdu('../../estilo/style.css', 'Escolas', '../escola', '../usuarios/cadastrar-usuarios.php', '../produto', '../cardapio','../../login/logOut.php');
+cabecalhoSecEdu('../../estilo/style.css', 'Escolas', '.', '../usuarios/cadastrar-usuarios.php', '../produto/', '../refeicao/', '../cardapio/', '../../login/logOut.php');
     
 sectionTop();?>
 <br><br>

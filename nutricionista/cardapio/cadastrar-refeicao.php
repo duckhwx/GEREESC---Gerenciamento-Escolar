@@ -10,7 +10,7 @@ $data = str_replace('/', '-', $dados['start']);
 $data_convertida = date('Y-m-d', strtotime($data));
 
 //string e função de insert ao banco de dados
-$insert = "insert into cardapio_refeicao values(default, '".$data_convertida."', '".$_SESSION['id_anoEscolar']."', '".$dados['refeicoes']."')";
+$insert = "insert into Cardapio_Refeicao values(default, '".$data_convertida."', '".$_SESSION['id_anoEscolar']."', '".$dados['refeicoes']."')";
 $query = mysqli_query($conexao, $insert);
 
 //função que identifica se o insert ao banco funcionou ou não

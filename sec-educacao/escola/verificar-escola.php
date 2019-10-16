@@ -35,7 +35,7 @@ $alunosEnsFundamental = $_POST["alunosEnsFundamental"];
     else if($_GET['acao'] == 'atualizar'){
        //Submissão dos dados atualizados para a escola selecionada
        $id = $_GET['id'];
-       $update = "update escola set nome='$nome', "
+       $update = "update Escola set nome='$nome', "
                . "endereco='$endereco', "
                . "cnpj='$cnpj', "
                . "email='$email', "
@@ -57,7 +57,7 @@ $alunosEnsFundamental = $_POST["alunosEnsFundamental"];
     else if($_GET['acao'] == 'excluir'){
         //Submissão da exclusão da escola ao banco
         $id = $_GET['id'];
-        $delete = "delete from escola where id=$id";
+        $delete = "delete from Escola where id=$id";
         $query = mysqli_query($conexao, $delete);
         
         if($query){

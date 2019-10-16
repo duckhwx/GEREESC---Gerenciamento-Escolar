@@ -5,7 +5,7 @@ require_once '../../funcoes-de-cabecalho.php';
 session_start();
     $_SESSION['id_anoEscolar'] = $_GET['id'];
 
-    cabecalhoNutricionista('../../estilo/styleNutricionista.css', 'Cardápio', '../escola', '../relatorio', '../produto', '../cardapio','../../login/logOut.php');
+    cabecalhoNutricionista('../../estilo/styleNutricionista.css', 'Cardápio', '../escola/', '../relatorio/', '../produto/', '../refeicao/', 'index.php','../../login/logOut.php');
     
 ?>
 <!--FullCalendar Links -->
@@ -15,13 +15,6 @@ session_start();
 <script src='../../FullCalendar/js/interaction/main.min.js'></script>
 <script src='../../FullCalendar/js/daygrid/main.min.js'></script>
 <script src='../../FullCalendar/js/core/locales/pt-br.js'></script>
-
-<!--bootstrap links-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <!--Página que possui os estilos do calendario-->
 <link href="../../estilo/fullCalendarEstilo.css" rel="stylesheet" />
@@ -50,7 +43,7 @@ session_start();
                                 <div class="col-sm-10">
                                     <?php 
 //metodo que pega os dados da classe Refeição e os exibe em um select HTML
-                                        $select = "select * from refeicao";
+                                        $select = "select * from Refeicao";
                                         $query = mysqli_query($conexao, $select);
                                     echo "<select name='refeicoes'>";
                                         while($tbl = mysqli_fetch_array($query)){

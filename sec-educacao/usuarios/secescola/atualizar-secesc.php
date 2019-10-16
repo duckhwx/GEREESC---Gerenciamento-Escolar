@@ -2,12 +2,12 @@
 require_once '../../../funcoes-de-cabecalho.php';
 require_once "../../../conexao.php";
 
-cabecalhoSecEdu('../../../estilo/style.css', 'Atualizar Secretario da Escola', '../../escola', '../cadastrar-usuarios.php', '../../produto', '../../cardapio','../../../login/logOut.php');
+cabecalhoSecEdu('../../../estilo/style.css', 'Atualizar Secretario da Escola', '../../escola/', '../cadastrar-usuarios.php', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
 sectionTop();
 
     $id = $_GET['id'];
 
-    $select = "select * from escola";
+    $select = "select * from Escola";
 
     $query = mysqli_query($conexao, $select);
 
