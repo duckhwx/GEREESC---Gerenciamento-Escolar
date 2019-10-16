@@ -26,6 +26,9 @@
                         data = data.slice(0, 10);
                         $('#cadastrar #start').val(data);
                         $('#cadastrar').modal('show');
+                    },
+                    eventClick: function (info) {
+                        console.log(info);
                     }
                 });
 
