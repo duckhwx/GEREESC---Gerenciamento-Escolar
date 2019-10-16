@@ -37,7 +37,7 @@ sectionTop();
                 <br><br>
                 <!--<a type="submit" href="atualizar-secesc.php">Atualizar Secretario da </a>-->
                 <br>
-                <a href="index.php" class="btn btn-dark">Voltar</a>
+                <a href="index.php" class="btn btn-dark m-2">Voltar</a>
 
 
 

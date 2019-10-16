@@ -70,7 +70,7 @@
             echo "</select>"
         ?><br>
     Quantidade <input type="number" name="quantidade" required><br>
-    <input type="submit" class="btn btn-dark" value="Alocar">
+    <input type="submit" class="btn btn-dark m-2" value="Alocar">
 </form>
 
 

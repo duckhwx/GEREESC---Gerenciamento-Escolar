@@ -34,7 +34,7 @@ sectionTop();
                              ?><br>
                     Login <input type="text" required maxlength="64" name="login"><br>
                     Senha <input type="text" required maxlength="64" name="senha"><br><br>
-                    <input type="submit" class="btn btn-dark" value="Atualizar Secretario da Escola">
+                    <input type="submit" class="btn btn-dark m-2" value="Atualizar Secretario da Escola">
                 </form>
 <br>
 <a href="index.php">Voltar</a>

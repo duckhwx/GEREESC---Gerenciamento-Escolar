@@ -1,15 +1,16 @@
 body{
-    background: url('imagem.jpg') no-repeat;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
+    background: url('secedu.jpg') no-repeat;
+    background-size: auto;
     position:  relative;
+    
+    /*background: rgb(18,30, 49) ;*/
+    
     text-align-last: center;
   }
   
 #Cadastro{
     background: white center;
-    opacity: 0.6;
+    opacity: 0.8;
     width: 800px;
     height: auto;
     margin-top: 50px;
@@ -33,7 +34,19 @@ form{
   }
 
   .container{
-    text-align: left;
-    font-family: Times New Roman, Sans-serif;
-    font-size: 28px;
+    height: 50px;
+    padding-top: 8px;
+    text-align: center;
+    font-family: fantasy;
+    font-size: 24px;
+  }
+  
+  #navbar, a:visited{
+      text-decoration: none;      
+      color: white;
+  }
+  
+  #Cadastro>a{
+      text-decoration: none;
+      color: black;
   }

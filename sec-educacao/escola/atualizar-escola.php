@@ -18,7 +18,7 @@ $id = $_GET['id'];
                     Ensino Infantil <input type="number" maxlength="4" name="alunosEnsInfantil"><br>
                     Ensino Fundamental <input type="number" maxlength="4" name="alunosEnsFundamental">
                     <br><br>
-                    <input type="submit" class="btn btn-dark" value="Atualizar Escola"/>
+                    <input type="submit" class="btn btn-dark m-2" value="Atualizar Escola"/>
                 </form>
 
 

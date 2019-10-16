@@ -4,17 +4,13 @@ require_once '../../login/funcoesdelogin.php';
 require_once '../../funcoes-de-cabecalho.php';
 
 
-    cabecalhoAluno('../../estilo/style.css', 'Escola', '../escola/', '../cardapio/calendario.php','../../login/logOut.php');
+    cabecalhoAluno('../../estilo/styleAluno.css', 'Escola', '../escola/', '../cardapio/calendario.php','../../login/logOut.php');
     sectionTop();
     
-    $id = $_SESSION['id'];
-   
-    $query1 = mysqli_query($conexao, "select * from Aluno where id='$id'");
-    $table1 = mysqli_fetch_array($query1);
-    $escola_id = $table1['escola_id'];
-    
+    $escola_id = $_SESSION['escola_id'];
+    var_dump($_SESSION);
     //Seleção dos dados da escola selecionada no index
-    $query = mysqli_query($conexao, "select * from Escola where id='$escola_id'");
+    $query = mysqli_query($conexao, "select * from Escola where id=$escola_id");
     $table = mysqli_fetch_array($query);
 
     $nome = $table['nome'];
@@ -39,7 +35,7 @@ require_once '../../funcoes-de-cabecalho.php';
                 <p>Ensino Fundamental: <?=$alunosEnsFundamental?></p>
                 <br><br>
 
-                <a href="../index.php" class="btn btn-dark">Voltar</a>
+                <a href="../index.php" class="btn btn-dark m-2">Voltar</a>
     
     
     

@@ -2,7 +2,7 @@
 require_once '../../funcoes-de-cabecalho.php';;
 require_once '../../conexao.php';
 
-cabecalhoSecEsc('../../estilo/style.css','Secretário da Escola - Cadastrar Alunos', 'index.php', '../escola/', '../estoque/', '../cardapio/','../../login/logOut.php');
+cabecalhoSecEsc('../../estilo/styleSecesc.css','Cadastrar Aluno', 'index.php', '../escola/', '../estoque/', '../cardapio/','../../login/logOut.php');
 
 sectionTop();
 
@@ -42,7 +42,7 @@ $query3 = mysqli_query($conexao, $select3);
                                         echo "</select>";
                              ?><br>
                     <br>
-                    <input type="submit" value='Cadastrar' class="btn btn-dark">
+                    <input type="submit" value='Cadastrar' class="btn btn-dark m-2">
                 </form>
 <br>
 <a href="index.php">Voltar</a>

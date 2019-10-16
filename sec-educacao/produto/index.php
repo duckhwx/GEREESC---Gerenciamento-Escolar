@@ -8,7 +8,7 @@ sectionTop();
     EM DESENVOLVIMENTO
 <br>
 <br>
-<a href="../index.php" class="btn btn-dark">Voltar</a>
+<a href="../index.php" class="btn btn-dark m-2">Voltar</a>
 <?php 
 sectionBaixo();
 rodape();

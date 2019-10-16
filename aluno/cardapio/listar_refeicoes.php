@@ -4,7 +4,7 @@ session_start();
 
 //string e função seleciona as refeições de um ano escolar no banco de dados
 $select = 'select Refeicao.nome, Cardapio_refeicao.data from Cardapio_Refeicao inner join Refeicao
-on Rardapio_Refeicao.refeicao_id = Refeicao.id where Cardapio_Refeicao.anoEscolar_id = '.$_SESSION['id_anoEscolar'];
+on Cardapio_Refeicao.refeicao_id = Refeicao.id where Cardapio_Refeicao.anoEscolar_id = '.$_SESSION['anoEscolar_id'];
 $query = mysqli_query($conexao, $select);
 
 $refeicoes = [];

@@ -25,13 +25,12 @@ $tipoDeProduto = $_POST["tipoDeProduto"];
                     header("Location: cadastrar-produto.php");
                 }
         }
+        else if($_GET['acao'] == 'atualizar'){
         
-    else if($_GET['acao'] == 'atualizar'){
-
-        $id_tipoDePeso = $_GET['tipoDePeso'];
-        $id_tipoDeProduto = $_GET['tipoDeProduto'];
+        $query = mysqli_query($conexao, "select * from Produto where id=$id");
+        $fetch = mysqli_fetch_array($query);
         
-       $update = "update Produto set nomeProduto='$nome', "
+        $update = "update Produto set nomeProduto='$nome', "
                . "marca='$marca', "
                . "peso='$peso', "
                . "email='$email', "
@@ -45,7 +44,6 @@ $tipoDeProduto = $_POST["tipoDeProduto"];
        } else {
            header("Location: atualizar-produto.php");
            }
-      }
     }
 
     else if($_GET['acao'] == 'excluir'){
@@ -63,4 +61,6 @@ $tipoDeProduto = $_POST["tipoDeProduto"];
         }
         
     }
+}
+    
 

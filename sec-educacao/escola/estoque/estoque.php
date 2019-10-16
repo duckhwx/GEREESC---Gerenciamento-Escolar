@@ -53,7 +53,7 @@
     echo "</table>";
 ?>
 
-<a href="alocar-produto.php?id=<?=$_SESSION["idEscola"]?>" class="btn btn-dark">Alocar Produto</a>
+<a href="alocar-produto.php?id=<?=$_SESSION["idEscola"]?>" class="btn btn-dark m-2">Alocar Produto</a>
 
 <?php
 sectionBaixo();

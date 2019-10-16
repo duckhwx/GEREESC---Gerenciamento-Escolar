@@ -22,7 +22,7 @@ $query2 = mysqli_query($conexao, "select * from Escola where id='$escola_id'");
    $table = mysqli_fetch_array($query2);   
    $nomeEscola = $table['nome'];
 
-cabecalhoSecEsc('../../estilo/style.css', 'Alunos', '.', '../escola/', '../estoque/', '../cardapio/', '../../login/logOut.php');
+cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Aluno', '.', '../escola/', '../estoque/', '../cardapio/', '../../login/logOut.php');
 sectionTop();
 ?>
 
@@ -32,7 +32,7 @@ sectionTop();
                 <p>Ano Escolar: <?=$nomeAnoEscolar?></p>
                 <p>Escola: <?=$nomeEscola?></p>
                 <br><br>
-                <a href="atualizar-aluno.php"><input type="submit" class="btn btn-dark" value="Atualizar Escola"></a>
+                <a href="atualizar-aluno.php"><input type="submit" class="btn btn-dark m-2" value="Atualizar Escola"></a>
                 <br>
 
 

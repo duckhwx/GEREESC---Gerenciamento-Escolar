@@ -17,7 +17,7 @@ sectionTop();
     Celular <input type="text" required maxlength="15" name="celular"><br>
     Login <input type="text" required maxlength="64" name="login"><br>
     Senha <input type="text" required maxlength="64" name="senha"><br>
-    <input type="submit" class="btn btn-dark" value="Cadastrar Nutricionista">
+    <input type="submit" class="btn btn-dark m-2" value="Cadastrar Nutricionista">
 </form>
 
 <br>

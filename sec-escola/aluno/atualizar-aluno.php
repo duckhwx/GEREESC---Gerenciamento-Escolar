@@ -2,7 +2,7 @@
 require_once '../../funcoes-de-cabecalho.php';
 require_once "../../conexao.php";
 
-cabecalhoSecEsc('../../estilo/style.css','Secretário da Escola - Atualizar Alunos', 'index.php', '../escola/', '../estoque/', '../cardapio/','../../login/logOut.php');
+cabecalhoSecEsc('../../estilo/styleSecesc.css','Atualizar Aluno', 'index.php', '../escola/', '../estoque/', '../cardapio/','../../login/logOut.php');
 
 sectionTop();
     
@@ -43,7 +43,7 @@ sectionTop();
             echo "</select>";
         ?><br>
         <br>
-        <input type="submit" class="btn btn-dark" value="Atualizar Aluno">
+        <input type="submit" class="btn btn-dark m-2" value="Atualizar Aluno">
     </form>
 <br>
 <a href="index.php">Voltar</a>

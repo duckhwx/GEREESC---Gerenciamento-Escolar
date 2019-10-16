@@ -1,4 +1,5 @@
 
+
 -- Usuarios --
 create table SecEdu (
     id int primary key auto_increment,
@@ -140,3 +141,4 @@ insert into AnoEscolar values
 (default, "Ensino Infantil"),
 (default, "Ensino Fundamental");
 
+insert into Aluno values(default, "roor", "aluno1", "123", "2001-07-07", 1, 2);

@@ -2,10 +2,9 @@
 require_once '../../funcoes-de-cabecalho.php';
 require_once '../../conexao.php';
 
-cabecalhoSecEsc('../../estilo/style.css', 'Alunos', '.', '../escola/', '../estoque/', '../cardapio/', '../../login/logOut.php');
+cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Alunos', '.', '../escola/', '../estoque/', '../cardapio/', '../../login/logOut.php');
 
 sectionTop();
-
 
 //Seleção de todas os Alunos cadastradas
 $select = "select * from Aluno";
@@ -26,7 +25,7 @@ $query = mysqli_query($conexao, $select);
 echo "</table>";
 ?>
 
-<a href="cadastrar-aluno.php" class="btn btn-dark">Cadastrar Aluno</a>
+<a href="cadastrar-aluno.php" class="btn btn-dark m-2">Cadastrar Aluno</a>
 
 <?php
 sectionBaixo();

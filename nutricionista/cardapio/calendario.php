@@ -5,7 +5,8 @@ require_once '../../funcoes-de-cabecalho.php';
 session_start();
 $_SESSION['id_anoEscolar'] = $_GET['id'];
 
-cabecalhoNutricionista('../../estilo/style.css', 'Cardápio', '../escola/', '../relatorio/', '../produto/', '../refeicao/', 'index.php', '../../login/logOut.php');
+    cabecalhoNutricionista('../../estilo/styleNutricionista.css', 'Cardápio', '../escola/', '../relatorio/', '../produto/', '../refeicao/', 'index.php','../../login/logOut.php');
+    
 ?>
 <!--FullCalendar Links -->
 <link href='../../FullCalendar/css/core/main.min.css' rel='stylesheet' />
@@ -21,26 +22,26 @@ cabecalhoNutricionista('../../estilo/style.css', 'Cardápio', '../escola/', '../
 <!--Página que possui os codigos Js de criação do FullCalendar-->
 <script src="calendario.js"></script>
 
-<div id='calendar'></div>
-
-<!-- Modal De cadastro...-->
-<div class="modal fade" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Cadastrar Refeição</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div id="msg-cadastro"></div>
-                <!--Formulario-->
-                <form id="adicionarRefeicao" method="post">
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Refeição</label>
-                        <div class="col-sm-10">
-                            <?php
+        <div id='calendar'></div>
+        
+        <!-- Modal De cadastro...-->
+        <div class="modal" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Refeição</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="msg-cadastro"></div>
+        <!--Formulario-->
+                        <form id="adicionarRefeicao" method="post">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Refeição</label>
+                                <div class="col-sm-10">
+                                    <?php 
 //metodo que pega os dados da classe Refeição e os exibe em um select HTML
                             $select = "select * from Refeicao";
                             $query = mysqli_query($conexao, $select);

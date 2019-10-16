@@ -4,6 +4,7 @@
     session_start();
     
     cabecalhoNutricionista('../../../estilo/style.css', 'Estoque', '../', '../../relatorio/', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
+    cabecalhoNutricionista('../../../estilo/styleNutricionista.css', 'Estoque', '../../escola', '../../relatorio', '../../produto', '../../cardapio','../../../login/logOut.php');
     
     sectionTop();
 

@@ -18,7 +18,7 @@ function cabecalhoSecEdu($estilo = null, $title = NULL, $linkEscola = NULL, $lin
 
         . "<header>"
         .    "<div class='container'>"
-        .        "<div class='row'>"
+        .        "<div class='row' id='navbar'>"
         .            "<div class='col'>"
         .               "<a href='$linkEscola'>Escola</a>"   
         .            "</div>"
@@ -35,7 +35,7 @@ function cabecalhoSecEdu($estilo = null, $title = NULL, $linkEscola = NULL, $lin
         .               "<a href='$linkCardapio'>Cardápio</a>"
         .            "</div>"
         .            "<div class='col'>"
-        .               "<a href='$linkLogOut'>Sair</a>"
+        .               "<a href='$linkLogOut'><img src='https://image.flaticon.com/icons/svg/660/660350.svg' width=26px/></a>"
         .            "</div>"
         .    "</div>"
         . "</div>"
@@ -56,7 +56,7 @@ function cabecalhoSecEsc($estilo = null, $title = NULL,  $linkAluno = NULL, $lin
         . "<body>"
         . "<header>"
         .    "<div class='container'>"
-        .        "<div class='row'>"
+        .        "<div class='row' id='navbar'>"
         .            "<div class='col'>"
         .               "<a href='$linkAluno'>Alunos</a>"   
         .            "</div>"
@@ -70,7 +70,7 @@ function cabecalhoSecEsc($estilo = null, $title = NULL,  $linkAluno = NULL, $lin
         .               "<a href='$linkCardapio'>Cardápio</a>"
         .            "</div>"
         .            "<div class='col'>"
-        .               "<a href='$linkLogOut'>Sair</a>"
+        .               "<a href='$linkLogOut'><img src='https://image.flaticon.com/icons/svg/660/660350.svg' width=26px/></a>"
         .            "</div>"
         .    "</div>"
         . "</div>"
@@ -93,7 +93,7 @@ function cabecalhoNutricionista($estilo = null, $title = NULL, $linkEscola = NUL
 
         . "<header>"
         .    "<div class='container'>"
-        .        "<div class='row'>"
+        .        "<div class='row' id='navbar'>"
         .            "<div class='col'>"
         .               "<a href='$linkEscola'>Escolas</a>"   
         .            "</div>"
@@ -110,7 +110,7 @@ function cabecalhoNutricionista($estilo = null, $title = NULL, $linkEscola = NUL
         .               "<a href='$linkCardapio'>Cardápio</a>"
         .            "</div>"
         .            "<div class='col'>"
-        .               "<a href='$linkLogOut'>Sair</a>"
+        .               "<a href='$linkLogOut'><img src='https://image.flaticon.com/icons/svg/660/660350.svg' width=26px/></a>"
         .            "</div>"
         .    "</div>"
         . "</div>"
@@ -133,7 +133,7 @@ function cabecalhoAluno($estilo = null, $title = NULL, $linkEscola = NULL, $link
 
         . "<header>"
         .    "<div class='container'>"
-        .        "<div class='row'>"
+        .        "<div class='row' id='navbar'>"
         .            "<div class='col'>"
         .               ""   
         .            "</div>"
@@ -147,13 +147,14 @@ function cabecalhoAluno($estilo = null, $title = NULL, $linkEscola = NULL, $link
         .               "<a href='$linkCardapio'>Cardápio</a>"
         .            "</div>"
         .            "<div class='col'>"
-        .               "<a href='$linkLogOut'>Sair</a>"
+        .               "<a href='$linkLogOut'><img src='https://image.flaticon.com/icons/svg/660/660350.svg' width=26px/></a>"
         .            "</div>"
         .    "</div>"
         . "</div>"
         . "</header>";
 
 }
+
 function sectionTop() {
     echo "<section>"
     .        "<div id='Cadastro'>";
