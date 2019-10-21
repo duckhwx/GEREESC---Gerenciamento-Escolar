@@ -6,8 +6,6 @@ session_start();
 $idEscola = $_SESSION['idEscola'];
 
 if ($_POST['acao'] == 'exibirDados') {
-
-
 //Requisição de todos os produtos cadastrados no estoque da escola selecionada
     $selectEstoque = "select produto_id from Estoque where Estoque.escola_id = " . $idEscola;
     $queryEstoque = mysqli_query($conexao, $selectEstoque);
