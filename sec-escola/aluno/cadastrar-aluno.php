@@ -22,10 +22,10 @@ $query3 = mysqli_query($conexao, $select3);
                     Ano Escolar  <?php
                                 echo "<select name='anoEscolar'>";
                                     while($table = mysqli_fetch_array($query2)){
-                                        $id = $table['id'];
+                                        $idEscola = $table['id'];
                                         $nome = $table['nome'];
 
-                                        echo "<option value=$id>$nome</option>";
+                                        echo "<option value=$idEscola>$nome</option>";
                                     }
                                         echo "</select>";
                              ?><br>
@@ -34,10 +34,10 @@ $query3 = mysqli_query($conexao, $select3);
                    
                                 echo "<select name='escola'>";
                                     while($table = mysqli_fetch_array($query3)){
-                                        $id = $table['id'];
+                                        $idEscola = $table['id'];
                                         $nome = $table['nome'];
 
-                                        echo "<option value=$id>$nome</option>";
+                                        echo "<option value=$idEscola>$nome</option>";
                                     }
                                         echo "</select>";
                              ?><br>

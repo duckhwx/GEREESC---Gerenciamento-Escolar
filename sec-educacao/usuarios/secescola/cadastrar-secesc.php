@@ -22,10 +22,10 @@ $query = mysqli_query($conexao, $select);
                     Escola  <?php
                                 echo "<select name='escola'>";
                                     while($table = mysqli_fetch_array($query)){
-                                        $id = $table['id'];
+                                        $idEscola = $table['id'];
                                         $nome = $table['nome'];
 
-                                        echo "<option value=$id>$nome</option>";
+                                        echo "<option value=$idEscola>$nome</option>";
                                     }
                                         echo "</select>";
                              ?><br>

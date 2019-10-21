@@ -50,16 +50,16 @@
   <tbody>
 
     <?php  while($table = mysqli_fetch_array($query)){
-            $id = $table['id'];
+            $idEscola = $table['id'];
             $nome = $table['nomeProduto'];
             
     ?>
     <tr>
       <th scope="row"><?php echo $row; ?></th>
       <td><?php echo $nome; ?></td>
-      <td><button  class="btn btn-light veiz" value="<?php echo $id; ?>" ><img src='https://image.flaticon.com/icons/svg/65/65000.svg' width=26px/></button></td>
-      <td><button  class="btn btn-light veiz" value="<?php echo $id; ?>" ><img src='https://image.flaticon.com/icons/svg/1001/1001371.svg' width=24px/></button></td>
-      <td><button  class="btn btn-light veiz" value="<?php echo $id; ?>" ><img src='https://image.flaticon.com/icons/svg/32/32178.svg' width=24px/></button></td>
+      <td><button  class="btn btn-light veiz" value="<?php echo $idEscola; ?>" ><img src='https://image.flaticon.com/icons/svg/65/65000.svg' width=26px/></button></td>
+      <td><button  class="btn btn-light veiz" value="<?php echo $idEscola; ?>" ><img src='https://image.flaticon.com/icons/svg/1001/1001371.svg' width=24px/></button></td>
+      <td><button  class="btn btn-light veiz" value="<?php echo $idEscola; ?>" ><img src='https://image.flaticon.com/icons/svg/32/32178.svg' width=24px/></button></td>
     </tr>
   
     <?php

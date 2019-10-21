@@ -5,11 +5,12 @@
     cabecalhoSecEdu('../../../estilo/style.css', 'Estoque', '../../escola/', '../../usuarios/cadastrar-usuarios.php', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
     
     sectionTop();
- 
-    $id = $_GET['id'];
+    
+    session_start();
+    $idEscola = $_SESSION['idEscola'];
     
 //Requisição de todos os produtos cadastrados no estoque da escola selecionada
-    $selectEstoque = "select produto_id from Estoque where Estoque.escola_id = ".$id;
+    $selectEstoque = "select produto_id from Estoque where Estoque.escola_id = ".$idEscola;
     $queryEstoque = mysqli_query($conexao, $selectEstoque);
     $produtosEstoque = [];
 
@@ -57,15 +58,15 @@
     }
 ?>
 <br><br>
-<form method="post" action="validar-estoque.php?acao=alocar&id=<?=$id?>">
+<form method="post" action="validar-estoque.php?acao=alocar">
         Produto <?php
             echo "<select name='produto'>";
 //Geração dinamica dos produtos que podem ser cadastrados a uma tag select
             foreach ($produtosVerificados as $produto) {
-                $id = $produto['id'];
+                $idProduto = $produto['id'];
                 $nome = $produto['nome'];
                 
-                echo "<option value='$id'>$nome</option>";
+                echo "<option value='$idProduto'>$nome</option>";
             }
             echo "</select>"
         ?><br>

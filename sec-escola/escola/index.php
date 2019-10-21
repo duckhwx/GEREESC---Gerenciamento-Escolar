@@ -7,18 +7,9 @@ require_once '../../funcoes-de-cabecalho.php';
     cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Escola', '../aluno/', '.', '../estoque/', '../cardapio/','../../login/logOut.php');
     sectionTop();
     
-    //PEGANDO O ID DO USUARIO LOGADO
-    $id = userid();
-    
-    $select = "select escola_id from secesc where id='$id'";
-    $query = mysqli_query($conexao, $select);
-    $table1 = mysqli_fetch_array($query);
-    $escola_id = $table1['escola_id'];
-    
     //Seleção dos dados da escola selecionada no index
-    $query1 = mysqli_query($conexao, "select * from escola where id=$escola_id");
-    $table = mysqli_fetch_array($query1);
-    
+    $query = mysqli_query($conexao, "select * from escola where id=".$_SESSION['idEscola']);
+    $table = mysqli_fetch_array($query);
     $nome = $table['nome'];
     $endereco = $table['endereco'];
     $cnpj = $table['cnpj'];
@@ -27,7 +18,6 @@ require_once '../../funcoes-de-cabecalho.php';
     $telefone = $table['telefone'];
     $alunosEnsInfantil = $table['alunosEnsInfantil'];
     $alunosEnsFundamental = $table['alunosEnsFundamental'];
-    
     ?>
     
                 <p>Nome: <?=$nome?></p>

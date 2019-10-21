@@ -6,10 +6,10 @@
     
     sectionTop();
  
-    $id = $_GET['id'];
+    $idEscola = $_GET['id'];
     
 //Requisição de todos os produtos cadastrados no estoque da escola selecionada
-    $selectEstoque = "select Produto_id from Estoque where Estoque.escola_id = ".$id;
+    $selectEstoque = "select Produto_id from Estoque where Estoque.escola_id = ".$idEscola;
     $queryEstoque = mysqli_query($conexao, $selectEstoque);
     $produtosEstoque = [];
 
@@ -51,15 +51,15 @@
     }
 ?>
 <br><br>
-<form method="post" action="validar-estoque.php?acao=alocar&id=<?=$id?>">
+<form method="post" action="validar-estoque.php?acao=alocar&id=<?=$idEscola?>">
         Produto <?php
             echo "<select name='produto'>";
 //Geração dinamica dos produtos que podem ser cadastrados a uma tag select
             foreach ($produtosVerificados as $produto) {
-                $id = $produto['id'];
+                $idEscola = $produto['id'];
                 $nome = $produto['nome'];
                 
-                echo "<option value='$id'>$nome</option>";
+                echo "<option value='$idEscola'>$nome</option>";
             }
             echo "</select>"
         ?><br>

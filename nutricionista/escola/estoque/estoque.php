@@ -12,7 +12,7 @@
         $_SESSION["idEscola"] = $_GET['id'];
     }
   
-    $id = $_SESSION['idEscola'];
+    $idEscola = $_SESSION['idEscola'];
     
 //Requisição dos dados do estoque ao Banco de Dados
     $selectEstoque = "Produto.id, Produto.nomeProduto, TipoDeProduto.nomeTipoProduto, Produto.marca, Produto.peso, TipoDePeso.nomeTipoPeso, from Produto " 

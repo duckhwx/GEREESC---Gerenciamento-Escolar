@@ -9,25 +9,25 @@ if($acao == 'cadastrar'){
     $query = mysqli_query($conexao, $insert);
 } 
 else if($acao == 'getById'){
-    $id = $_POST['id'];
+    $idEscola = $_POST['id'];
 
-    $select = "select * from Refeicao where id = $id";
+    $select = "select * from Refeicao where id = $idEscola";
     $query = mysqli_query($conexao, $select);
     $fetch = mysqli_fetch_array($query);
     
     echo json_encode($fetch);
 }
 else if($acao == 'atualizar'){
-    $id = $_POST['id'];
+    $idEscola = $_POST['id'];
     $nome = $_POST['nome'];
     
-    $insert = "update Refeicao set nome='$nome' where id= $id";
+    $insert = "update Refeicao set nome='$nome' where id= $idEscola";
     $query = mysqli_query($conexao, $insert);  
 } 
 else if($acao == 'excluir'){
-    $id = $_POST['id'];
+    $idEscola = $_POST['id'];
     
-    $delete = "delete from Refeicao where id=$id";
+    $delete = "delete from Refeicao where id=$idEscola";
     $query = mysqli_query($conexao, $delete);
 }
 

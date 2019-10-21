@@ -48,8 +48,8 @@ if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
     
 } else if($_GET['acao'] == 'excluir'){
     
-        $id = $_GET['id'];
-        $delete = "delete from aluno where id=$id";
+        $idEscola = $_GET['id'];
+        $delete = "delete from aluno where id=$idEscola";
         $query = mysqli_query($conexao, $delete);
         if($query){
             header("Location: index.php");

@@ -4,13 +4,13 @@
 //Condição que será executada caso for selecionado a opção de alocar produtos
 if($_GET['acao'] == 'alocar'){
 
-    $id = $_GET['id'];
+    $idEscola = $_GET['id'];
 
     $id_produto = $_POST['produto'];
     $quantidade = $_POST['quantidade'];
 
 //Submissão dos dados ao Banco de Dados
-    $insert = "insert into Estoque values (default, $id, $id_produto, $quantidade, 'Adicionado')";
+    $insert = "insert into Estoque values (default, $idEscola, $id_produto, $quantidade, 'Adicionado')";
     $query = mysqli_query($conexao, $insert);
     
     if($query){

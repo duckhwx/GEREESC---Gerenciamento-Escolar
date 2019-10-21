@@ -34,10 +34,10 @@
     echo "<select name='escolaAlvo'>";
 //Exibição dinamica das escolas alvos a serem selecionadas.
     while ($tableEscAlvo = mysqli_fetch_array($queryEscAlvo)) {
-        $id = $tableEscAlvo['id'];
+        $idEscola = $tableEscAlvo['id'];
         $nome = $tableEscAlvo['nome'];
 
-        echo "<option value=$id>$nome</option>";
+        echo "<option value=$idEscola>$nome</option>";
     }
     echo "</select>";
     ?><br>

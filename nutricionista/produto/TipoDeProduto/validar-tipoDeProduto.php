@@ -50,9 +50,9 @@ $tipoDeProduto = $_POST["tipoDeProduto"];
 
     else if($_GET['acao'] == 'excluir'){
 
-        $id = $_GET['id'];
+        $idEscola = $_GET['id'];
 
-        $delete = "delete from Produto where id=$id";
+        $delete = "delete from Produto where id=$idEscola";
         
         $query = mysqli_query($conexao, $delete);
         

@@ -14,7 +14,7 @@ echo "<table>
       <th>Escola</th>
       </tr>";
 while($table = mysqli_fetch_array($query)){
-    $id = $table['id'];
+    $idEscola = $table['id'];
     $nome = $table['nome'];
     $cpf = $table['cpf'];
     $rg = $table['rg'];
@@ -35,9 +35,9 @@ while($table = mysqli_fetch_array($query)){
 echo "<tr>
       <td>$nome<td>
       <td>$nomeEscola</td>
-      <td><a href='visualizar-secesc.php?id=$id'>Visualizar</a></td>
-      <td><a href='atualizar-secesc.php?acao=atualizar&id=$id'>Atualizar</a></td>
-      <td><a href='validar-secesc.php?acao=excluir&id=$id'>Excluir</a></td>
+      <td><a href='visualizar-secesc.php?id=$idEscola'>Visualizar</a></td>
+      <td><a href='atualizar-secesc.php?acao=atualizar&id=$idEscola'>Atualizar</a></td>
+      <td><a href='validar-secesc.php?acao=excluir&id=$idEscola'>Excluir</a></td>
       </tr>";
 }
 

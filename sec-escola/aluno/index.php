@@ -12,13 +12,13 @@ $query = mysqli_query($conexao, $select);
 
 //Exibição dinamica de todas os Alunos
     while($table = mysqli_fetch_array($query)){
-        $id = $table['id'];
+        $idEscola = $table['id'];
         $nome = $table['nome'];
         
         echo"$nome  "
-            . "<a href='visualizar-aluno.php?id=$id'>Visualizar</a>  "
-            . "<a href='atualizar-aluno.php?id=$id'>Atualizar</a>  "
-            . "<a href='validar-aluno.php?id=$id&acao=excluir'>Excluir</a>"
+            . "<a href='visualizar-aluno.php?id=$idEscola'>Visualizar</a>  "
+            . "<a href='atualizar-aluno.php?id=$idEscola'>Atualizar</a>  "
+            . "<a href='validar-aluno.php?id=$idEscola&acao=excluir'>Excluir</a>"
             . "<br>";
             
     }

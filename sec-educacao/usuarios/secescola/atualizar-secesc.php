@@ -5,7 +5,7 @@ require_once "../../../conexao.php";
 cabecalhoSecEdu('../../../estilo/style.css', 'Atualizar Secretario da Escola', '../../escola/', '../cadastrar-usuarios.php', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
 sectionTop();
 
-    $id = $_GET['id'];
+    $idEscola = $_GET['id'];
 
     $select = "select * from Escola";
 
@@ -13,7 +13,7 @@ sectionTop();
 
 ?>
                 
-                <form method="post" action="validar-secesc.php?acao=atualizar&id=<?=$id?>">
+                <form method="post" action="validar-secesc.php?acao=atualizar&id=<?=$idEscola?>">
                 Nome <input type="text" required maxlength="64" name="nome"><br>
                     CPF <input type="text" required maxlength="11" name="cpf"><br>
                     RG <input type="text" required maxlength="11" name="rg"><br>
@@ -25,10 +25,10 @@ sectionTop();
                     Escola  <?php
                                 echo "<select name='escola'>";
                                     while($table = mysqli_fetch_array($query)){
-                                        $id = $table['id'];
+                                        $idEscola = $table['id'];
                                         $nome = $table['nome'];
 
-                                        echo "<option value=$id>$nome</option>";
+                                        echo "<option value=$idEscola>$nome</option>";
                                     }
                                         echo "</select>";
                              ?><br>

@@ -22,20 +22,20 @@
     Tipo de Peso <?php
                                 echo "<select name='tipoDePeso'>";
                                     while($table = mysqli_fetch_array($query)){
-                                        $id = $table['id'];
+                                        $idEscola = $table['id'];
                                         $nome = $table['nomeTipoPeso'];
 
-                                        echo "<option value=$id>$nome</option>";
+                                        echo "<option value=$idEscola>$nome</option>";
                                     }
                                         echo "</select>";
                              ?><br>
     Tipo de Produto  <?php
                                 echo "<select name='tipoDeProduto'>";
                                     while($table = mysqli_fetch_array($query1)){
-                                        $id = $table['id'];
+                                        $idEscola = $table['id'];
                                         $nome = $table['nomeTipoProduto'];
 
-                                        echo "<option value=$id>$nome</option>";
+                                        echo "<option value=$idEscola>$nome</option>";
                                     }
                                         echo "</select>";
                              ?><br><br>

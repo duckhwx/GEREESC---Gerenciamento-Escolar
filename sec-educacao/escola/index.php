@@ -18,15 +18,15 @@ $query = mysqli_query($conexao, $select);
 
 //Exibição dinamica de todas as escolas
     while($table = mysqli_fetch_array($query)){
-        $id = $table['id'];
+        $idEscola = $table['id'];
         $nome = $table['nome'];
         
-        echo"$nome  "
-            . "<a href='visualizar-escola.php?id=$id'>Visualizar</a>  "
-            . "<a href='atualizar-escola.php?id=$id'>Atualizar</a>  "
-            . "<a href='estoque/estoque.php?id=$id'>Estoque  </a>"
-            . "<a href='verificar-escola.php?id=$id&acao=excluir'>Excluir</a>"
-            . "<br>";
+        echo"<div class='m-2'><span class='m-2'>$nome</span>"
+            . "<a class='btn btn-light m-2' href='visualizar-escola.php?id=$idEscola'><img src='../../estilo/icones/eye.png' width=26px/></a>"
+            . "<a class='btn btn-light m-2'href='atualizar-escola.php?id=$idEscola'><img src='../../estilo/icones/edit.png' width=26px/></a>"
+            . "<a class='btn btn-light m-2'href='estoque/estoque.php?id=$idEscola'><img src='../../estilo/icones/box.png' width=26px/></a>"
+            . "<a class='btn btn-light m-2'href='verificar-escola.php?id=$idEscola&acao=excluir'><img src='../../estilo/icones/delete.png' width=26px/></a>"
+            . "</div>";
             
     }
 echo "</table>";

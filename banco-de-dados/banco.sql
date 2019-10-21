@@ -74,6 +74,16 @@ create table Estoque (
     status enum('Adicionado', 'Retirado', 'Transportado')
 );
 
+create table Estoque (
+    estoque_id int primary key auto_increment,
+    escola_id int references Escola(id),
+    produto_id int references Produto(id),
+    quantidade int,
+    quantMal int,
+    acao enum('Adicionado', 'Retirado'),
+    status boolean
+);
+
 create table Produto (
     id int primary key auto_increment,
     nomeProduto varchar(64),
@@ -131,7 +141,7 @@ insert into TipoDePeso values
 (default, "kg"),
 (default, "ml"),
 (default, "L");
-select * from TipoDePeso;
+
 insert into TipoDeProduto values
 (default, "tipo01"),
 (default, "tipo02"),
@@ -141,5 +151,3 @@ insert into AnoEscolar values
 (default, "Ensino Infantil"),
 (default, "Ensino Fundamental");
 
-select Cardapio_Refeicao.id, Refeicao.nome, Cardapio_Refeicao.data from Cardapio_Refeicao inner join Refeicao
-on Cardapio_Refeicao.refeicao_id = Refeicao.id where Cardapio_Refeicao.anoEscolar_id = 1;

@@ -4,10 +4,10 @@ cabecalhoSecEdu('../../estilo/style.css', 'Atualizar Escola', '../escola/', '../
     
 sectionTop();
 
-$id = $_GET['id'];
+$idEscola = $_GET['id'];
 ?>
 
-                <form method="post" action="verificar-escola.php?acao=atualizar&id=<?=$id?>">
+                <form method="post" action="verificar-escola.php?acao=atualizar&id=<?=$idEscola?>">
                     Nome <input type="text" required maxlength="100" name="nomeEscola"><br>
                     Endereco <input type="text" required maxlength="255" name="enderecoEscola"><br>
                     Numero <input type="text" required maxlength="8" name="numeroEscola"><br>

@@ -1,0 +1,52 @@
+body{
+    background: url('backgrounds/Background.jpg') no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position:  relative;
+    
+    /*background: rgb(18,30, 49) ;*/
+    
+    text-align-last: center;
+  }
+  
+  #logout{
+      background: url('icones/logout.png') no-repeat;
+      float: right;
+  }
+  
+#Box{
+    background: white center;
+    opacity: 0.8;
+    width: 800px;
+    height: auto;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    position: relative;
+    border: solid 3px rgb(26, 26, 26);
+    
+}
+
+
+form{
+    margin-top: 17px;
+    margin-left: 7%
+}
+
+  header{
+    background-color: #323A45;
+    opacity: 0.8;
+  }
+
+  .container{
+    text-align: center;
+    font-family: fantasy;
+    font-size: 32px;
+  }
+  
+  #navbar, a:visited{
+      color: white;
+  }
+  

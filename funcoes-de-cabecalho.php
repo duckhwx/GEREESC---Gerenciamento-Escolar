@@ -157,7 +157,7 @@ function cabecalhoAluno($estilo = null, $title = NULL, $linkEscola = NULL, $link
 
 function sectionTop() {
     echo "<section>"
-    .        "<div id='Cadastro'>";
+    .        "<div id='Box'>";
 }
 
 function sectionBaixo() {

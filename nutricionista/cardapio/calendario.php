@@ -47,10 +47,10 @@ $_SESSION['id_anoEscolar'] = $_GET['id'];
                             $query = mysqli_query($conexao, $select);
                             echo "<select name='refeicoes'>";
                             while ($tbl = mysqli_fetch_array($query)) {
-                                $id = $tbl['id'];
+                                $idEscola = $tbl['id'];
                                 $refeicao = $tbl['nome'];
 
-                                echo "<option value='" . $id . "'>" . $refeicao . "</option>";
+                                echo "<option value='" . $idEscola . "'>" . $refeicao . "</option>";
                             }
                             echo "</select>";
                             ?>

@@ -7,7 +7,7 @@ $query = mysqli_query($conexao, $select);
 
 $table = mysqli_fetch_array($query);
 
-$id = $table['id'];
+$idEscola = $table['id'];
 $nome = $table['nome'];
 $cpf = $table['cpf'];
 $rg = $table['rg'];
@@ -33,8 +33,8 @@ cabecalhoSecEdu('../../../estilo/style.css', 'Nutricionista', '../../escola/', '
 
 <br>
 <a href="cadastrar-nutricionista.php">Cadastrar</a>
-<a href="atualizar-nutricionista.php?id=<?=$id?>">Atualizar</a>
-<a href="validar-nutricionista.php?id=<?=$id?>&acao=excluir">Excluir</a>
+<a href="atualizar-nutricionista.php?id=<?=$idEscola?>">Atualizar</a>
+<a href="validar-nutricionista.php?id=<?=$idEscola?>&acao=excluir">Excluir</a>
 
 <?php 
 sectionBaixo();

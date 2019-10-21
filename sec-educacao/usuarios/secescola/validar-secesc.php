@@ -36,7 +36,7 @@ if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
             header("Location: cadastrar-secesc.php");
         }
     } else if($_GET['acao'] == 'atualizar'){
-        $id = $_GET['id'];
+        $idEscola = $_GET['id'];
         $update = "update SecEsc set nome='$nome',"
                 . " login='$login',"
                 . " senha='$senha',"
@@ -47,7 +47,7 @@ if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
                 . " dataDeNascimento='$nascimento',"
                 . " numero='$numero',"
                 . " celular='$celular',"
-                . " escola_id=$escola where id=$id";
+                . " escola_id=$escola where id=$idEscola";
         
         $query = mysqli_query($conexao, $update);
         
@@ -60,8 +60,8 @@ if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
     
 } else if($_GET['acao'] == 'excluir'){
     
-        $id = $_GET['id'];
-        $delete = "delete from SecEsc where id=$id";
+        $idEscola = $_GET['id'];
+        $delete = "delete from SecEsc where id=$idEscola";
         $query = mysqli_query($conexao, $delete);
         if($query){
             header("Location: index.php");

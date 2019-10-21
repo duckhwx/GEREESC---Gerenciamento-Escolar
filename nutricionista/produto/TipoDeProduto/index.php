@@ -12,13 +12,13 @@
     echo '<table>';
     
         while($table = mysqli_fetch_array($query)){
-            $id = $table['id'];
+            $idEscola = $table['id'];
             $nome = $table['nomeProduto'];
 
             echo"$nome  "
-                . "<a href='visualizar-tipoDeProduto.php?id=$id'>Visualizar</a>  "
-                . "<a href='atualizar-tipoDeProduto.php?id=$id'>Atualizar</a>  "
-                . "<a href='validar-tipoDeProduto.php?id=$id&acao=excluir'>Excluir</a>"
+                . "<a href='visualizar-tipoDeProduto.php?id=$idEscola'>Visualizar</a>  "
+                . "<a href='atualizar-tipoDeProduto.php?id=$idEscola'>Atualizar</a>  "
+                . "<a href='validar-tipoDeProduto.php?id=$idEscola&acao=excluir'>Excluir</a>"
                 . "<br>";
 
         }

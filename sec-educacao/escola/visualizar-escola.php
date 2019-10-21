@@ -2,10 +2,10 @@
 require_once '../../conexao.php';
 require_once '../../funcoes-de-cabecalho.php';
 
-$id = $_GET['id'];
+$idEscola = $_GET['id'];
 
 //Seleção dos dados da escola selecionada no index
-$query = mysqli_query($conexao, "select * from Escola where id='$id'");
+$query = mysqli_query($conexao, "select * from Escola where id='$idEscola'");
 $table = mysqli_fetch_array($query);
 
 $nome = $table['nome'];

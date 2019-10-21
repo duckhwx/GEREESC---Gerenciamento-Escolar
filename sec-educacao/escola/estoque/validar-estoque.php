@@ -1,16 +1,26 @@
 <?php
         require_once "../../../conexao.php";
-
+        session_start();
+        
 //Condição que será executada caso for selecionado a opção de alocar produtos
 if($_GET['acao'] == 'alocar'){
 
-    $id = $_GET['id'];
-
+    $idEscola = $_SESSION['idEscola'];
     $id_produto = $_POST['produto'];
-    $quantidade = $_POST['quantidade'];
+    $quantidadeAlocada = $_POST['quantidade'];
 
-//Submissão dos dados ao Banco de Dados
-    $insert = "insert into Estoque values (default, $id, $id_produto, $quantidade, 'Adicionado')";
+    $select = "select quantidade from Estoque where status = true and produto_id = $id_produto";
+    $querySelect = mysqli_query($conexao, $select);
+    if(mysqli_num_rows($querySelect) == 0){
+        $insert = "insert into Estoque values (default, $idEscola, $id_produto, $quantidadeAlocada, $quantidadeAlocada, 'Adicionado', true)";
+    } else {
+        $table = mysqli_fetch_array($querySelect);
+        $quantidade = $table['quantidade'];
+        $quantidade += $quantidadeAlocada;
+        $insert = "insert into Estoque values (default, $idEscola, $id_produto, $quantidade, $quantidadeAlocada, 'Adicionado', true)";
+    }
+    
+    //Submissão dos dados ao Banco de Dados
     $query = mysqli_query($conexao, $insert);
     
     if($query){

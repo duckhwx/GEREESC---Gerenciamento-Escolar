@@ -3,9 +3,9 @@
     require_once '../funcoes-de-cabecalho.php';
     
     session_start();
-    $id = $_SESSION['id'];
+    $idEscola = $_SESSION['id'];
     
-    $query1 = mysqli_query($conexao, "select * from Aluno where id='$id'");
+    $query1 = mysqli_query($conexao, "select * from Aluno where id='$idEscola'");
     $table = mysqli_fetch_array($query1);
     
     $_SESSION['escola_id'] = $table['escola_id'];

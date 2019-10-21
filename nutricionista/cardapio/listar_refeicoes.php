@@ -10,12 +10,12 @@ $query = mysqli_query($conexao, $select);
 $refeicoes = [];
 
 while($tbl = mysqli_fetch_array($query)){
-    $id = $tbl['id'];
+    $idEscola = $tbl['id'];
     $refeicao = $tbl['nome'];
     $data = $tbl['data'];
     
     $refeicoes[] = [
-        'id' => $id,
+        'id' => $idEscola,
         'title' => $refeicao,
         'start' => $data,
     ];
