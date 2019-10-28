@@ -15,7 +15,6 @@ function cabecalhoSecEdu($estilo = null, $title = NULL, $linkEscola = NULL, $lin
         . "<title>$title</title>"
         . "</head>"
         . "<body>"
-
         . "<header>"
         .    "<div class='container'>"
         .        "<div class='row' id='navbar'>"

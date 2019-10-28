@@ -9,7 +9,7 @@ $query = mysqli_query($conexao, $select);
 
 sectionTop();
 ?>
-
+<!--Table com exibição dinamica das Refeições cadastradas-->
 <table class="table">
     <thead class="thead-dark">
     <th scope="col" colspan="3">Refeição</th>
@@ -44,7 +44,7 @@ sectionTop();
 sectionBaixo();
 ?>
 
-<!-- Modal -->
+<!-- Modal de Cadastro-->
 <div class="modal fade" id="divModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -65,6 +65,7 @@ sectionBaixo();
     </div>
 </div>
 
+<!--Modal de Exclusão-->
 <div class="modal fade" id="delRef" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -75,8 +76,8 @@ sectionBaixo();
                 </button>
             </div>
             <div class="modal-body">
-                <div class="m-2">Tens certeza de que desejas deletar:</div>
-                <div id="nomeRefDel" class="m-2"></div>
+                <div class="m-2">Tens certeza de que desejas deletar: <span id="nomeRefDel"></span></div>
+                <input type="hidden" id="idExcluir">
                 <button class="btn btn-dark" id="buttonConfirmar">Confirmar</button>
             </div>
         </div>

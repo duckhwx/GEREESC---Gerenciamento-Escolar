@@ -19,7 +19,7 @@ $query = mysqli_query($conexao, $select);
 //Exibição dinamica de todas as escolas
     while($table = mysqli_fetch_array($query)){
         $idEscola = $table['id'];
-        $nome = $table['nome'];
+        $nome = $table['nomeEscola'];
         
         echo"<div class='m-2'><span class='m-2'>$nome</span>"
             . "<a class='btn btn-light m-2' href='visualizar-escola.php?id=$idEscola'><img src='../../estilo/icones/eye.png' width=26px/></a>"

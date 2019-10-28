@@ -1,20 +1,18 @@
- /*Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
+/*Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
 @media (max-width: 575.98px) {
     body{
-        background: url('backgrounds/Background.jpg') no-repeat;
+        background: url('backgrounds/Background-575.jpg') no-repeat;
+        height: 100%;
         width: 100%;
-        background-size: cover;
-        position:  relative;
-
-        /*background: rgb(18,30, 49) ;*/
-
+        background-size: auto;
+        position: relative;
         text-align-last: center;
-      }
+    }
 
     #Box{
         background: white center;
         opacity: 0.8;
-        width: 400px;
+        width: 450px;
         height: auto;
         margin-top: 30px;
         margin-right: auto;
@@ -23,63 +21,233 @@
         position: relative;
         border: solid 3px rgb(26, 26, 26);
         box-sizing: content-box;
-
+        font-size: 12px;
     }
 
 
     form{
-        margin-top: 7px;
-        margin-left: 2%
+        margin: 5% 8%;
     }
 
-      header{
+    header{
         background-color: #323A45;
         opacity: 0.8;
-      }
+    }
 
-      .container{
+    .container{
         height: 30px;
         padding-top: 4px;
         text-align: center;
         font-family: fantasy;
-        font-size: 14px;
+        font-size: 12px;
         box-sizing: content-box;
-      }
+    }
 
-      #navbar, a:visited{
-          text-decoration: none;      
-          color: white;
-      }
+    img{
+        width: 18px;
+    }
 
-      #Box>a{
-          text-decoration: none;
-          color: black;
-      }
+    #navbar, a:visited{
+        text-decoration: none;      
+        color: white;
+    }
+
+    #Box>a{
+        text-decoration: none;
+        color: black;
+    }
 }
 
 /*Dispositivos small (telefones em modo paisagem, com 576px ou mais)*/
-@media (min-width: 576px) and (max-width: 767.98px) { }
+@media (min-width: 576px) and (max-width: 767.98px) {
+    body{
+        background: url('backgrounds/background-767.jpg') no-repeat;
+        height: 100%;
+        width: 100%;
+        background-size: auto;
+        position: relative;
+        text-align-last: center;
+    }
 
- /*Dispositivos médios (tablets com 768px ou mais)*/
-@media (min-width: 768px) and (max-width: 991.98px) { }
+    #Box{
+        background: white center;
+        opacity: 0.8;
+        width: 500px;
+        height: auto;
+        margin-top: 50px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        position: relative;
+        border: solid 3px rgb(26, 26, 26);
+        box-sizing: content-box;
+        font-size: 16px;
+    }
+
+
+    form{
+        margin: 5% 8%;
+    }
+
+    header{
+        background-color: #323A45;
+        opacity: 0.8;
+    }
+
+    .container{
+        height: 40px;
+        padding-top: 6px;
+        text-align: center;
+        font-family: fantasy;
+        font-size: 18px;
+        box-sizing: content-box;
+    }
+
+    img{
+        width: 20px;
+    }
+
+    #navbar, a:visited{
+        text-decoration: none;      
+        color: white;
+    }
+
+    #Box>a{
+        text-decoration: none;
+        color: black;
+    }
+}
+
+/*Dispositivos médios (tablets com 768px ou mais)*/
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    body{
+        background: url('backgrounds/background-991.jpg') no-repeat;
+        height: 100%;
+        width: 100%;
+        background-size: auto;
+        position: relative;
+        text-align-last: center;
+    }
+
+    #Box{
+        background: white center;
+        opacity: 0.8;
+        width: 700px;
+        height: auto;
+        margin-top: 50px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        position: relative;
+        border: solid 3px rgb(26, 26, 26);
+        box-sizing: content-box;
+        font-size: 18px;
+    }
+
+
+    form{
+        margin: 5% 8%;
+    }
+
+    header{
+        background-color: #323A45;
+        opacity: 0.8;
+    }
+
+    .container{
+        height: 40px;
+        padding-top: 6px;
+        text-align: center;
+        font-family: fantasy;
+        font-size: 18px;
+        box-sizing: content-box;
+    }
+
+    img{
+        width: 22px;
+    }
+
+    #navbar, a:visited{
+        text-decoration: none;      
+        color: white;
+    }
+
+    #Box>a{
+        text-decoration: none;
+        color: black;
+    }
+}
 
 /*Dispositivos large (desktops com 992px ou mais)*/
-@media (min-width: 992px) and (max-width: 1199.98px) { }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    body{
+        background: url('backgrounds/background.jpg') no-repeat;
+        height: 100%;
+        width: 100%;
+        background-size: auto;
+        position: relative;
+        text-align-last: center;
+    }
 
- /*Dispositivos extra large (desktops grandes com 1200px ou mais)*/
+    #Box{
+        background: white center;
+        opacity: 0.8;
+        width: 750px;
+        height: auto;
+        margin-top: 50px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        position: relative;
+        border: solid 3px rgb(26, 26, 26);
+        box-sizing: content-box;
+        font-size: 20px;
+    }
+
+
+    form{
+        margin: 5% 8%;
+    }
+
+    header{
+        background-color: #323A45;
+        opacity: 0.8;
+    }
+
+    .container{
+        height: 45px;
+        padding-top: 7px;
+        text-align: center;
+        font-family: fantasy;
+        font-size: 20px;
+        box-sizing: content-box;
+    }
+
+    img{
+        width: 24px;
+    }
+
+    #navbar, a:visited{
+        text-decoration: none;      
+        color: white;
+    }
+
+    #Box>a{
+        text-decoration: none;
+        color: black;
+    }
+}
+
+/*Dispositivos extra large (desktops grandes com 1200px ou mais)*/
 @media (min-width: 1200px) { 
     body{
-        background: url('backgrounds/Background.jpg') no-repeat;
+        background: url('backgrounds/background.jpg') no-repeat;
+        height: 100%;
+        width: 100%;
         background-size: cover;
-        position:  relative;
-        /*background: rgb(18,30, 49) ;*/
-
+        position: relative;
         text-align-last: center;
-      }
-      
-      a:link{
-          text-decoration: none !important;
-      }
+    }
 
     #Box{
         background: white center;
@@ -93,43 +261,47 @@
         position: relative;
         border: solid 3px rgb(26, 26, 26);
         box-sizing: content-box;
-
+        font-size: 24px;
     }
 
 
     form{
-        margin-top: 17px;
-        margin-left: 7%
+        margin: 3% 8% 2% 8%;
+    }
+    
+    h3{
+        margin: 3% 3%;
     }
 
-      header{
+    [type="date"]::-webkit-inner-spin-button {
+        display: none;
+    }
+    
+    header{
         background-color: #323A45;
         opacity: 0.8;
-      }
+    }
 
-      .container{
+    label{
+        margin: 1% 0 0 0;
+    }
+    
+    .container{
         height: 50px;
         padding-top: 8px;
         text-align: center;
         font-family: fantasy;
         font-size: 24px;
         box-sizing: content-box;
-      }
+    }
 
-      #navbar>div>a{
-          color: white;
-      }
-      
-      #Box>a{
-          text-decoration: none;
-          color: black;
-      }
-      
-      #Box>a:hover{
-          border-bottom: black 1pt solid; 
-      }
-      
-      #img{
-          width: 26px;
-      }
+    #navbar a:visited{
+        text-decoration: none;      
+        color: white;
+    }
+
+    #Box a{
+        text-decoration: none;
+        color: black;
+    }
 }

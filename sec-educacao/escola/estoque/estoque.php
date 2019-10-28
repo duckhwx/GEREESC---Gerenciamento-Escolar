@@ -60,6 +60,7 @@ echo "</tbody>"
 ?>
 
 <button class="btn btn-dark m-2" id="buttonAdicionar">Alocar Produto</button>
+<a class="btn btn-dark m-2" href="movimentacoes.php" id="buttonHistorico">Historico de Movimentações</a>
 <script src="requisicao-ajax.js"></script>
 <?php
 sectionBaixo();

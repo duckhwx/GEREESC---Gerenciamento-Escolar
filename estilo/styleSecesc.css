@@ -1,12 +1,9 @@
 /*Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
 @media (max-width: 575.98px) {
     body{
-        background: url('backgrounds/Background.jpg') no-repeat;
+        background: url('backgrounds/secesc-575.jpg') no-repeat;
         background-size: auto;
         position:  relative;
-
-        /*background: rgb(18,30, 49) ;*/
-
         text-align-last: center;
       }
 
@@ -41,7 +38,7 @@
         padding-top: 4px;
         text-align: center;
         font-family: fantasy;
-        font-size: 14px;
+        font-size: 16px;
         box-sizing: content-box;
       }
 
@@ -57,23 +54,176 @@
 }
 
 /*Dispositivos small (telefones em modo paisagem, com 576px ou mais)*/
-@media (min-width: 576px) and (max-width: 767.98px) { }
+@media (min-width: 576px) and (max-width: 767.98px) {
+    body{
+        background: url('backgrounds/secesc-767.jpg') no-repeat;
+        background-size: cover;
+        position:  relative;
+        text-align-last: center;
+      }
+
+    #Box{
+        background: white center;
+        opacity: 0.8;
+        width: 600px;
+        height: auto;
+        margin-top: 50px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        position: relative;
+        border: solid 3px rgb(26, 26, 26);
+        box-sizing: content-box;
+
+    }
+
+
+    form{
+        margin-top: 17px;
+        margin-left: 7%
+    }
+
+      header{
+        background-color: #323A45;
+        opacity: 0.8;
+      }
+
+      .container{
+        height: 37px;
+        padding-top: 8px;
+        text-align: center;
+        font-family: fantasy;
+        font-size: 18px;
+        box-sizing: content-box;
+      }
+
+      #navbar, a:visited{
+          text-decoration: none;      
+          color: white;
+      }
+
+      #Box>a{
+          text-decoration: none;
+          color: black;
+      }
+}
 
  /*Dispositivos médios (tablets com 768px ou mais)*/
-@media (min-width: 768px) and (max-width: 991.98px) { }
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    body{
+        background: url('backgrounds/secesc-991.jpg') no-repeat;
+        background-size: cover;
+        position:  relative;
+        text-align-last: center;
+      }
+
+    #Box{
+        background: white center;
+        opacity: 0.8;
+        width: 750px;
+        height: auto;
+        margin-top: 50px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        position: relative;
+        border: solid 3px rgb(26, 26, 26);
+        box-sizing: content-box;
+
+    }
+
+
+    form{
+        margin-top: 17px;
+        margin-left: 7%
+    }
+
+      header{
+        background-color: #323A45;
+        opacity: 0.8;
+      }
+
+      .container{
+        height: 43px;
+        padding-top: 8px;
+        text-align: center;
+        font-family: fantasy;
+        font-size: 20px;
+        box-sizing: content-box;
+      }
+
+      #navbar, a:visited{
+          text-decoration: none;      
+          color: white;
+      }
+
+      #Box>a{
+          text-decoration: none;
+          color: black;
+      }
+}
 
 /*Dispositivos large (desktops com 992px ou mais)*/
-@media (min-width: 992px) and (max-width: 1199.98px) { }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    body{
+        background: url('backgrounds/secesc.jpg') no-repeat;
+        background-size: cover;
+        position:  relative;
+        text-align-last: center;
+      }
+
+    #Box{
+        background: white center;
+        opacity: 0.8;
+        width: 700px;
+        height: auto;
+        margin-top: 50px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        position: relative;
+        border: solid 3px rgb(26, 26, 26);
+        box-sizing: content-box;
+
+    }
+
+
+    form{
+        margin-top: 17px;
+        margin-left: 7%
+    }
+
+      header{
+        background-color: #323A45;
+        opacity: 0.8;
+      }
+
+      .container{
+        height: 48px;
+        padding-top: 8px;
+        text-align: center;
+        font-family: fantasy;
+        font-size: 22px;
+        box-sizing: content-box;
+      }
+
+      #navbar, a:visited{
+          text-decoration: none;      
+          color: white;
+      }
+
+      #Box>a{
+          text-decoration: none;
+          color: black;
+      }
+}
 
  /*Dispositivos extra large (desktops grandes com 1200px ou mais)*/
 @media (min-width: 1200px) { 
     body{
-        background: url('backgrounds/Background.jpg') no-repeat;
+        background: url('backgrounds/secesc.jpg') no-repeat;
         background-size: cover;
         position:  relative;
-
-        /*background: rgb(18,30, 49) ;*/
-
         text-align-last: center;
       }
 

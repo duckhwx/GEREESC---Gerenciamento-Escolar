@@ -1,52 +1,264 @@
-body{
-    background: url('backgrounds/Background.jpg') no-repeat;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    position:  relative;
-    
-    /*background: rgb(18,30, 49) ;*/
-    
-    text-align-last: center;
-  }
-  
-  #logout{
-      background: url('icones/logout.png') no-repeat;
-      float: right;
-  }
-  
-#Box{
-    background: white center;
-    opacity: 0.8;
-    width: 800px;
-    height: auto;
-    margin-top: 50px;
-    margin-right: auto;
-    margin-bottom: 0px;
-    margin-left: auto;
-    position: relative;
-    border: solid 3px rgb(26, 26, 26);
-    
+/*Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
+@media (max-width: 575.98px) {
+    body{
+        background: url('backgrounds/background-575.jpg') no-repeat;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        position:  relative;
+        text-align-last: center;
+      }
+
+      #logout{
+          background: url('icones/logout.png') no-repeat;
+          float: right;
+      }
+
+    #Box{
+        background: white center;
+        opacity: 0.8;
+        width: 400px;
+        height: auto;
+        margin-top: 50px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        position: relative;
+        border: solid 3px rgb(26, 26, 26);
+
+    }
+
+
+    form{
+        margin-top: 17px;
+        margin-left: 7%
+    }
+
+      header{
+        background-color: #323A45;
+        opacity: 0.8;
+      }
+
+      .container{
+        text-align: center;
+        font-family: fantasy;
+        font-size: 24px;
+      }
+
+      #navbar, a:visited{
+          color: white;
+      }
+
 }
 
+/*Dispositivos small (telefones em modo paisagem, com 576px ou mais)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    body{
+        background: url('backgrounds/background-767.jpg') no-repeat;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        position:  relative;
+        text-align-last: center;
+      }
 
-form{
-    margin-top: 17px;
-    margin-left: 7%
+      #logout{
+          background: url('icones/logout.png') no-repeat;
+          float: right;
+      }
+
+    #Box{
+        background: white center;
+        opacity: 0.8;
+        width: 500px;
+        height: auto;
+        margin-top: 50px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        position: relative;
+        border: solid 3px rgb(26, 26, 26);
+
+    }
+
+
+    form{
+        margin-top: 17px;
+        margin-left: 7%
+    }
+
+      header{
+        background-color: #323A45;
+        opacity: 0.8;
+      }
+
+      .container{
+        text-align: center;
+        font-family: fantasy;
+        font-size: 26px;
+      }
+
+      #navbar, a:visited{
+          color: white;
+      }
+
 }
 
-  header{
-    background-color: #323A45;
-    opacity: 0.8;
-  }
+/*Dispositivos médios (tablets com 768px ou mais)*/
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    body{
+        background: url('backgrounds/background-991.jpg') no-repeat;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        position:  relative;
+        text-align-last: center;
+      }
 
-  .container{
-    text-align: center;
-    font-family: fantasy;
-    font-size: 32px;
-  }
-  
-  #navbar, a:visited{
-      color: white;
-  }
-  
+      #logout{
+          background: url('icones/logout.png') no-repeat;
+          float: right;
+      }
+
+    #Box{
+        background: white center;
+        opacity: 0.8;
+        width: 750px;
+        height: auto;
+        margin-top: 50px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        position: relative;
+        border: solid 3px rgb(26, 26, 26);
+
+    }
+
+
+    form{
+        margin-top: 17px;
+        margin-left: 7%
+    }
+
+      header{
+        background-color: #323A45;
+        opacity: 0.8;
+      }
+
+      .container{
+        text-align: center;
+        font-family: fantasy;
+        font-size: 28px;
+      }
+
+      #navbar, a:visited{
+          color: white;
+      }
+
+}
+
+/*Dispositivos large (desktops com 992px ou mais)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    body{
+        background: url('backgrounds/background.jpg') no-repeat;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        position:  relative;
+        text-align-last: center;
+      }
+
+      #logout{
+          background: url('icones/logout.png') no-repeat;
+          float: right;
+      }
+
+    #Box{
+        background: white center;
+        opacity: 0.8;
+        width: 750px;
+        height: auto;
+        margin-top: 50px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        position: relative;
+        border: solid 3px rgb(26, 26, 26);
+
+    }
+
+
+    form{
+        margin-top: 17px;
+        margin-left: 7%
+    }
+
+      header{
+        background-color: #323A45;
+        opacity: 0.8;
+      }
+
+      .container{
+        text-align: center;
+        font-family: fantasy;
+        font-size: 30px;
+      }
+
+      #navbar, a:visited{
+          color: white;
+      }
+
+}
+
+ /*Dispositivos extra large (desktops grandes com 1200px ou mais)*/
+@media (min-width: 1200px) { 
+    body{
+        background: url('backgrounds/background.jpg') no-repeat;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        position:  relative;
+        text-align-last: center;
+      }
+
+      #logout{
+          background: url('icones/logout.png') no-repeat;
+          float: right;
+      }
+
+    #Box{
+        background: white center;
+        opacity: 0.8;
+        width: 800px;
+        height: auto;
+        margin-top: 50px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        position: relative;
+        border: solid 3px rgb(26, 26, 26);
+
+    }
+
+
+    form{
+        margin-top: 17px;
+        margin-left: 7%
+    }
+
+      header{
+        background-color: #323A45;
+        opacity: 0.8;
+      }
+
+      .container{
+        text-align: center;
+        font-family: fantasy;
+        font-size: 32px;
+      }
+
+      #navbar, a:visited{
+          color: white;
+      }
+
+}

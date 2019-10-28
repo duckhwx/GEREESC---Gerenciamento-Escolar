@@ -2,14 +2,14 @@ $(document).ready(function () {
     $('#button-cadastro').click(function (event) {
         event.preventDefault();
 
-        $('#modalCadUp').html('Cadastrar Refeição');
+        $('#tituloModal').html('Cadastrar Tipo de Produto');
         $('#buttonSubmit').val('Cadastrar');
-        $('#divModal').modal('show');
+        $('#modalTipoProduto').modal('show');
         $('#formulario').submit(function () {
 
             $.ajax({
                 method: 'post',
-                url: 'gerenciar-refeicao.php',
+                url: 'verificacao.php',
                 data: {
                     nome: $('input[name=nome]').val(),
                     acao: 'cadastrar'
@@ -24,9 +24,8 @@ $(document).ready(function () {
 
     $('.button-atualizar').on("click", function () {
         var buttonId = $(this).val();
-
         $.ajax({
-            url: 'gerenciar-refeicao.php',
+            url: 'verificacao.php',
             method: 'post',
             data: {
                 id: buttonId,
@@ -34,19 +33,19 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (data) {
-                $('#nome').val(data.nome);
+                $('#nome').val(data.nomeTipoProduto);
             }
         });
 
-        $('#modalCadUp').html('Atualizar Refeição');
+        $('#tituloModal').html('Atualizar Tipo de Produto');
         $('#buttonSubmit').val('Atualizar');
-        $('#divModal').modal('show');
+        $('#modalTipoProduto').modal('show');
         $('#formulario').on("submit", function (event) {
             event.preventDefault();
 
             $.ajax({
                 method: 'post',
-                url: 'gerenciar-refeicao.php',
+                url: 'verificacao.php',
                 data: {
                     id: buttonId,
                     nome: $('input[name=nome]').val(),
@@ -59,11 +58,11 @@ $(document).ready(function () {
         });
     });
 
-    $('.button-excluir').on('click', function () {
+    $('.button-deletar').on('click', function () {
         var buttonId = $(this).val();
 
         $.ajax({
-            url: 'gerenciar-refeicao.php',
+            url: 'verificacao.php',
             method: 'post',
             data: {
                 id: buttonId,
@@ -71,18 +70,18 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (data) {
-                $('#nomeRefDel').html(data.nome);
-                $('#idExcluir').val(data.id);
+                $('#nomeTipoDeProdutoDel').html(data.nomeTipoProduto);
+                $('#idTipoProdutoDel').val(data.id);
             }
         });
-        $('#delRef').modal('show');
+        $('#delTipoProduto').modal('show');
     });
     $('#buttonConfirmar').on('click', function () {
         $.ajax({
-            url: 'gerenciar-refeicao.php',
+            url: 'verificacao.php',
             method: 'post',
             data: {
-                id: $('#idExcluir').val(),
+                id: $('#idTipoProdutoDel').val(),
                 acao: 'excluir'
             },
             success: function () {

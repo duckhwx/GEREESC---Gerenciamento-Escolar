@@ -1,117 +1,122 @@
 <?php
+require_once '../../conexao.php';
+require_once '../../funcoes-de-cabecalho.php';
 
-    require_once '../../conexao.php';
-    require_once '../../funcoes-de-cabecalho.php';
-    
-    cabecalhoNutricionista('../../estilo/styleNutricionista.css', 'Produtos', '../escola/', '../relatorio/', '.', '../refeicao/', '../cardapio/', '../../login/logOut.php');
-    
-    sectionTop();
-    
-    $select = "select * from Produto";
-    
-    $query = mysqli_query($conexao, $select);
-    
-    $row =1;
-    
-    ?>
-        <script>
-      $(document).ready(function(){
-          $('.veiz').on("click", function(){
-              var buttonId = $(this).val();
+cabecalhoNutricionista('../../estilo/styleNutricionista.css', 'Produtos', '../escola/', '../relatorio/', '.', '../refeicao/', '../cardapio/', '../../login/logOut.php');
 
-            $.ajax({
-                 method: 'post',
-                 url: 'validar-produto.php',
-                 data: {
-                     id: buttonId,
-                     acao: 'getById'
-                 },
-                 dataType: "json",
-                 success: function(data){
-                     $("#nomeProduto").html(data.nomeProduto);
-                    
-                 }
-              });
-              $("#modalProduto").modal("show");
-          });
-      });
-  </script>
+sectionTop();
+
+$select = "select * from Produto";
+$query = mysqli_query($conexao, $select);
+$row = 1;
+?>
+<script src="requisicao-ajax.js"></script>
 
 <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col"></th>
-      <th scope="col" width=60%>Nome</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col" width=60%>Nome</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
 
-    <?php  while($table = mysqli_fetch_array($query)){
-            $idEscola = $table['id'];
+        <?php
+        while ($table = mysqli_fetch_array($query)) {
+            $idProduto = $table['id'];
             $nome = $table['nomeProduto'];
-            
-    ?>
-    <tr>
-      <th scope="row"><?php echo $row; ?></th>
-      <td><?php echo $nome; ?></td>
-      <td><button  class="btn btn-light veiz" value="<?php echo $idEscola; ?>" ><img src='https://image.flaticon.com/icons/svg/65/65000.svg' width=26px/></button></td>
-      <td><button  class="btn btn-light veiz" value="<?php echo $idEscola; ?>" ><img src='https://image.flaticon.com/icons/svg/1001/1001371.svg' width=24px/></button></td>
-      <td><button  class="btn btn-light veiz" value="<?php echo $idEscola; ?>" ><img src='https://image.flaticon.com/icons/svg/32/32178.svg' width=24px/></button></td>
-    </tr>
-  
-    <?php
-    $row += 1;
-    }
-    ?>
-  </tbody>
+            ?>
+            <tr>
+                <th scope="row"><?php echo $row; ?></th>
+                <td><?php echo $nome; ?></td>
+                <td><button class="btn btn-light button-visualizar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/65/65000.svg' width=26px/></button></td>
+                <td><button class="btn btn-light button-alterar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/1001/1001371.svg' width=26px/></button></td>
+                <td><button class="btn btn-light button-deletar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/32/32178.svg' width=26px/></button></td>
+            </tr>
+
+            <?php
+            $row += 1;
+        }
+        ?>
+    </tbody>
 </table>
-    
-    
 
-<a href="cadastrar-produto.php" class="btn btn-dark m-2">Cadastrar Produto</a>  <a href="TipoDeProduto/index.php" class="btn btn-dark m-2">Tipo de Produto</a>
-    
-    
-    <?php
-    sectionBaixo();
-    ?>
+<button class="btn btn-dark m-2" id="button-cadastro">Cadastrar Produto</button> <a href="TipoDeProduto/index.php" class="btn btn-dark m-2">Tipo de Produto</a>
+<div id="debug"></div>
 
-<!-- Modal -->
-<div class="modal fade" id="modalProduto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalNome"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <div id="nomeProduto"></div>
-      </div>
-    </div>
-  </div>
-</div>    
 <?php
-    rodape();
-    
-    
-    
-//echo '<table>';
-//    
-//        while($table = mysqli_fetch_array($query)){
-//            $id = $table['id'];
-//            $nome = $table['nomeProduto'];
-//            
-//
-//            echo"$nome  "
-//                . "<a href='visualizar-produto.php?id=$id'>Visualizar</a>  "
-//                . "<a href='atualizar-produto.php?id=$id'>Atualizar</a>  "
-//                . "<a href='validar-produto.php?id=$id&acao=excluir'>Excluir</a>"
-//                . "<br>";
-//            $row += 1;
-//        }
-//    echo "</table>";
+sectionBaixo();
+?>
 
+<!-- Modal Cadastro de Produto-->
+<div class="modal fade" id="modalProduto" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-group m-2" id="formulario" method="post">
+                    <label>Nome</label>
+                    <input type="text" id="nome" required class="form-control m-2" name="nome">
+                    <label>Marca</label>
+                    <input type="text" id="marca" required class="form-control m-2" name="marca">
+                    <label>Peso</label>
+                    <input type="number" id="peso" required class="form-control m-2" name="peso">
+                    <label>Tipo de Peso</label>
+                    <select name="tipoDePeso" class="custom-select" id="tipoDePeso"></select>
+                    <label>Tipo de Produto</label>
+                    <select name="tipoDeProduto" class="custom-select" id="tipoDeProduto"></select>
+                    <input type="submit" id="buttonSubmit" class="btn btn-dark m-2">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Visualizar Produto -->
+<div class="modal fade" id="modalVisualizar" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Visualizar Produto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>Nome: <span id="nomeProduto"></span></div>
+                <div>Tipo: <span id="tipoProduto"></span></div>
+                <div>Marca: <span id="marcaProduto"></span></div>
+                <div>Peso: <span id="pesoProduto"></span> <span id="tipoDePeso"></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Excluir produto-->
+<div class="modal fade" id="delProduto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Excluir Tipo de Produto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="m-2">Tens certeza de que desejas deletar: <span id="nomeProdutoDel"></span></div>
+                <input type="hidden" id="idProdutoDel">
+                <button class="btn btn-dark" id="buttonConfirmar">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>   
+<?php
+rodape();
