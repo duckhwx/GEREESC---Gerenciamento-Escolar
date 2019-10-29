@@ -16,6 +16,11 @@ $(document).ready(function () {
             success: function (data) {
                 $('#nome').html(data.nomeSecEsc);
                 $('#escola').html(data.nomeEscola);
+                if (data.cargo === 'Diretor') {
+                    $('#cargo').html('Diretor');
+                } else if (data.cargo === 'Secretario') {
+                    $('#cargo').html('Secretário');
+                }
                 $('#cpf').html(data.cpf);
                 $('#rg').html(data.rg);
                 $('#endereco').html(data.endereco);

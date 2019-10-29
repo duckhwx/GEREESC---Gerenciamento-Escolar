@@ -1,5 +1,7 @@
 $(document).ready(function () {
+//Função que lida com o cadastro de um produto
     $('#button-cadastro').click(function () {
+//Requisição dos tipos de produtos e pesos existentes para colocalos como Options de um Select
         $.ajax({
             method: 'post',
             url: 'verificacao.php',
@@ -19,38 +21,68 @@ $(document).ready(function () {
             }
         });
 
+//Preparação do modal para Cadastro de um produto
         $('#tituloModal').html('Cadastrar Produto');
         $('#buttonSubmit').val('Cadastrar');
         $('#modalProduto').modal('show');
-        $('#formulario').submit(function () {
-            event.preventDefault();
+    });
 
-            console.log($.ajax({
-                method: 'post',
-                url: 'verificacao.php',
-                data: {
-                    nome: $('input[name=nome]').val(),
-                    marca: $('input[name=marca]').val(),
-                    peso: $('input[name=peso]').val(),
-                    tipoDePeso: $('select[name=tipoDePeso]').val(),
-                    tipoDeProduto: $('select[name=tipoDeProduto]').val(),
-                    acao: 'cadastrar'
-                },
-                success: function () {
-                    //location.reload();
-                }
-            }));
+//função que indentifica se o formulário é de Cadastro ou Atualização com base no Button clicado
+    $('#buttonSubmit').on('click', function(){
+        if($(this).val() === "Cadastrar"){
+//Função que lida com a submissão dos dados colocados no formulario de cadastro
+            $('#formulario').submit(function () {
+                event.preventDefault();
+                console.log($.ajax({
+                    method: 'post',
+                    url: 'verificacao.php',
+                    data: {
+                        nome: $('input[name=nome]').val(),
+                        marca: $('input[name=marca]').val(),
+                        peso: $('input[name=peso]').val(),
+                        tipoDePeso: $('select[name=tipoDePeso]').val(),
+                        tipoDeProduto: $('select[name=tipoDeProduto]').val(),
+                        acao: 'cadastrar'
+                    },
+                    success: function () {
+                       location.reload();
+                    }
+                }));
 
-        });
+            });
+        } else if ($(this).val() === "Atualizar"){
+//Função que indica quando um formulário é confirmado
+            $('#formulario').on("submit", function (event) {
+                event.preventDefault();
+                
+                console.log($.ajax({
+                    method: 'post',
+                    url: 'verificacao.php',
+                    data: {
+                        id: $('#idProdutoUp').val(),
+                        nome: $('input[name=nome]').val(),
+                        marca: $('input[name=marca]').val(),
+                        peso: $('input[name=peso]').val(),
+                        tipoDePeso: $('select[name=tipoDePeso]').val(),
+                        tipoDeProduto: $('select[name=tipoDeProduto]').val(),
+                        acao: 'atualizar'
+                    },
+                    success: function () {
+                        location.reload();
+                    }
+                }));
+            });
+        }
     });
 
 //Função que limpa todos os campos dos inputs toda vez que o modal de cadastro/atualização é fechado
-    $('#modalProduto').on('hide.bs.modal', function(){
-       $('#formulario input').val("");
-       $('#tipoDePeso').empty();
-       $('#tipoDeProduto').empty();
+    $('#modalProduto').on('hide.bs.modal', function () {
+        $('#formulario input').val("");
+        $('#tipoDePeso').empty();
+        $('#tipoDeProduto').empty();
+        $('#buttonSubmit').val("");
     });
-    
+
 //Função que trabalha com alterar os dados de um produto
     $('.button-alterar').on("click", function () {
         var buttonId = $(this).val();
@@ -68,51 +100,31 @@ $(document).ready(function () {
                 $('#nome').val(data.nomeProduto);
                 $('#marca').val(data.marca);
                 $('#peso').val(data.peso);
-                
+                $('#idProdutoUp').val(data.id);
+
 //Funções que percorrem os os tipos de produtos e pesos existentes para coloca-los como Options nos Selects
                 $.each(JSON.parse(data[6].tipoPeso), function (index, value) {
-                    if(value.nomeTipoPeso === data.nomeTipoPeso){
-                       $('#tipoDePeso').append('<option value=' + value.id + ' selected>' + value.nomeTipoPeso + '</option>'); 
+                    if (value.nomeTipoPeso === data.nomeTipoPeso) {
+                        $('#tipoDePeso').append('<option value=' + value.id + ' selected>' + value.nomeTipoPeso + '</option>');
                     } else {
-                       $('#tipoDePeso').append('<option value=' + value.id + '>' + value.nomeTipoPeso + '</option>');
+                        $('#tipoDePeso').append('<option value=' + value.id + '>' + value.nomeTipoPeso + '</option>');
                     }
                 });
-                
+
                 $.each(JSON.parse(data[6].tipoProduto), function (index, value) {
-                     if(value.nomeTipoProduto === data.nomeTipoProduto){
-                       $('#tipoDeProduto').append('<option value=' + value.id + ' selected>' + value.nomeTipoProduto + '</option>');
+                    if (value.nomeTipoProduto === data.nomeTipoProduto) {
+                        $('#tipoDeProduto').append('<option value=' + value.id + ' selected>' + value.nomeTipoProduto + '</option>');
                     } else {
-                       $('#tipoDeProduto').append('<option value=' + value.id + '>' + value.nomeTipoProduto + '</option>');
+                        $('#tipoDeProduto').append('<option value=' + value.id + '>' + value.nomeTipoProduto + '</option>');
                     }
                 });
             }
         });
-        
+
 //Alteração nos dados do modal para indicar que é a atualização do produto
         $('#tituloModal').html('Atualizar Produto');
         $('#buttonSubmit').val('Atualizar');
         $('#modalProduto').modal('show');
-//Função que indica quando um formulário é confirmado
-        $('#formulario').on("submit", function (event) {
-            event.preventDefault();
-//Submissão dos dados informados com AJAX
-            console.log($.ajax({
-                method: 'post',
-                url: 'verificacao.php',
-                data: {
-                    id: buttonId,
-                    nome: $('input[name=nome]').val(),
-                    marca: $('input[name=marca]').val(),
-                    peso: $('input[name=peso]').val(),
-                    tipoDePeso: $('select[name=tipoDePeso]').val(),
-                    tipoDeProduto: $('select[name=tipoDeProduto]').val(),
-                    acao: 'atualizar'
-                },
-                success: function () {
-                    //location.reload();
-                }
-            }));
-        });
     });
 
 //Função que trabalha com a visualização dos dados de um produto selecionado
@@ -154,11 +166,11 @@ $(document).ready(function () {
                 $('#idProdutoDel').val(data.id);
             }
         });
-        
+
 //Modal que aparece pedindo a confirmação da exclusão
         $('#delProduto').modal('show');
     });
-    
+
 //Função que identifica a confirmação da exclusão de um produto
     $('#buttonConfirmar').on('click', function () {
         $.ajax({

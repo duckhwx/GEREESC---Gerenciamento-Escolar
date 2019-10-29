@@ -33,7 +33,11 @@ sectionTop();
     ?>
 </tbody>
 </table>
+
+<div id="linkButton">
 <a href="validar-secesc.php?acao=cadastrar" class="btn btn-dark m-2">Cadastrar</a>
+</div>
+
 <script src="requisicao-ajax.js"></script>
 <?php
 sectionBaixo();
@@ -52,6 +56,7 @@ sectionBaixo();
             <div class="modal-body">
                 <div>Nome: <span id="nome"></span></div>
                 <div>Escola: <span id="escola"></span></div>
+                <div>Cargo: <span id="cargo"></span></div>
                 <div>CPF: <span id="cpf"></span></div>
                 <div>RG: <span id="rg"></span></div>
                 <div>Endereço: <span id="endereco"></span></div>

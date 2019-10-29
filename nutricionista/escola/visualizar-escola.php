@@ -8,7 +8,7 @@ $idEscola = $_GET['id'];
 $query = mysqli_query($conexao, "select * from Escola where id='$idEscola'");
 $table = mysqli_fetch_array($query);
 
-$nome = $table['nome'];
+$nome = $table['nomeEscola'];
 $endereco = $table['endereco'];
 $cnpj = $table['cnpj'];
 $email = $table['email'];

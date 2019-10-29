@@ -34,7 +34,7 @@ echo "<table class='table'>"
  . "</thead>"
  . "<tbody>";
 //Imprimir os dados dinamicamente em tabelas do estoque 
-while ($table = mysqli_fetch_array($queryEstoque)) {
+while ($table = mysqli_fetch_array($queryEstoque)) {    
     $idEstoque = $table['estoque_id'];
     $idProduto = $table['id'];
     $nomeProduto = $table['nomeProduto'];
@@ -57,8 +57,11 @@ echo "</tbody>"
  . "</table>";
 ?>
 
+<div id="linkButton">
 <button class="btn btn-dark m-2" id="buttonAdicionar">Alocar Produto</button>
 <a class="btn btn-dark m-2" href="movimentacoes.php" id="buttonHistorico">Historico de Movimentações</a>
+</div>
+
 <script src="requisicao-ajax.js"></script>
 <?php
 sectionBaixo();

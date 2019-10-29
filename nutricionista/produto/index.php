@@ -10,8 +10,6 @@ $select = "select * from Produto";
 $query = mysqli_query($conexao, $select);
 $row = 1;
 ?>
-<script src="requisicao-ajax.js"></script>
-
 <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -36,7 +34,7 @@ $row = 1;
                 <td><button class="btn btn-light button-alterar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/1001/1001371.svg' width=26px/></button></td>
                 <td><button class="btn btn-light button-deletar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/32/32178.svg' width=26px/></button></td>
             </tr>
-
+            
             <?php
             $row += 1;
         }
@@ -44,9 +42,11 @@ $row = 1;
     </tbody>
 </table>
 
+<div id="linkButton">
 <button class="btn btn-dark m-2" id="button-cadastro">Cadastrar Produto</button> <a href="TipoDeProduto/index.php" class="btn btn-dark m-2">Tipo de Produto</a>
-<div id="debug"></div>
+</div>
 
+<script src="requisicao-ajax.js"></script>
 <?php
 sectionBaixo();
 ?>
@@ -63,6 +63,7 @@ sectionBaixo();
             </div>
             <div class="modal-body">
                 <form class="form-group m-2" id="formulario" method="post">
+                    <input type="hidden" id="idProdutoUp">
                     <label>Nome</label>
                     <input type="text" id="nome" required class="form-control m-2" name="nome">
                     <label>Marca</label>

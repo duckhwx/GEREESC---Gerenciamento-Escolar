@@ -35,9 +35,8 @@ $_SESSION['id_anoEscolar'] = $_GET['id'];
                         </button>
                     </div>
                     <div class="modal-body">
-                        <span id="msg-cadastro"></span>
         <!--Formulario-->
-                        <form id="adicionarRefeicao" method="post">
+                        <form id="adicionarRefeicao" class="m-0 mt-3" method="post">
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Refeição</label>
                                 <div class="col-sm-10">
@@ -45,7 +44,7 @@ $_SESSION['id_anoEscolar'] = $_GET['id'];
 //metodo que pega os dados da classe Refeição e os exibe em um select HTML
                             $select = "select * from Refeicao";
                             $query = mysqli_query($conexao, $select);
-                            echo "<select name='refeicoes'>";
+                            echo "<select name='refeicoes' class='custom-select'>";
                             while ($tbl = mysqli_fetch_array($query)) {
                                 $idEscola = $tbl['id'];
                                 $refeicao = $tbl['nome'];
@@ -63,8 +62,8 @@ $_SESSION['id_anoEscolar'] = $_GET['id'];
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-dark" name="cadastrar" id="cadastrar">Cadastrar</button>
+                        <div class="col-sm">
+                            <button type="submit" class="btn btn-dark mt-1" name="cadastrar" id="cadastrar">Cadastrar</button>
                         </div>
                     </div>
                 </form>
@@ -85,6 +84,7 @@ $_SESSION['id_anoEscolar'] = $_GET['id'];
             </div>
             <div class="modal-body">
                 <h6>Refeição: <span id='ref'></span></h6>
+                <input type="hidden" id="idRefExcluir">
                 <button class='btn btn-danger' id="buttonExcluir">Excluir</button>
             </div>
         </div>

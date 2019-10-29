@@ -272,6 +272,10 @@
     h3{
         margin: 3% 3%;
     }
+    
+    #linkButton>a{
+        color: white !important;
+    }
 
     [type="date"]::-webkit-inner-spin-button {
         display: none;

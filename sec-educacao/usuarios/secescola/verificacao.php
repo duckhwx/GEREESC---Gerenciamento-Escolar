@@ -3,7 +3,11 @@
 require_once '../../../conexao.php';
 
 if(!empty($_GET['acao'])){
-    if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar') {
+    $acao = $_GET['acao'];
+    
+//Condição que indica se o tipo de ação é cadastrar ou Atualizar, é nescessario pois apenas estas funções tem dados
+//a serem pegos por POST
+    if($acao == 'cadastrar' or $acao == 'atualizar') {
 
     $nome = $_POST['nome'];
     $cpf = $_POST['cpf'];
@@ -13,9 +17,10 @@ if(!empty($_GET['acao'])){
     $nascimento = $_POST['nascimento'];
     $numero = $_POST['numero'];
     $celular = $_POST['celular'];
+    $cargo = $_POST['cargo'];
     $escola = $_POST['escola'];
 
-        if($_GET['acao'] == 'cadastrar') {
+        if($acao == 'cadastrar') {
         $insert = "insert into SecEsc values (default, "
             . "'$nome', "
             . "'$login', "
@@ -27,6 +32,7 @@ if(!empty($_GET['acao'])){
             . "'$nascimento', "
             . "'$numero', "
             . "'$celular', "
+            . "'$cargo', "
             . "$escola)";
 
         $query = mysqli_query($conexao, $insert);
@@ -37,7 +43,7 @@ if(!empty($_GET['acao'])){
                 header("Location: validar-secesc.php");
             }
         } 
-        else if ($_GET['acao'] == 'atualizar') {
+        else if ($acao == 'atualizar') {
             $idEscola = $_GET['id'];
             $update = "update SecEsc set nomeSecEsc='$nome',"
             . " cpf='$cpf',"
@@ -47,6 +53,7 @@ if(!empty($_GET['acao'])){
             . " dataDeNascimento='$nascimento',"
             . " numero='$numero',"
             . " celular='$celular',"
+            . " cargo='$cargo',"
             . " escola_id=$escola where id=$idEscola";
 
             $query = mysqli_query($conexao, $update);
@@ -66,7 +73,7 @@ else if (!empty($_POST['acao'])) {
     if ($acao == 'getById') {
         $id = $_POST['idSecEsc'];
 
-        $select = "select Escola.nomeEscola, SecEsc.nomeSecEsc, SecEsc.cpf, SecEsc.rg, SecEsc.endereco, SecEsc.email, SecEsc.dataDeNascimento, SecEsc.numero, SecESc.celular from SecEsc "
+        $select = "select Escola.nomeEscola, SecEsc.nomeSecEsc, SecEsc.cpf, SecEsc.rg, SecEsc.endereco, SecEsc.email, SecEsc.dataDeNascimento, SecEsc.numero, SecESc.celular, SecEsc.cargo from SecEsc "
                 . "inner join Escola on SecEsc.escola_id = Escola.id where SecEsc.id = $id";
         $query = mysqli_query($conexao, $select);
         $table = mysqli_fetch_array($query);

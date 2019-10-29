@@ -29,20 +29,9 @@
                     },
                     eventClick: function (info) {
                         $('#ref').html(info.event.title);
+                        $('#idRefExcluir').val(info.event.id);
                         
                         $('#excluir').modal('show');
-                        $('#buttonExcluir').on('click', function(){
-                           $.ajax({
-                             method: 'post',
-                             url: 'excluir-refeicao.php',
-                             data:{
-                                 id: info.event.id
-                             },
-                             success: function(){
-                                 location.reload();
-                             }
-                           });
-                        });
                     }
                 });
 
@@ -59,13 +48,26 @@
                             data: new FormData(this),
                             contentType: false,
                             processData: false,
-//função que retorna o reloado da página caso dê sucesso ou mensagem de Erro caso dê erro.
+//função que retorna o reload da página caso dê sucesso ou mensagem de Erro caso dê erro.
                             success: function(retorna){
                                 if(retorna['sit']){
                                     location.reload();
                                 }else {
                                     $('#msg-cadastro').html(retorna['msg']);
                                 }
+                            }
+                        });
+                    });
+//Função responsavel pela confirmação da exclusão de uma refeição
+                    $('#buttonExcluir').on('click', function () {
+                        $.ajax({
+                            method: 'post',
+                            url: 'excluir-refeicao.php',
+                            data: {
+                                id: $('#idRefExcluir').val()
+                            },
+                            success: function () {
+                                location.reload();
                             }
                         });
                     });

@@ -18,7 +18,7 @@ sectionTop()
     while ($tbl = mysqli_fetch_array($query)) {
 
         echo "<tr><td>"
-        . "Nome: " . $tbl['nome'] . ""
+        . "".$tbl['nome'].""
         . "</td></tr>";
     }
     ?>

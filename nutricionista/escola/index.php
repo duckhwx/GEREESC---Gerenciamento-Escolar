@@ -7,51 +7,71 @@ $_SESSION["idEscola"] = NULL;
 
 
 cabecalhoNutricionista('../../estilo/styleNutricionista.css', 'Escola', '.', '../relatorio/', '../produto/', '../refeicao/', '../cardapio/', '../../login/logOut.php');
-    
+
 sectionTop();
 
-$row =1;
-
 //Seleção de todas as escolas cadastradas
-$select = "select * from Escola";
+$select = "select Escola.id, Escola.nomeEscola from Escola";
 $query = mysqli_query($conexao, $select);
 ?>
 
 <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col"></th>
-      <th scope="col" width=60%>Nome</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col" colspan="2"></th>
+        </tr>
+    </thead>
+    <tbody>
 
-<?php
+        <?php
 //Exibição dinamica de todas as escolas
-    while($table = mysqli_fetch_array($query)){
-        $idEscola = $table['id'];
-        $nome = $table['nome'];
+        while ($table = mysqli_fetch_array($query)) {
+            $idEscola = $table['id'];
+            $nome = $table['nomeEscola'];
             ?>
 
-    <tr>
-      <th scope="row"><?php echo $row; ?></th>
-      <td><?php echo $nome; ?></td>
-      <td><button  class="btn btn-light m-2"><a href="visualizar-escola.php?id=<?php echo $idEscola; ?>" ><img src='https://image.flaticon.com/icons/svg/65/65000.svg' width=26px/></button></td>
-      <td><button  class="btn btn-light m-2"><a href="estoque/estoque.php?id=<?php echo $idEscola; ?>" ><img src='../../estilo/icones/box.png' width=24px/></button></td>
-      
-    </tr>
-  
-    <?php
-    $row += 1;
-    }
-    ?>
-    
- </tbody>
+            <tr>
+                <td><?php echo $nome; ?></td>
+                <td><button class="btn btn-light m-2 visualizar-escola" value="<?php echo $idEscola; ?>"><img src='https://image.flaticon.com/icons/svg/65/65000.svg' width=26px/></button></td>
+                <td><button class="btn btn-light m-2"><a href="estoque/estoque.php?id=<?php echo $idEscola; ?>" ><img src='../../estilo/icones/box.png' width=26px/></button></td>
+            </tr>
+            <?php
+        }
+        ?>
+    </tbody>
 </table>
 
-<?php 
+<script src="requisicao-ajax.js"></script>
+
+<?php
 sectionBaixo();
+?>
+<!-- Modal Visualizar Escola-->
+<div class="modal fade" id="modalVisualizar" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloModal">Visualizar Escola</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>Nome: <span id="nomeEscola"></span></div>
+                <div>Endereço: <span id="endereco"></span></div>
+                <div>Número: <span id="numero"></span></div>
+                <div>CNPJ: <span id="cnpj"></span></div>
+                <div>E-Mail: <span id="email"></span></div>
+                <div>Telefone: <span id="telefone"></span></div>
+                <div>Numero de Alunos</div>
+                <div>Ensino Infantil: <span id="infantil"></span></div>
+                <div>Ensino Fundamental: <span id="fundamental"></span></div>
+                <div>Diretor: <span id="diretor"></span></div>
+                <div>Secretários: <span id="secretarios"></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
 rodape();

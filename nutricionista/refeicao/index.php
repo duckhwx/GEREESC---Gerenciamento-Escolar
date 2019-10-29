@@ -19,7 +19,7 @@ sectionTop();
     while ($tbl = mysqli_fetch_array($query)) {
 
         echo "<tr><td>"
-        . "Nome: " . $tbl['nome'] . ""
+        . "" . $tbl['nome'] . ""
         . "</td>"
         . "<td>"
         . "<button class='btn btn-light button-atualizar' value='" . $tbl['id'] . "'>"
@@ -58,7 +58,8 @@ sectionBaixo();
                 <form class="form-group m-2" id="formulario" method="post">
                     <label>Nome</label>
                     <input type="text" id="nome" required class="form-control m-2" name="nome">
-                    <input type="submit" value="" id="buttonSubmit" class="btn btn-dark m-2">
+                    <input type="hidden" id="idRefeicaoUp">
+                    <input type="submit" id="buttonSubmit" class="btn btn-dark m-2">
                 </form>
             </div>
         </div>

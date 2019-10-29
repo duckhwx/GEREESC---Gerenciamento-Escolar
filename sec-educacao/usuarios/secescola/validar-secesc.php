@@ -22,6 +22,7 @@ if ($acao == 'cadastrar') {
     $dataNascimento = $table['dataDeNascimento'];
     $numero = $table['numero'];
     $celular = $table['celular'];
+    $cargo = $table['cargo'];
     $escola_id = $table['escola_id'];
 }
 
@@ -30,11 +31,11 @@ sectionTop();
 ?>
 <h3><?php echo $acaoHTML ?> Secretário da Escola</h3>
 <form method="post" action="verificacao.php?acao=<?php
-if (!empty($id)) {
-    echo $acao . "&id=$id";
-} else {
-    echo $acao;
-}
+    if (!empty($id) and $acao == "atualizar") {
+        echo $acao . "&id=$id";
+    } else {
+        echo $acao;
+    }
 ?>">
     <label>Nome</label>
     <input type="text" class="form-control" required maxlength="64" name="nome"<?php
@@ -84,6 +85,19 @@ if (!empty($id)) {
             echo " value='" . $celular . "'";
     }
     ?>>
+    <label class="d-flex justify-content-center">Cargo</label>
+        <select name="cargo" class="custom-select">
+            <option value="Diretor" <?php 
+                if(!empty($cargo) and $cargo == "Diretor"){
+                    echo "selected";
+                }
+            ?>>Diretor</option>
+            <option value="Secretario"<?php 
+                if(!empty($cargo) and $cargo == "Secretario"){
+                    echo "selected";
+                }
+            ?>>Secretário</option>
+        </select>
     <label class="d-flex justify-content-center">Escola</label>
     <?php
         $selectEscolas = "select * from Escola";
@@ -102,13 +116,7 @@ if (!empty($id)) {
     }
     echo "</select>";
     ?>
-    <input type="submit" class="btn btn-dark mt-4" value="<?php
-        if (!empty($id)) {
-            echo $acaoHTML;
-        } else {
-            echo $acaoHTML;
-        }
-    ?>">
+    <input type="submit" class="btn btn-dark mt-4" value="<?php echo $acaoHTML; ?>">
 </form>
 <?php
 sectionBaixo();

@@ -144,5 +144,7 @@ insert into Nutricionista values
 (default, 'Nutricionista', 'nut', '123', '12181281221', '21214', 'rua tun', 'nut@gmail.com', '1990-09-09', '42', '44546325');
 
 insert into SecEsc values
-(default, 'SecEsc01', 'esc1', '123', '111111111', '11111', 'rua 11', 'secesc1@gmail.com', '1990-09-09', '11', '11111111', 1),
-(default, 'SecEsc02', 'esc2', '123', '222222222', '22222', 'rua 22', 'secesc2@gmail.com', '1990-09-09', '22', '22222222', 2);
+(default, 'SecEsc01', 'esc1', '123', '111111111', '11111', 'rua 11', 'secesc1@gmail.com', '1990-09-09', '11', '11111111', 'Diretor', 1),
+(default, 'SecEsc02', 'esc2', '123', '222222222', '22222', 'rua 22', 'secesc2@gmail.com', '1990-09-09', '22', '22222222', 'Diretor', 2);
+
+update Escola set nome='escola-1', endereco='Rua 01', cnpj='010101', email='escola01@gmail', numero='01', telefone='01011010', alunosEnsInfantil=300, alunosEnsFundamental=250 where id=3

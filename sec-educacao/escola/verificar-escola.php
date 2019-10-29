@@ -1,69 +1,104 @@
 <?php
-
+require_once "../../funcoes-de-cabecalho.php";
 require_once "../../conexao.php";
 
-//Condição que indica se o tipo de ação é cadastrar ou Atualizar, é nescessario pois apenas estas funções tem dados
-//a serem pegos por POST
-if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
-    
-$nome = $_POST["nomeEscola"];
-$endereco = $_POST["enderecoEscola"];
-$cnpj = $_POST["cnpjEscola"];
-$email = $_POST["emailEscola"];
-$numero = $_POST["numeroEscola"];
-$telefone = $_POST["telefoneEscola"];
-$alunosEnsInfantil = $_POST["alunosEnsInfantil"];
-$alunosEnsFundamental = $_POST["alunosEnsFundamental"];
+$acao = $_GET['acao'];
 
-        if(empty($nome) or empty($endereco) or empty($numero) or empty($cnpj) or empty($email) or empty($telefone)){
-            header("Location: cadastrar-escola.php");
-        }
-        //Condição selecionada caso foi selecionado o cadastro de uma escola
-         else if($_GET['acao'] == 'cadastrar'){
-                //submissão dos dados ao banco
-                $insert = "insert into Escola values(default, '$nome', '$endereco', '$cnpj', '$email', '$numero', '$telefone', $alunosEnsInfantil, $alunosEnsFundamental)";
-                $query = mysqli_query($conexao, $insert);
-                
-                if($query){
-                    header("Location: index.php");
-                } else {
-                    header("Location: cadastrar-escola.php");
-                }
-        }
+//Identificar se o formulario deve ser de cadastro ou Atualização
+if($acao == "cadastrar"){
+    $acaoHTML = "Cadastrar";
+} else if ($acao == "atualizar"){
+    $acaoHTML = "Atualizar";
+    $idEscola = $_GET['id'];
     
-    //Condição selecionada caso foi selecionado a atualização de uma escola
-    else if($_GET['acao'] == 'atualizar'){
-       //Submissão dos dados atualizados para a escola selecionada
-       $idEscola = $_GET['id'];
-       $update = "update Escola set nome='$nome', "
-               . "endereco='$endereco', "
-               . "cnpj='$cnpj', "
-               . "email='$email', "
-               . "numero='$numero', "
-               . "telefone='$telefone', "
-               . "alunosEnsInfantil=$alunosEnsInfantil, "
-               . "alunosEnsFundamental=$alunosEnsFundamental where id=$idEscola";
-       $query = mysqli_query($conexao, $update);
-       
-       if($query){
-           header("Location: index.php");
-       } else {
-           header("Location: atualizar-escola.php");
-           }
-      }
-    }
+//Seleção dos dados da escola para colocar nos formulários.
+    $select = "select * from Escola where id = $idEscola";
+    $query = mysqli_query($conexao, $select);
+    $table = mysqli_fetch_array($query);
     
-    //Condição selecionada caso foi selecionado a exclusão de uma escola
-    else if($_GET['acao'] == 'excluir'){
-        //Submissão da exclusão da escola ao banco
-        $idEscola = $_GET['id'];
-        $delete = "delete from Escola where id=$idEscola";
-        $query = mysqli_query($conexao, $delete);
-        
-        if($query){
-            header("Location: index.php");
-        } else {
-            echo "Erro";
-        }
-        
+    $id = $table['id'];
+    $nomeEscola = $table['nomeEscola'];
+    $endereco = $table['endereco'];
+    $cnpj = $table['cnpj'];
+    $email = $table['email'];
+    $numero = $table['numero'];
+    $telefone = $table['telefone'];
+    $alunosEnsInfantil = $table['alunosEnsInfantil'];
+    $alunosEnsFundamental = $table['alunosEnsFundamental'];
+}
+
+cabecalhoSecEdu("../../estilo/style.css", " $acaoHTML Escola", "../escola/", "../usuarios/cadastrar-usuarios.php", "../produto/", "../refeicao/", "../cardapio/", "../../login/logOut.php");
+    
+sectionTop();
+?>
+<h3><?php echo $acaoHTML ?> Escola</h3>
+
+<form method="post" action="verificacao.php?acao=<?php
+    if (!empty($id) and $acao == "atualizar") {
+        echo $acao . "&id=$id";
+    } else {
+        echo $acao;
     }
+?>">
+    
+    <label>Nome</label>
+    <input type="text" class="form-control" required maxlength="100" name="nomeEscola" <?php
+        if(!empty($nomeEscola)){
+            echo "value='".$nomeEscola."'";
+        }
+    ?>>
+    
+    <label>Endereco</label>
+    <input type="text" class="form-control" required maxlength="255" name="endereco" <?php
+        if(!empty($endereco)){
+            echo "value='".$endereco."'";
+        }
+    ?>>
+    
+    <label>Numero</label>
+    <input type="text" class="form-control" required maxlength="8" name="numero" <?php
+        if(!empty($numero)){
+            echo "value='".$numero."'";
+        }
+    ?>>
+    
+    <label>CNPJ</label>
+    <input type="text" class="form-control" required maxlength="12" name="cnpj" <?php
+        if(!empty($cnpj)){
+            echo "value='".$cnpj."'";
+        }
+    ?>>
+    
+    <label>E-mail</label>
+    <input type="email" class="form-control" required maxlength="255" name="email" <?php
+        if(!empty($email)){
+            echo "value='".$email."'";
+        }
+    ?>>
+    
+    <label>Telefone</label>
+    <input type="text" class="form-control" required maxlength="12" name="telefone" <?php
+        if(!empty($telefone)){
+            echo "value='".$telefone."'";
+        }
+    ?>>
+    
+    <div class="mt-3">Numero de Alunos:</div>
+    <label>Ensino Infantil</label>
+    <input type="number" class="form-control" maxlength="4" name="alunosEnsInfantil" <?php
+        if(!empty($alunosEnsInfantil)){
+            echo "value='".$alunosEnsInfantil."'";
+        }
+    ?>>
+    
+    <label>Ensino Fundamental</label>
+    <input type="number" class="form-control" maxlength="4" name="alunosEnsFundamental" <?php
+        if(!empty($alunosEnsFundamental)){
+            echo "value='".$alunosEnsFundamental."'";
+        }
+    ?>>
+    <input type="submit" class="btn btn-dark mt-4" value="<?php echo $acaoHTML ?>">
+</form>
+<?php 
+sectionBaixo();
+rodape();

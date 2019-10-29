@@ -251,6 +251,9 @@
 
     }
 
+    #linkButton>a{
+        color: white !important;
+    }  
 
     form{
         margin-top: 17px;
