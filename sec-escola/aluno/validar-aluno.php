@@ -1,59 +1,110 @@
 <?php
-require_once "../../conexao.php";
+require_once '../../funcoes-de-cabecalho.php';
+require_once '../../conexao.php';
 
-if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
+$acao = $_GET['acao'];
+
+//Identifica a ação para mudar adaptar os campos para a atualização ou cadastro
+if ($acao == 'cadastrar') {
+    $acaoHTML = "Cadastrar";
     
-    $nome = $_POST['nome']; 
-    $login = $_POST['login'];
-    $senha = $_POST['senha'];
-    $nascimento = $_POST['nascimento'];
-    $anoEscolar = $_POST['anoEscolar']; 
-    $escola = $_POST['escola'];
-            
-    if($_GET['acao'] == 'cadastrar'){
-        $insert = "insert into aluno values (default, "
-                . "'$nome', "
-                . "'$login', "
-                . "'$senha',"
-                . "'$nascimento',"
-                . "$anoEscolar, "
-                . "$escola)";
-        
-        $query = mysqli_query($conexao, $insert);
-        if($query){
-            header("Location: index.php");
-        } else{
-            var_dump($insert);
-            //header("Location: cadastrar-aluno.php");
-        }
-    } else if($_GET['acao'] == 'atualizar'){
-        $id_anoEscolar = $_POST['anoEscolar'];
-        $id_escola = $_POST['escola'];
-        
-        $update = "update aluno set nome='$nome',"
-                . " login='$login',"
-                . " senha='$senha',"
-                . " dataDeNascimento='$nascimento',"
-                . " anoEscolar_id='$anoEscolar where id=$id_anoEscolar',"
-                . " escola_id=$escola where id=$id_escola";
-        
-        $query = mysqli_query($conexao, $update);
-        
-        if($query){
-            header('Location: index.php');
-        } else {
-            header('Location: atualizar-aluno.php');
-        }
-    }
-    
-} else if($_GET['acao'] == 'excluir'){
-    
-        $idEscola = $_GET['id'];
-        $delete = "delete from aluno where id=$idEscola";
-        $query = mysqli_query($conexao, $delete);
-        if($query){
-            header("Location: index.php");
-        } else {
-            header("Location: index.php");
-        }
+} else if ($acao == 'atualizar') {
+    $acaoHTML = "Atualizar";
+    $id = $_GET['id'];
+
+    $select = "select * from Aluno where id=$id";
+    $query = mysqli_query($conexao, $select);
+    $table = mysqli_fetch_array($query);
+
+    $nomeAluno = $table['nomeAluno'];
+    $login = $table['login'];
+    $senha = $table['senha'];
+    $dataNascimento = $table['dataDeNascimento'];
+    $anoEscolar_id = $table['anoEscolar_id'];
+    $escola_id = $table['escola_id'];
 }
+
+$selectEscolas = "select Escola.id, Escola.nomeEscola from Escola";
+$selectAnosEscolares =  "select AnoEscolar.id, AnoEscolar.nomeAnoEscolar from AnoEscolar";
+
+$queryEscolas = mysqli_query($conexao, $selectEscolas);
+$queryAnosEscolares = mysqli_query($conexao, $selectAnosEscolares);
+
+cabecalhoSecEsc("../../estilo/styleSecesc.css", "$acaoHTML Aluno", "index.php", "../escola/", "../estoque/", "../cardapio/", "../../login/logOut.php");
+sectionTop();
+?>
+<h3><?php echo $acaoHTML?> Aluno</h3>
+<hr>
+
+    <form method="post" action="verificacao.php?acao=<?php
+        if (!empty($id) and $acao == "atualizar") {
+            echo $acao . "&id=$id";
+        } else {
+            echo $acao;
+        }
+    ?>">
+    
+        <label>Nome</label>
+        <input type="text" class="form-control" required maxlength="64" name="nome"<?php
+            if(!empty($nomeAluno)){
+                echo " value='".$nomeAluno."'";
+            }
+        ?>>
+
+        <label>Login</label>
+        <input type="text" class="form-control" required maxlength="64" name="login"<?php
+            if(!empty($login)){
+                echo " value='".$login."'";
+            }
+        ?>>
+
+        <label>Senha</label>
+        <input type="password" class="form-control" required maxlength="64" name="senha"<?php
+            if(!empty($senha)){
+                echo " value='".$senha."'";
+            }
+        ?>>
+
+        <label>Data de Nascimento</label>
+        <input type="date" class="form-control" required  name="nascimento"<?php
+            if(!empty($dataNascimento)){
+                echo " value='".$dataNascimento."'";
+            }
+        ?>>
+        
+        <label  class="d-flex justify-content-center">Ano Escolar</label>
+            <?php
+                echo "<select name='anoEscolar' class='custom-select'>";
+                while($tableAnosEscolares = mysqli_fetch_array($queryAnosEscolares)){
+                    $idAnoEscolar = $tableAnosEscolares['id'];
+                    $nomeAnoEscolar = $tableAnosEscolares['nomeAnoEscolar'];
+
+                    if($id == $anoEscolar_id){
+                        echo "<option value='$idAnoEscolar' selected>$nomeAnoEscolar</option>";
+                    } else {
+                        echo "<option value='$idAnoEscolar'>$nomeAnoEscolar</option>";
+                    }
+                }
+                echo "</select>";
+            ?>
+        
+        <label  class="d-flex justify-content-center">Escola</label>
+            <?php
+                echo "<select name='escola' class='custom-select'>";
+                    while($tableEscolas = mysqli_fetch_array($queryEscolas)){
+                        $idEscola = $tableEscolas['id'];
+                        $nomeEscola = $tableEscolas['nomeEscola'];
+
+                        if($id == $escola_id){
+                            echo "<option value='$idEscola' selected>$nomeEscola</option>";
+                        } else {
+                            echo "<option value='$idEscola'>$nomeEscola</option>";
+                        }
+                    }
+                echo "</select>";
+            ?>
+        <input type="submit" value='Cadastrar' class="btn btn-dark mt-4">
+</form>
+<?php
+sectionBaixo();
+rodape();

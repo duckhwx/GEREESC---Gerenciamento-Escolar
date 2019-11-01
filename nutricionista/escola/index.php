@@ -32,9 +32,9 @@ $query = mysqli_query($conexao, $select);
             ?>
 
             <tr>
-                <td><?php echo $nome; ?></td>
+                <td class="py-4"><?php echo $nome; ?></td>
                 <td><button class="btn btn-light m-2 visualizar-escola" value="<?php echo $idEscola; ?>"><img src='https://image.flaticon.com/icons/svg/65/65000.svg' width=26px/></button></td>
-                <td><button class="btn btn-light m-2"><a href="estoque/estoque.php?id=<?php echo $idEscola; ?>" ><img src='../../estilo/icones/box.png' width=26px/></button></td>
+                <td><a href="estoque/estoque.php?id=<?php echo $idEscola; ?>" ><button class="btn btn-light m-2"><img src='../../estilo/icones/box.png' width=26px/></button></a></td>
             </tr>
             <?php
         }

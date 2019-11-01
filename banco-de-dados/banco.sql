@@ -32,12 +32,13 @@ create table SecEsc (
     dataDeNascimento date,
     numero varchar(8),
     celular varchar(15),
+    cargo enum('Diretor', 'Secretario');
     escola_id int references Escola(id)
 );
 
 create table Aluno (
     id int primary key auto_increment,
-    nome varchar(64),
+    nomeAluno varchar(64),
     login varchar(64),
     senha varchar(64),
     dataDeNascimento date,
@@ -61,7 +62,7 @@ create table Escola (
 
 create table AnoEscolar (
     id int primary key auto_increment,
-    nome varchar(64)
+    nomeAnoEscolar varchar(64)
 );
 
 create table Estoque (
@@ -146,5 +147,3 @@ insert into Nutricionista values
 insert into SecEsc values
 (default, 'SecEsc01', 'esc1', '123', '111111111', '11111', 'rua 11', 'secesc1@gmail.com', '1990-09-09', '11', '11111111', 'Diretor', 1),
 (default, 'SecEsc02', 'esc2', '123', '222222222', '22222', 'rua 22', 'secesc2@gmail.com', '1990-09-09', '22', '22222222', 'Diretor', 2);
-
-update Escola set nome='escola-1', endereco='Rua 01', cnpj='010101', email='escola01@gmail', numero='01', telefone='01011010', alunosEnsInfantil=300, alunosEnsFundamental=250 where id=3

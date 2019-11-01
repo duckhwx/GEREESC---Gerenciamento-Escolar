@@ -59,7 +59,7 @@ echo "</tbody>"
 
 <div id="linkButton">
 <button class="btn btn-dark m-2" id="buttonAdicionar">Alocar Produto</button>
-<a class="btn btn-dark m-2" href="movimentacoes.php" id="buttonHistorico">Historico de Movimentações</a>
+<a class="btn btn-dark m-2 buttonLink" href="movimentacoes.php" id="buttonHistorico">Historico</a>
 </div>
 
 <script src="requisicao-ajax.js"></script>

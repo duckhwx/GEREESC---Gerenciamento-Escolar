@@ -4,38 +4,79 @@ require_once '../../login/funcoesdelogin.php';
 require_once '../../funcoes-de-cabecalho.php';
 
 
-    cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Escola', '../aluno/', '.', '../estoque/', '../cardapio/','../../login/logOut.php');
-    sectionTop();
-    
-    //Seleção dos dados da escola selecionada no index
-    $query = mysqli_query($conexao, "select * from escola where id=".$_SESSION['idEscola']);
-    $table = mysqli_fetch_array($query);
-    $nome = $table['nome'];
-    $endereco = $table['endereco'];
-    $cnpj = $table['cnpj'];
-    $email = $table['email'];
-    $numero = $table['numero'];
-    $telefone = $table['telefone'];
-    $alunosEnsInfantil = $table['alunosEnsInfantil'];
-    $alunosEnsFundamental = $table['alunosEnsFundamental'];
-    ?>
-    
-                <p>Nome: <?=$nome?></p>
-                <p>Endereço: <?=$endereco?></p>
-                <p>CNPJ: <?=$cnpj?></p>
-                <p>E-mail: <?=$email?></p>
-                <p>Numero: <?=$numero?></p>
-                <p>Telefone: <?=$telefone?></p>
-                <p>Numero de Alunos</p>
-                <p>Ensino Infantil: <?=$alunosEnsInfantil?></p>
-                <p>Ensino Fundamental: <?=$alunosEnsFundamental?></p>
-                <br><br>
+cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Escola', '../aluno/', '.', '../estoque/', '../cardapio/', '../../login/logOut.php');
+sectionTop();
 
-                <a href="../index.php" class="btn btn-dark m-2">Voltar</a>
+
+//Seleção dos dados da escola selecionada no index
+$query = mysqli_query($conexao, "select * from escola where id=" . $_SESSION['idEscola']);
+
+    echo "<h3>Escola</h3>"
+    . "<hr>";
+    if (mysqli_num_rows($query) == 1) {
+
+        $table = mysqli_fetch_array($query);
+        $nome = $table['nomeEscola'];
+        $endereco = $table['endereco'];
+        $cnpj = $table['cnpj'];
+        $email = $table['email'];
+        $numero = $table['numero'];
+        $telefone = $table['telefone'];
+        $alunosEnsInfantil = $table['alunosEnsInfantil'];
+        $alunosEnsFundamental = $table['alunosEnsFundamental'];
+        
+        $selectSecEsc = "select SecEsc.nomeSecEsc, SecEsc.cargo from SecEsc where SecEsc.escola_id = ".$_SESSION['idEscola'];
+        $querySecEsc = mysqli_query($conexao, $selectSecEsc);
+        
+        $secretarios = [];
+        
+        if($querySecEsc){
+            while($tableSecEsc = mysqli_fetch_array($querySecEsc)){
+                $nomeSecEsc = $tableSecEsc['nomeSecEsc'];
+                $cargo = $tableSecEsc['cargo'];
+
+                if($cargo == "Diretor"){
+                    $diretor = $nomeSecEsc;
+                } else {
+                    $secretarios[] = [
+                        "nome" => $nomeSecEsc
+                    ];
+                }
+            }  
+        }
+        
+        
+         echo "<div id='escola' class='m-4'>"
+                . "<div>Nome: <span>$nome</span></div>"
+                . "<div>Endereço: <span>$endereco</span></div>"
+                . "<div>Número: <span>$numero</span></div>"
+                . "<div>CNPJ: <span>$cnpj</span></div>"
+                . "<div>E-Mail: <span>$email</span></div>"
+                . "<div>Telefone: <span>$telefone</span></div>"
+                . "<div class=' mt-3 border-bottom subTitulos'>Numero de Alunos</div>"
+                . "<div>Ensino Infantil: <span>$alunosEnsInfantil</span></div>"
+                . "<div>Ensino Fundamental: <span>$alunosEnsFundamental</span></div>"
+                 . "<div class=' mt-3 border-bottom subTitulos'>Secretários</div>";
+                    if(!empty($diretor)){
+                        echo "<div>Diretor: <span>$diretor</span></div>";
+                    } else {
+                        echo "<div>Diretor: <span>---</span></div>";
+                    }
+
+             echo "<div>Secretários: ";
+                    if(!empty($secretarios)){
+                        foreach ($secretarios as $secretario) {
+                            echo "<span>".$secretario['nome']."</span>";
+                        }
+                    } else {
+                        echo "<span>---</span>";
+                    }
+                echo "</div>"
+            . "</div>";
+         
+    } else {
+        echo "<h3 class='font-weight-normal'> Nenhuma Escola alocada a este secretário</h3>";
+    }
     
-    
-    
-<?php    
-    sectionBaixo();
-    rodape();
-?>
+sectionBaixo();
+rodape();

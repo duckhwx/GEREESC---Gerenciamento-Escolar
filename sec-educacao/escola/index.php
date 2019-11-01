@@ -27,7 +27,7 @@ $query = mysqli_query($conexao, $select);
         $idEscola = $table['id'];
         $nome = $table['nomeEscola'];
         
-        echo"<tr><td>$nome</td>"
+        echo"<tr><td class='py-4'>$nome</td>"
             . "<td><button class='btn btn-light m-2 visualizar-escola' value='$idEscola'><img src='../../estilo/icones/eye.png' width=26px/></button></td>"
             . "<td><a class='btn btn-light m-2' href='verificar-escola.php?id=$idEscola&acao=atualizar'><img src='../../estilo/icones/edit.png' width=26px/></a></td>"
             . "<td><a class='btn btn-light m-2' href='estoque/estoque.php?id=$idEscola'><img src='../../estilo/icones/box.png' width=26px/></a></td>"
@@ -39,9 +39,7 @@ $query = mysqli_query($conexao, $select);
 </tbody>
 </table>
 
-<div id="linkButton">
-<a href="verificar-escola.php?acao=cadastrar" class="btn btn-dark m-2 cadastrar-escola">Cadastrar Escola</a>
-</div>
+<a href="verificar-escola.php?acao=cadastrar" class="btn btn-dark m-2 cadastrar-escola buttonLink">Cadastrar Escola</a>
 
 <script src="requisicao-ajax.js"></script>
 <?php 

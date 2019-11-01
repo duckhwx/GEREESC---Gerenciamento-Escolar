@@ -4,8 +4,10 @@ require_once '../../../conexao.php';
 
 $acao = $_GET['acao'];
 
+//Identifica a ação para mudar adaptar os campos para a atualização ou cadastro
 if ($acao == 'cadastrar') {
     $acaoHTML = "Cadastrar";
+    
 } else if ($acao == 'atualizar') {
     $acaoHTML = "Atualizar";
     $id = $_GET['idSecEsc'];
@@ -24,12 +26,15 @@ if ($acao == 'cadastrar') {
     $celular = $table['celular'];
     $cargo = $table['cargo'];
     $escola_id = $table['escola_id'];
+    $login = $table['login'];
+    $senha = $table['senha'];
 }
 
 cabecalhoSecEdu("../../../estilo/style.css", "$acaoHTML Secretário da Escola", "../../escola/", "../cadastrar-usuarios.php", "../../produto/", "../../refeicao/", "../../cardapio/", "../../../login/logOut.php");
 sectionTop();
 ?>
 <h3><?php echo $acaoHTML ?> Secretário da Escola</h3>
+<hr>
 <form method="post" action="verificacao.php?acao=<?php
     if (!empty($id) and $acao == "atualizar") {
         echo $acao . "&id=$id";
@@ -116,6 +121,18 @@ sectionTop();
     }
     echo "</select>";
     ?>
+    <label>Login</label>
+    <input type="text" class="form-control" required maxlength="64" name="login"<?php
+        if(!empty($login)){
+            echo " value='".$login."'";
+        }
+    ?>>
+    <label>Senha</label>
+    <input type="password" class="form-control" required maxlength="64" name="senha"<?php
+        if(!empty($senha)){
+            echo " value='".$senha."'";
+        }
+    ?>>
     <input type="submit" class="btn btn-dark mt-4" value="<?php echo $acaoHTML; ?>">
 </form>
 <?php

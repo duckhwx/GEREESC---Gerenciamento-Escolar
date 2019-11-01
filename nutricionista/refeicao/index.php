@@ -12,13 +12,13 @@ sectionTop();
 <!--Table com exibição dinamica das Refeições cadastradas-->
 <table class="table">
     <thead class="thead-dark">
-    <th scope="col" colspan="3">Refeição</th>
-</thead>
+        <th scope="col" colspan="3">Refeição</th>
+    </thead>
 <tbody>
     <?php
     while ($tbl = mysqli_fetch_array($query)) {
 
-        echo "<tr><td>"
+        echo "<tr><td class='py-4'>"
         . "" . $tbl['nome'] . ""
         . "</td>"
         . "<td>"

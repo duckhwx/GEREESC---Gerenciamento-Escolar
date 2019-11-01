@@ -29,5 +29,8 @@ else if($acao == 'excluir'){
     
     $delete = "delete from Refeicao where id=$idRefeicao";
     $query = mysqli_query($conexao, $delete);
+    
+    $deleteRefCardapio = "delete from Cardapio_Refeicao where refeicao_id = $idRefeicao";
+    $queryRefDel = mysqli_query($conexao, $deleteRefCardapio);
 }
 

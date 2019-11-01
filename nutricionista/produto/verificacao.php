@@ -114,5 +114,6 @@ else if($acao == 'excluir'){
     
     $delete = "delete from Produto where id=$idProduto";
     $query = mysqli_query($conexao, $delete);
+    
 }
 

@@ -1,4 +1,4 @@
- /*Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
+/*Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
 @media (max-width: 575.98px) {
     body{
         background: url('backgrounds/imagem-575.jpg') no-repeat;
@@ -6,8 +6,8 @@
         background-size: auto;
         position: relative;
         text-align-last: center;
-      }
-      #Login{
+    }
+    #Login{
         background: white center;
         opacity: 0.5;
         width: 180px;
@@ -20,12 +20,12 @@
         border: solid 3px rgb(26, 26, 26);
         text-align: center;
         font-size: 12px;
-      }
-      #Login>input, #Login>h4{
+    }
+    #Login>input, #Login>h4{
         margin: inherit;
-      }
+    }
 
-      #avatar{
+    #avatar{
         background: url("icones/user.png") no-repeat;
         height: 50px;
         width: 50px;
@@ -34,34 +34,34 @@
         margin-left: 37%;
         margin-bottom: 25px;
 
-      }
-      
-      h4{
-          font-size: 16px;
-      }
-      
-      header{
+    }
+
+    h4{
+        font-size: 16px;
+    }
+
+    header{
         background-color: #323A45;
         opacity: 0.8;
-      }
-      #Titulo{
+    }
+    #Titulo{
         text-align: center;
         color: White;
         font-size: 20px;
-      }
-      
-      .btn{
-          width: 60px;
-          height: 30px;
-      }
-      .container{
+    }
+
+    .btn{
+        width: 60px;
+        height: 30px;
+    }
+    .container{
         text-align: left;
         font-family: Times New Roman, Sans-serif;
-      }
- 
-      .form-control{
+    }
+
+    .form-control{
         text-align-last: center;
-      }
+    }
 }
 
 /*Dispositivos small (telefones em modo paisagem, com 576px ou mais)*/
@@ -73,8 +73,8 @@
         width: 100%;
         background-size: auto;
         position: relative;
-      }
-      #Login{
+    }
+    #Login{
         background: white center;
         opacity: 0.5;
         width: 220px;
@@ -86,52 +86,52 @@
         position: relative;
         border: solid 3px rgb(26, 26, 26);
         text-align: center;
-      }
-      #Login>input, #Login>h4{
+    }
+    #Login>input, #Login>h4{
         margin: inherit;
-      }
+    }
 
-      #avatar{
+    #avatar{
         background: url("https://image.flaticon.com/icons/png/128/149/149452.png") no-repeat;
         width: 70px;
         height: 70px;
         background-size: cover;
         margin-top: 14px;
         margin-left: 35%;
-        
-      }
-      
-      h4{
-          font-size: 18px;
-      }
-      
-      header{
+
+    }
+
+    h4{
+        font-size: 18px;
+    }
+
+    header{
         background-color: #323A45;
         opacity: 0.8;
-      }
-      #Titulo{
+    }
+    #Titulo{
         text-align: center;
         color: White;
         font-size: 22px;
-      }
-      .btn{
-          width: 60px;
-          height: 30px;
-      }
-      .container{
+    }
+    .btn{
+        width: 60px;
+        height: 30px;
+    }
+    .container{
         text-align: left;
         font-family: Times New Roman, Sans-serif;
         font-size: 14px;
-  
-      }
-      .form-control{
+
+    }
+    .form-control{
         text-align-last: center;
-        }
+    }
 }
 
 /*Dispositivos médios (tablets com 768px ou mais)*/
 @media (min-width: 768px) and (max-width: 991.98px) { 
-    
+
     body{
         background: url('backgrounds/imagem-767.jpg') no-repeat;
         height: 100%;
@@ -139,8 +139,8 @@
         background-size: cover;
         position: relative;
         text-align-last: center;
-      }
-      #Login{
+    }
+    #Login{
         background: white center;
         opacity: 0.5;
         width: 280px;
@@ -152,48 +152,48 @@
         position: relative;
         border: solid 3px rgb(26, 26, 26);
         text-align: center;
-      }
-      #Login>input, #Login>h4{
+    }
+    #Login>input, #Login>h4{
         margin: inherit;
-      }
+    }
 
-      #avatar{
+    #avatar{
         background: url("https://image.flaticon.com/icons/png/128/149/149452.png") no-repeat;
         width: 130px;
         height: 130px;
         margin-top: 17px;
         margin-left: 27%;
         margin-bottom: 20px;
-      }
-      header{
+    }
+    header{
         background-color: #323A45;
         opacity: 0.8;
-      }
-      
-      h4{
-          font-size: 22px;
-      }
-      
-      #Titulo{
+    }
+
+    h4{
+        font-size: 22px;
+    }
+
+    #Titulo{
         text-align: center;
         color: White;
         font-size: 32px;
-      }
-      
-      .btn{
-          width: 60px;
-          height: 30px;
-      }
-      
-      .container{
+    }
+
+    .btn{
+        width: 60px;
+        height: 30px;
+    }
+
+    .container{
         text-align: left;
         font-family: Times New Roman, Sans-serif;
         font-size: 22px;
-  
-      }
-      .form-control{
+
+    }
+    .form-control{
         text-align-last: center;
-      }
+    }
 }
 
 /*Dispositivos large (desktops com 992px ou mais)*/
@@ -206,8 +206,8 @@
         background-size: cover;
         position: relative;
         text-align-last: center;
-      }
-      #Login{
+    }
+    #Login{
         background: white center;
         opacity: 0.5;
         width: 280px;
@@ -219,42 +219,42 @@
         position: relative;
         border: solid 3px rgb(26, 26, 26);
         text-align: center;
-      }
-      #Login>input, #Login>h4{
+    }
+    #Login>input, #Login>h4{
         margin: inherit;
-      }
+    }
 
-      #avatar{
+    #avatar{
         background: url("https://image.flaticon.com/icons/png/128/149/149452.png") no-repeat;
         width: 150px;
         height: 150px;
         margin-top: 17px;
         margin-left: 27%;
 
-      }
-      header{
+    }
+    header{
         background-color: #323A45;
         opacity: 0.8;
-      }
-      #Titulo{
+    }
+    #Titulo{
         text-align: center;
         color: White;
-        
-      }
-      .container{
+
+    }
+    .container{
         text-align: left;
         font-family: Times New Roman, Sans-serif;
         font-size: 24px;        
-      }
-      
-      .form-control{
+    }
+
+    .form-control{
         text-align-last: center;
-      }
+    }
 }
 
 /*Dispositivos extra large (desktops grandes com 1200px ou mais)*/
 @media (min-width: 1200px) {
-    
+
     body{
         background: url('backgrounds/imagem.jpg') no-repeat;
         height: 100%;
@@ -262,8 +262,9 @@
         background-size: cover;
         position: relative;
         text-align-last: center;
-      }
-      #Login{
+    }
+
+    #Login{
         background: white center;
         opacity: 0.5;
         width: 280px;
@@ -275,34 +276,34 @@
         position: relative;
         border: solid 3px rgb(26, 26, 26);
         text-align: center;
-      }
-      #Login>input, #Login>h4{
-        margin: inherit;
-      }
+    }
 
-      #avatar{
-        background: url("https://image.flaticon.com/icons/png/128/149/149452.png") no-repeat;
+    #Login>input, #Login>h4{
+        margin: inherit;
+    }
+
+    #avatar{
         width: 150px;
         height: 150px;
-        margin-top: 17px;
-        margin-left: 27%;
+        margin: 20px auto 0px auto;
+    }
 
-      }
-      header{
+    .textInput{
+        font-size: 22px;
+        margin: 5px auto 0px auto;
+    }
+
+    header{
         background-color: #323A45;
         opacity: 0.8;
-      }
-      #Titulo{
+    }
+    #Titulo{
         text-align: center;
         color: White;
-      }
-      .container{
+    }
+    .container{
         text-align: left;
         font-family: Times New Roman, Sans-serif;
         font-size: 28px;
-    }
-    .form-control{
-        text-align-last: center;
-        margin-left: 37%;
     }
 }

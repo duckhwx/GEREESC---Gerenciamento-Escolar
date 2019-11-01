@@ -19,33 +19,37 @@ if(!empty($_GET['acao'])){
     $celular = $_POST['celular'];
     $cargo = $_POST['cargo'];
     $escola = $_POST['escola'];
+    $login = $_POST['login'];
+    $senha = $_POST['senha'];
 
         if($acao == 'cadastrar') {
-        $insert = "insert into SecEsc values (default, "
-            . "'$nome', "
-            . "'$login', "
-            . "'$senha', "
-            . "'$cpf', "
-            . "'$rg', "
-            . "'$endereco', "
-            . "'$email', "
-            . "'$nascimento', "
-            . "'$numero', "
-            . "'$celular', "
-            . "'$cargo', "
-            . "$escola)";
+            $insert = "insert into SecEsc values (default, "
+                . "'$nome', "
+                . "'$login', "
+                . "'$senha', "
+                . "'$cpf', "
+                . "'$rg', "
+                . "'$endereco', "
+                . "'$email', "
+                . "'$nascimento', "
+                . "'$numero', "
+                . "'$celular', "
+                . "'$cargo', "
+                . "$escola)";
 
-        $query = mysqli_query($conexao, $insert);
+            $query = mysqli_query($conexao, $insert);
 
-            if ($query) {
-                header("Location: index.php");
-            } else {
-                header("Location: validar-secesc.php");
-            }
+                if ($query) {
+                    header("Location: ../cadastrar-usuarios.php");
+                } else {
+                    header("Location: validar-secesc.php?acao=cadastrar");
+                }
         } 
         else if ($acao == 'atualizar') {
             $idEscola = $_GET['id'];
             $update = "update SecEsc set nomeSecEsc='$nome',"
+            . " login='$login',"
+            . " senha='$senha',"
             . " cpf='$cpf',"
             . " rg='$rg',"
             . " endereco='$endereco',"
@@ -59,7 +63,7 @@ if(!empty($_GET['acao'])){
             $query = mysqli_query($conexao, $update);
 
             if ($query) {
-                header('Location: index.php');
+                header('Location: ../cadastrar-usuarios.php');
             } else {
                 header('Location: validar-secesc.php');
             }
@@ -76,7 +80,16 @@ else if (!empty($_POST['acao'])) {
         $select = "select Escola.nomeEscola, SecEsc.nomeSecEsc, SecEsc.cpf, SecEsc.rg, SecEsc.endereco, SecEsc.email, SecEsc.dataDeNascimento, SecEsc.numero, SecESc.celular, SecEsc.cargo from SecEsc "
                 . "inner join Escola on SecEsc.escola_id = Escola.id where SecEsc.id = $id";
         $query = mysqli_query($conexao, $select);
-        $table = mysqli_fetch_array($query);
+        
+        $numRows = mysqli_num_rows($query);
+        
+        if($numRows == 1){
+            $table = mysqli_fetch_array($query);
+        } else {
+            $select = "select SecEsc.nomeSecEsc, SecEsc.cpf, SecEsc.rg, SecEsc.endereco, SecEsc.email, SecEsc.dataDeNascimento, SecEsc.numero, SecESc.celular, SecEsc.cargo from SecEsc where SecEsc.id = $id";
+            $query = mysqli_query($conexao, $select);
+            $table = mysqli_fetch_array($query);
+        }
 
         echo json_encode($table);
     }

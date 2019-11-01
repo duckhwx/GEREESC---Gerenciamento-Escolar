@@ -1,70 +1,109 @@
 <?php
+require_once '../../../funcoes-de-cabecalho.php';
+require_once '../../../conexao.php';
 
-require_once "../../../conexao.php";
+$acao = $_GET['acao'];
 
-if($_GET['acao'] == 'cadastrar' or $_GET['acao'] == 'atualizar'){
+//Identifica a ação para mudar adaptar os campos para a atualização ou cadastro
+if ($acao == 'cadastrar') {
+    $acaoHTML = "Cadastrar";
     
-    $nome = $_POST['nome'];
-    $cpf = $_POST['cpf'];
-    $rg = $_POST['rg'];
-    $endereco = $_POST['endereco'];
-    $email = $_POST['email'];
-    $nascimento = $_POST['nascimento'];
-    $numero = $_POST['numero'];
-    $celular = $_POST['celular'];
-    $login = $_POST['login'];
-    $senha = $_POST['senha'];
-    
-    if($_GET['acao'] == 'cadastrar'){
-        
-        $insert = "insert into Nutricionista values (default, "
-                . "'$nome', "
-                . "'$login', "
-                . "'$senha', "
-                . "'$cpf', "
-                . "'$rg', "
-                . "'$endereco', "
-                . "'$email', "
-                . "'$nascimento', "
-                . "'$numero', "
-                . "'$celular')";
-        
-        $query = mysqli_query($conexao, $insert);
-        
-        if($query){
-            header("Location: index.php");
-        } else{
-            header("Location: cadastrar-nutricionista.php");
-        }
-    } else if($_GET['acao'] == 'atualizar'){
-        $update = "update Nutricionista set nome='$nome',"
-                . " login='$login',"
-                . " senha='$senha',"
-                . " cpf='$cpf',"
-                . " rg='$rg',"
-                . " endereco='$endereco',"
-                . " email='$email',"
-                . " dataDeNascimento='$nascimento',"
-                . " numero='$numero',"
-                . " celular='$celular' where id=1";
-        
-        $query = mysqli_query($conexao, $update);
-        
-        if($query){
-            header('Location: index.php');
-        } else {
-            header('Location: atualizar-nutricionista.php');
-        }
-    }
-    
-} else if($_GET['acao'] == 'excluir'){
-    $delete = "delete from Nutricionista where id =1";
+} else if ($acao == 'atualizar') {
+    $acaoHTML = "Atualizar";
+    $id = $_GET['id'];
 
-    $query = mysqli_query($conexao, $delete);
+    $select = "select * from Nutricionista where id=$id";
+    $query = mysqli_query($conexao, $select);
+    $table = mysqli_fetch_array($query);
 
-    if($query){
-        header("Location: index.php");
-    } else {
-        heade("Location: index.php");
-    }
+    $nomeNut = $table['nome'];
+    $cpf = $table['cpf'];
+    $rg = $table['rg'];
+    $endereco = $table['endereco'];
+    $email = $table['email'];
+    $dataNascimento = $table['dataDeNascimento'];
+    $numero = $table['numero'];
+    $celular = $table['celular'];
+    $login = $table['login'];
+    $senha = $table['senha'];
 }
+
+cabecalhoSecEdu("../../../estilo/style.css", "$acaoHTML Nutricionista", "../../escola/", "../cadastrar-usuarios.php", "../../produto/", "../../refeicao/", "../../cardapio/", "../../../login/logOut.php");
+    
+sectionTop()
+?>
+<h3><?php echo $acaoHTML; ?> Nutricionista</h3>
+
+<form method="post" action="verificacao.php?acao=<?php
+    if (!empty($id) and $acao == "atualizar") {
+      echo $acao . "&id=$id";
+  } else {
+      echo $acao;
+  }
+?>">
+    <label>Nome</label>
+    <input type="text" class="form-control" required maxlength="64" name="nome"<?php
+        if(!empty($nomeNut)){
+            echo " value='".$nomeNut."'";
+        }
+    ?>>
+    <label>CPF</label>
+    <input type="text" class="form-control" required maxlength="11" name="cpf"<?php
+        if(!empty($cpf)){
+            echo " value='".$cpf."'";
+        }
+    ?>>
+    <label>RG</label>
+    <input type="text" class="form-control" required maxlength="11" name="rg"<?php
+        if(!empty($rg)){
+            echo " value='".$rg."'";
+        }
+    ?>>
+    <label>Endereco</label>
+    <input type="text" class="form-control" required maxlength="255" name="endereco"<?php
+        if(!empty($endereco)){
+            echo " value='".$endereco."'";
+        }
+    ?>>
+    <label>E-Mail</label>
+    <input type="email" class="form-control" required maxlength="255" name="email"<?php
+        if(!empty($email)){
+            echo " value='".$email."'";
+        }
+    ?>>
+    <label>Data de Nascimento</label>
+    <input type="date" class="form-control" required  name="nascimento"<?php
+        if(!empty($dataNascimento)){
+            echo " value='".$dataNascimento."'";
+        }
+    ?>>
+    <label>Número</label>
+    <input type="text" class="form-control" required maxlength="8" name="numero"<?php
+        if(!empty($numero)){
+            echo " value='".$numero."'";
+        }
+    ?>>
+    <label>Celular</label>
+    <input type="text" class="form-control" required maxlength="15" name="celular"<?php
+        if(!empty($celular)){
+            echo " value='".$celular."'";
+        }
+    ?>>
+    <label>Login</label>
+    <input type="text" class="form-control" required maxlength="64" name="login"<?php
+        if(!empty($login)){
+            echo " value='".$login."'";
+        }
+    ?>>
+    <label>Senha</label>
+    <input type="password" class="form-control" required maxlength="64" name="senha"<?php
+        if(!empty($senha)){
+            echo " value='".$senha."'";
+        }
+    ?>>
+    <input type="submit" class="btn btn-dark m-2" value="<?php echo $acaoHTML; ?>">
+</form>
+
+<?php
+sectionBaixo();
+rodape();

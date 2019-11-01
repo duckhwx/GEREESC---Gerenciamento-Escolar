@@ -8,7 +8,6 @@ $select = "select Produto.nomeProduto, Produto.marca, Produto.peso, TipoDeProdut
         . "inner join TipoDeProduto on Produto.tipoDeProduto_id = TipoDeProduto.id "
         . "inner join TipoDePeso on Produto.tipoDePeso_id = TipoDePeso.id";
 $query = mysqli_query($conexao, $select);
-
 sectionTop();
 ?>
 <table class="table">
@@ -37,7 +36,6 @@ while($table = mysqli_fetch_array($query)){
 ?>
 </tbody>
 </table>
-<a href="../index.php" class="btn btn-dark m-2">Voltar</a>
 <?php 
 sectionBaixo();
 rodape();

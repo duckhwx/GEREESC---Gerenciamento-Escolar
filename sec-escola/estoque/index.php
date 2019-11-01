@@ -14,45 +14,48 @@ sectionTop();
                     ."where escola_id =".$_SESSION["idEscola"]." and status = 1";
     $queryEstoque = mysqli_query($conexao, $selectEstoque);
     
-    echo "<table class='table'>"
-    . "<thead class='thead-dark'>"
-    . "<tr>"
-            . "<th scope='col'>Nome</th>"
-            . "<th scope='col'>Tipo</th>"
-            . "<th scope='col'>Marca</th>"
-            . "<th scope='col'>Peso</th>"
-            . "<th scope='col'>Quantidade</th>"
-            . "<th scope='col'></th>"
-    . "</tr>"
-    . "</thead>"
-    . "<tbody>";
-//Imprimir os dados dinamicamente em tabelas do estoque 
-    while($table = mysqli_fetch_array($queryEstoque)){
-        $idEstoque = $table['estoque_id'];
-        $idProduto = $table['id'];
-        $nomeProduto = $table['nomeProduto'];
-        $nomeTipoProduto = $table['nomeTipoProduto'];
-        $marca = $table['marca'];
-        $peso = $table['peso'];
-        $nomeTipoPeso = $table['nomeTipoPeso'];
-        $quantidade = $table['quantidade'];
-            
-        echo "<tr>"
-           . "<td>$nomeProduto</td>"
-           . "<td>$nomeTipoProduto</td>"
-           . "<td>$marca</td>"
-           . "<td>$peso $nomeTipoPeso</td>"
-           . "<td>$quantidade</td>"
-           . "<td><button class='btn btn-light reduzir-produto' value='$idEstoque'><img src='../../estilo/icones/reduce.png' width='25px'/></button></td>"
-           . "</tr>";
-    }
     
-    echo "</tbody>"
-    . "</table>";
+    if(mysqli_num_rows($queryEstoque) == 0){
+        echo "<hr>"
+           . "<h3 class='font-weight-normal'>Nenhum produto alocado</h3>";
+    } else {
+        echo "<table class='table'>"
+            . "<thead class='thead-dark'>"
+            . "<tr>"
+                    . "<th scope='col'>Nome</th>"
+                    . "<th scope='col'>Tipo</th>"
+                    . "<th scope='col'>Marca</th>"
+                    . "<th scope='col'>Peso</th>"
+                    . "<th scope='col'>Quantidade</th>"
+                    . "<th scope='col'></th>"
+            . "</tr>"
+            . "</thead>"
+            . "<tbody>";
+//Imprimir os dados dinamicamente em tabelas do estoque 
+      while($table = mysqli_fetch_array($queryEstoque)){
+          $idEstoque = $table['estoque_id'];
+          $idProduto = $table['id'];
+          $nomeProduto = $table['nomeProduto'];
+          $nomeTipoProduto = $table['nomeTipoProduto'];
+          $marca = $table['marca'];
+          $peso = $table['peso'];
+          $nomeTipoPeso = $table['nomeTipoPeso'];
+          $quantidade = $table['quantidade'];
+
+          echo "<tr>"
+             . "<td class='py-4'>$nomeProduto</td>"
+             . "<td class='py-4'>$nomeTipoProduto</td>"
+             . "<td class='py-4'>$marca</td>"
+             . "<td class='py-4'>$peso $nomeTipoPeso</td>"
+             . "<td class='py-4'>$quantidade</td>"
+             . "<td><button class='btn btn-light reduzir-produto' value='$idEstoque'><img src='../../estilo/icones/reduce.png' width='25px'/></button></td>"
+             . "</tr>";
+      }
+
+      echo "</tbody>"
+      . "</table>";  
+    }
 ?>
-
-<a href="../index.php" class="btn btn-dark m-2">Voltar</a>
-
 <?php
 sectionBaixo();
 ?>

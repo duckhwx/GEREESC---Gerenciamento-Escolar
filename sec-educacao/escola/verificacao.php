@@ -105,5 +105,8 @@ else if(!empty($_POST['acao'])){
         
         $delete = "delete from Escola where id = $idEscola";
         mysqli_query($conexao, $delete);
+        
+        $setNullSecEsc = "update SecEsc set escola_id = NULL where escola_id = $idEscola";
+        $querySetNullSecEsc = mysqli_query($conexao, $setNullSecEsc);
     }
 } 

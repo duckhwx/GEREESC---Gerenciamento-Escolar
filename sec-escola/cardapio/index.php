@@ -6,9 +6,10 @@ require_once '../../funcoes-de-cabecalho.php';
 cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Cardápio', '../aluno/', '../escola/', '../estoque/', '.','../../login/logOut.php');
 sectionTop();
 ?>
-<br>
-    <a href="calendario.php?id=1">Ensino Infantil</a>
-    <a href="calendario.php?id=2">Ensino Fundamental</a>
+<h3>Cardápio</h3>
+<hr>
+<a class="btn btn-dark mx-2 my-3 buttonLink" href="calendario.php?id=1">Ensino Infantil</a>
+<a class="btn btn-dark mx-2 my-3 buttonLink" href="calendario.php?id=2">Ensino Fundamental</a>
 
 <?php
 sectionBaixo();

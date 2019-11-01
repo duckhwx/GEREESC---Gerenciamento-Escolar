@@ -18,7 +18,12 @@
                                 cachebuster: new Date().valueOf()
                             };
                         }
-                    }]
+                    }],
+                    eventClick: function (info) {
+                        $('#ref').html(info.event.title);
+                        
+                        $('#visualizar').modal('show');
+                    }
                 });
 
                 calendar.render();

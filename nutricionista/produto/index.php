@@ -28,8 +28,8 @@ $row = 1;
             $nome = $table['nomeProduto'];
             ?>
             <tr>
-                <th scope="row"><?php echo $row; ?></th>
-                <td><?php echo $nome; ?></td>
+                <th scope="row" class="py-4"><?php echo $row; ?></th>
+                <td class="py-4"><?php echo $nome; ?></td>
                 <td><button class="btn btn-light button-visualizar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/65/65000.svg' width=26px/></button></td>
                 <td><button class="btn btn-light button-alterar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/1001/1001371.svg' width=26px/></button></td>
                 <td><button class="btn btn-light button-deletar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/32/32178.svg' width=26px/></button></td>
@@ -42,9 +42,8 @@ $row = 1;
     </tbody>
 </table>
 
-<div id="linkButton">
-<button class="btn btn-dark m-2" id="button-cadastro">Cadastrar Produto</button> <a href="TipoDeProduto/index.php" class="btn btn-dark m-2">Tipo de Produto</a>
-</div>
+<button class="btn btn-dark m-2" id="button-cadastro">Cadastrar Produto</button>
+<a href="TipoDeProduto/index.php" class="btn btn-dark m-2 buttonLink">Tipo de Produto</a>
 
 <script src="requisicao-ajax.js"></script>
 <?php

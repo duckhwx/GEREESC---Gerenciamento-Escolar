@@ -22,7 +22,7 @@ $query = mysqli_query($conexao, $select);
                 $nome = $table['nomeTipoProduto'];
 
                 echo "<tr>"
-                . "<td>$nome</td>"
+                . "<td class='py-4'>$nome</td>"
                 . "<td><button class='btn btn-light button-atualizar' value='$idTipoProduto' ><img src='https://image.flaticon.com/icons/svg/1001/1001371.svg' width=26px/></button></td>"
                 . "<td><button class='btn btn-light button-deletar' value='$idTipoProduto' ><img src='https://image.flaticon.com/icons/svg/32/32178.svg' width=26px/></button></td>"
                 . "</tr>";

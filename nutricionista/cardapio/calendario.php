@@ -26,7 +26,7 @@ $_SESSION['id_anoEscolar'] = $_GET['id'];
         
         <!-- Modal De cadastro...-->
         <div class="modal fade" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Cadastrar Refeição</h5>
@@ -63,7 +63,7 @@ $_SESSION['id_anoEscolar'] = $_GET['id'];
                     </div>
                     <div class="form-group row">
                         <div class="col-sm">
-                            <button type="submit" class="btn btn-dark mt-1" name="cadastrar" id="cadastrar">Cadastrar</button>
+                            <button type="submit" class="btn btn-dark" name="cadastrar" id="cadastrar">Cadastrar</button>
                         </div>
                     </div>
                 </form>
@@ -74,7 +74,7 @@ $_SESSION['id_anoEscolar'] = $_GET['id'];
 
 <!--Modal Delete-->
 <div class="modal fade" id="excluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Refeição do Cardapio</h5>

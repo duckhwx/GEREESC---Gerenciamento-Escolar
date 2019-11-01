@@ -30,5 +30,8 @@ else if($acao == 'excluir'){
     
     $delete = "delete from TipoDeProduto where id=$idTipoProduto";
     $query = mysqli_query($conexao, $delete);
+    
+    $deleteProduto = "delete from Produto where tipoDeProduto_id = $idTipoProduto";
+    $queryDelProduto = mysqli_query($conexao, $deleteProduto);
 }
 
