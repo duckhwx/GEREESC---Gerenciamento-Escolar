@@ -69,9 +69,13 @@ create table Estoque (
     estoque_id int primary key auto_increment,
     escola_id int references Escola(id),
     produto_id int references Produto(id),
+    estoqueTransf_id int,
     quantidade int,
-    quantMal int,
-    acao enum('Adicionado', 'Retirado', 'Transferido', 'Alterado'),
+    quantAlterada int,
+    data datetime,
+    usuario_id int,
+    tipoUsuario enum('SecEdu', 'SecEsc', 'Nut', 'Aluno'),
+    acao enum('Adicionado', 'Retirado', 'TransfRed', 'TransfAdd'),
     status boolean
 );
 

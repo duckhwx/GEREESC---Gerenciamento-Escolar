@@ -60,20 +60,20 @@ sectionBaixo();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form class="form-group m-2" id="formulario" method="post">
+            <div class="modal-body modalInfo">
+                <form class="form-group my-0" id="formulario" method="post">
                     <input type="hidden" id="idProdutoUp">
-                    <label>Nome</label>
-                    <input type="text" id="nome" required class="form-control m-2" name="nome">
-                    <label>Marca</label>
-                    <input type="text" id="marca" required class="form-control m-2" name="marca">
-                    <label>Peso</label>
-                    <input type="number" id="peso" required class="form-control m-2" name="peso">
-                    <label>Tipo de Peso</label>
-                    <select name="tipoDePeso" class="custom-select" id="tipoDePeso"></select>
-                    <label>Tipo de Produto</label>
-                    <select name="tipoDeProduto" class="custom-select" id="tipoDeProduto"></select>
-                    <input type="submit" id="buttonSubmit" class="btn btn-dark m-2">
+                    <label class="pt-2">Nome</label>
+                    <input type="text" id="nome" required class="form-control" name="nome">
+                    <label class="pt-2">Marca</label>
+                    <input type="text" id="marca" required class="form-control" name="marca">
+                    <label class="pt-2">Peso</label>
+                    <input type="number" id="peso" required class="form-control" name="peso">
+                    <label class="d-block pt-2">Tipo de Peso</label>
+                    <select name="tipoDePeso" class="custom-select px-2" id="tipoDePeso"></select>
+                    <label class="d-block pt-2">Tipo de Produto</label>
+                    <select name="tipoDeProduto" class="custom-select px-2" id="tipoDeProduto"></select>
+                    <input type="submit" id="buttonSubmit" class="btn btn-dark mt-3">
                 </form>
             </div>
         </div>
@@ -90,7 +90,7 @@ sectionBaixo();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body modalInfo">
                 <div>Nome: <span id="nomeProduto"></span></div>
                 <div>Tipo: <span id="tipoProduto"></span></div>
                 <div>Marca: <span id="marcaProduto"></span></div>
@@ -110,10 +110,10 @@ sectionBaixo();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div class="m-2">Tens certeza de que desejas deletar: <span id="nomeProdutoDel"></span></div>
+            <div class="modal-body modalInfo">
+                <div class="my-2">Excluir produto: <span id="nomeProdutoDel" class="border-bottom"></span></div>
                 <input type="hidden" id="idProdutoDel">
-                <button class="btn btn-dark" id="buttonConfirmar">Confirmar</button>
+                <button class="btn btn-danger mt-2" id="buttonConfirmar">Confirmar</button>
             </div>
         </div>
     </div>

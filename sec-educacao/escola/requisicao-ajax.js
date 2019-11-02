@@ -24,7 +24,7 @@ $(document).ready(function () {
                     if (secretario.cargo === "Diretor") {
                         $('#diretor').html(secretario.nome);
                     } else if (secretario.cargo === "Secretario") {
-                        $('#secretarios').append('<span class="secretario ml-1">' + secretario.nome + '</span>');
+                        $('#secretarios').append('<div class="secretario">' + secretario.nome + '</div>');
                     }
                 });
             }
@@ -35,6 +35,7 @@ $(document).ready(function () {
 
 //Função retira os dados colocados no modal apos ele ser fechado
     $('#modalVisualizar').on('hide.bs.modal', function () {
+        $('span').empty();
         $('span').remove('.secretario');
     });
 

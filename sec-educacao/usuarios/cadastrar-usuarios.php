@@ -37,7 +37,7 @@ $querySemEscola = mysqli_query($conexao, $selectSemEscola);
                     $nome = $table['nome'];
 
                     echo "<tr>"
-                        . "<td class='py-4'>$nome</td>"
+                        . "<td>$nome</td>"
                         . "<td><button class='btn btn-light m-2 visualizar-nutricionista' value='$idNut'><img src='../../estilo/icones/eye.png' width='26px' /></button></td>"
                         . "<td><a class='btn btn-light m-2 atualizar-nutricionista' href='nutricionista/validar-nutricionista.php?acao=atualizar&id=$idNut'><img src='../../estilo/icones/edit.png' width='26px' /></a></td>"
                         . "<td><button class='btn btn-light m-2 deletar-nutricionista' value='$idNut'><img src='../../estilo/icones/delete.png' width='26px' /></button></td>"

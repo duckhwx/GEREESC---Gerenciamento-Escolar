@@ -26,8 +26,10 @@ input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-input{
+input, td{
     text-align: center;
+    vertical-align: middle !important;
+    font-weight: 400;
 }
 
 /*Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
@@ -271,7 +273,25 @@ input{
         box-sizing: content-box;
         font-size: 24px;
     }
-
+/*Estilo envolvendo os conteudos do Modal na parte de Visualização de dados*/
+    .modalInfo div{
+        font-size: 22px;
+        margin: 3px 0px;
+    }
+    
+    .modalInfo label{
+        font-size: 22px;
+        margin: 3px 0px;
+    }
+    
+    span{
+        font-size: 20px !important;
+    }
+    
+    .subTituloModal{
+        font-size: 25px !important;
+    }
+    
     tr td{
         font-size: 20px;
     }
@@ -316,7 +336,7 @@ input{
         margin: 1% 0 0 0;
     }
     
-    .container{
+    .container-fluid{
         height: 50px;
         padding-top: 8px;
         text-align: center;

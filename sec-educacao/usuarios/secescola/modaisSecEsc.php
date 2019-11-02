@@ -8,7 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body modalInfo">
                 <div>Nome: <span id="nomeSecEsc"></span></div>
                 <div>Escola: <span id="escolaSecEsc"></span></div>
                 <div>Cargo: <span id="cargoSecEsc"></span></div>
@@ -34,10 +34,10 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div>Excluir o Secretário da Educação <span id="nomeExcluirSecEsc" style="border-bottom: solid 1pt black"></span></div>
+            <div class="modal-body modalInfo">
+                <div class="my-2">Excluir o Secretário da Educação <span id="nomeExcluirSecEsc" class="border-bottom"></span></div>
                 <input type="hidden" id="idSecEsc">
-                <button class="btn btn-danger" id="excluirSecEsc">Excluir</button>
+                <button class="btn btn-danger mt-2" id="excluirSecEsc">Excluir</button>
             </div>
         </div>
     </div>

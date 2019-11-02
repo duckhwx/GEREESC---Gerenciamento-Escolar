@@ -6,48 +6,64 @@ session_start();
 cabecalhoSecEdu('../../../estilo/style.css', 'Movimentações', '../../escola/', '../../usuarios/cadastrar-usuarios.php', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
 sectionTop();
 
-$selectEstoque = "select Escola.nome, Produto.nomeProduto, Estoque.quantidade, Estoque.quantMal, Estoque.acao, Estoque.status from Estoque "
+$selectEstoque = "select Produto.nomeProduto, Estoque.quantidade, Estoque.quantAlterada, Estoque.acao, Estoque.status, Estoque.estoqueTransf_id from Estoque "
         . "inner join Escola on Estoque.escola_id = Escola.id "
         . "inner join Produto on Estoque.produto_id = Produto.id "
         . "where escola_id = ".$_SESSION["idEscola"]." "
-        . "order by Estoque.status desc";
+        . "order by Estoque.data desc";
 $queryEstoque = mysqli_query($conexao, $selectEstoque);
 
-echo "<h3 class='m-3'>Historico de Movimentações</h3>";
-echo "<div class='alert alert-light ' role='alert'>"
-    . "Nome da Escola | Produto | Quantidade Atual | Quantidade Movimentada | Ação | Status Atual"
-    . "</div>";
+echo "<h3 class='m-3'>Historico de Movimentações</h3>"
+    . "<hr>";
 while($table = mysqli_fetch_array($queryEstoque)){
-    $escNome = $table['nome'];
     $nomeProduto = $table['nomeProduto'];
     $quantidade = $table['quantidade'];
-    $quantMov = $table['quantMal'];
+    $quantMov = $table['quantAlterada'];
     $acao = $table['acao'];
     $status = $table['status'];
+    $estoqueTransf_id = $table['estoqueTransf_id'];
 
-    if($status == 0){
-        $status = 'Desativo';
-    } else if($status == 1){
-        $status = 'Ativo';
-    }
+    echo "<div class='mx-5'>";
+
     if($acao == 'Adicionado'){
-        echo "<div class='alert alert-info ' role='alert'>
-                $escNome | $nomeProduto | $quantidade | +$quantMov | $acao | $status
+        echo "<div class='adicionado historico rounded border' role='alert'>
+                 <span>$nomeProduto | $quantidade | +$quantMov | $acao</span>
              </div>";
     } 
     else if($acao == 'Retirado'){
-        echo "<div class='alert alert-danger' role='alert'>
-                $escNome | $nomeProduto | $quantidade | -$quantMov | $acao | $status
+        echo "<div class='retirado historico rounded border' role='alert'>
+                 <span>$nomeProduto | $quantidade | -$quantMov | $acao</span>
              </div>";
     }
     else if($acao == 'Transferido'){
-        echo "<div class='alert alert-dark' role='alert'>
-                $escNome | $nomeProduto | $quantidade | $quantMov | $acao | $status
+        echo "<div class='transferido historico rounded border' role='alert'>
+                 <span>$nomeProduto | $quantidade | $quantMov | $acao</span>
              </div>";
     }
+    
+    echo "</div>";
 }
 ?>
-
+<script src="requisicao-ajax.js"></script>
 <?php
 sectionBaixo();
+?>
+
+<!--Modal Adicionar--> 
+<div class="modal fade" id="modalHistorico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modalInfo">
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
 rodape();

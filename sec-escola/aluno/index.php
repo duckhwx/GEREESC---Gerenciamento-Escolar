@@ -51,7 +51,7 @@ sectionBaixo();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body modalInfo">
                 <div>Nome: <span id="nomeAluno"></span></div>
                 <div>Escola: <span id="escolaAluno"></span></div>
                 <div>Ano Escolar: <span id="anoEscolarAluno"></span></div>
@@ -71,10 +71,10 @@ sectionBaixo();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div>Excluir o Aluno <span id="nomeExcluir" style="border-bottom: solid 1pt black"></span></div>
+            <div class="modal-body modalInfo">
+                <div class="my-2">Excluir o Aluno <span id="nomeExcluir" class="border-bottom"></span></div>
                 <input type="hidden" id="idAluno">
-                <button class="btn btn-danger" id="excluir">Excluir</button>
+                <button class="btn btn-danger mt-2" id="excluir">Excluir</button>
             </div>
         </div>
     </div>

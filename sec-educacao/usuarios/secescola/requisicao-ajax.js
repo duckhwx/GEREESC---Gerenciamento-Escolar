@@ -42,6 +42,10 @@ $(document).ready(function () {
         $('#modalVisualizarSecEsc').modal('show');
     });
 
+//Função retira os dados colocados no modal apos ele ser fechado
+    $('.modal').on('hide.bs.modal', function () {
+        $('span').empty();
+    });
 
 //Identifica se o usuário aperta o button de excluir
     $('.excluir-secEsc').on('click', function () {

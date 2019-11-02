@@ -49,12 +49,12 @@ sectionBaixo();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form class="form-group m-2" id="formulario" method="post">
+            <div class="modal-body modalInfo">
+                <form class="form-group my-0" id="formulario" method="post">
                     <label>Nome</label>
-                    <input type="text" id="nome" required class="form-control m-2" name="nome">
+                    <input type="text" id="nome" required class="form-control my-2" name="nome">
                     <input type="hidden" id="idTipoProdutoUp">
-                    <input type="submit" id="buttonSubmit" class="btn btn-dark m-2">
+                    <input type="submit" id="buttonSubmit" class="btn btn-dark mt-2">
                 </form>
             </div>
         </div>
@@ -70,10 +70,10 @@ sectionBaixo();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div class="m-2">Tens certeza de que desejas deletar: <span id="nomeTipoDeProdutoDel"></span></div>
+            <div class="modal-body modalInfo">
+                <div class="my-2">Excluir o tipo de produto: <span id="nomeTipoDeProdutoDel" class="border-bottom"></span></div>
                 <input type="hidden" id="idTipoProdutoDel">
-                <button class="btn btn-dark" id="buttonConfirmar">Confirmar</button>
+                <button class="btn btn-danger my-2" id="buttonConfirmar">Excluir</button>
             </div>
         </div>
     </div>

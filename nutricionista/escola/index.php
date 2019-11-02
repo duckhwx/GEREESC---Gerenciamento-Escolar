@@ -57,7 +57,7 @@ sectionBaixo();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body modalInfo">
                 <div>Nome: <span id="nomeEscola"></span></div>
                 <div>Endereço: <span id="endereco"></span></div>
                 <div>Número: <span id="numero"></span></div>

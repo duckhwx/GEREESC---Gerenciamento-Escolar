@@ -18,6 +18,12 @@ a:link{
     cursor: pointer;
 }
 
+input, td{
+    text-align: center;
+    vertical-align: middle !important;
+    font-weight: 400;
+}
+
 /*Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
 @media (max-width: 575.98px) {
     body{
@@ -41,8 +47,7 @@ a:link{
         border: solid 3px rgb(26, 26, 26);
 
     }
-
-
+    
     form{
         margin-top: 17px;
         margin-left: 7%
@@ -268,6 +273,24 @@ a:link{
         font-size: 24px;
     }
 
+/*Estilo envolvendo os conteudos do Modal na parte de Visualização de dados*/
+    .modalInfo div{
+        font-size: 22px;
+        margin: 3px 0px;
+    }
+    
+    .modalInfo label{
+        font-size: 20px;
+    }
+    
+    span{
+        font-size: 20px !important;
+    }
+    
+    .subTituloModal{
+        font-size: 25px !important;
+    }
+    
     tr td{
         font-size: 20px;
     }
@@ -310,7 +333,7 @@ a:link{
         margin: 1% 0 0 0;
     }
     
-    .container{
+    .container-fluid{
         height: 50px;
         padding-top: 8px;
         text-align: center;

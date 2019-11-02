@@ -2,7 +2,7 @@
 require_once '../../conexao.php';
 require_once '../../funcoes-de-cabecalho.php';
 
-cabecalhoNutricionista("../../estilo/style.css", "Refeições", "../escola/", "../relatorio/", "../produto/", ".", "../cardapio/", "../../login/logOut.php");
+cabecalhoNutricionista("../../estilo/styleNutricionista.css", "Refeições", "../escola/", "../relatorio/", "../produto/", ".", "../cardapio/", "../../login/logOut.php");
 
 $select = "select * from Refeicao";
 $query = mysqli_query($conexao, $select);
@@ -54,12 +54,12 @@ sectionBaixo();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form class="form-group m-2" id="formulario" method="post">
+            <div class="modal-body modalInfo">
+                <form class="form-group my-0" id="formulario" method="post">
                     <label>Nome</label>
-                    <input type="text" id="nome" required class="form-control m-2" name="nome">
+                    <input type="text" id="nome" required class="form-control my-2" name="nome">
                     <input type="hidden" id="idRefeicaoUp">
-                    <input type="submit" id="buttonSubmit" class="btn btn-dark m-2">
+                    <input type="submit" id="buttonSubmit" class="btn btn-dark mt-2">
                 </form>
             </div>
         </div>
@@ -76,10 +76,10 @@ sectionBaixo();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div class="m-2">Tens certeza de que desejas deletar: <span id="nomeRefDel"></span></div>
+            <div class="modal-body modalInfo">
+                <div class="my-2">Excluir refeição: <span id="nomeRefDel" class="border-bottom"></span></div>
                 <input type="hidden" id="idExcluir">
-                <button class="btn btn-dark" id="buttonConfirmar">Confirmar</button>
+                <button class="btn btn-danger my-2" id="buttonConfirmar">Excluir</button>
             </div>
         </div>
     </div>

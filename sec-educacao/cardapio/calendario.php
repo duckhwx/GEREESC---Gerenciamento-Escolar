@@ -41,8 +41,8 @@ session_start();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <h6>Refeição: <span id='ref'></span></h6>
+            <div class="modal-body modalInfo">
+                <div class="my-2">Refeição: <span id='ref' class="border-bottom"></span></div>
             </div>
         </div>
     </div>

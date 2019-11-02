@@ -33,7 +33,7 @@ $(document).ready(function () {
 //Função que lida com a submissão dos dados colocados no formulario de cadastro
             $('#formulario').submit(function () {
                 event.preventDefault();
-                console.log($.ajax({
+                $.ajax({
                     method: 'post',
                     url: 'verificacao.php',
                     data: {
@@ -47,15 +47,14 @@ $(document).ready(function () {
                     success: function () {
                        location.reload();
                     }
-                }));
+                });
 
             });
         } else if ($(this).val() === "Atualizar"){
 //Função que indica quando um formulário é confirmado
             $('#formulario').on("submit", function (event) {
                 event.preventDefault();
-                
-                console.log($.ajax({
+                $.ajax({
                     method: 'post',
                     url: 'verificacao.php',
                     data: {
@@ -70,7 +69,7 @@ $(document).ready(function () {
                     success: function () {
                         location.reload();
                     }
-                }));
+                });
             });
         }
     });

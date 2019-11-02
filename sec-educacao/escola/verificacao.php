@@ -88,7 +88,7 @@ else if(!empty($_POST['acao'])){
         }
         
         array_push($tableEscola, $secretarios);
-        
+
         echo json_encode($tableEscola);
     } 
     else if ($acao == "getDataEscola"){

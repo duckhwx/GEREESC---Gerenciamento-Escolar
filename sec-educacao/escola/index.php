@@ -27,7 +27,7 @@ $query = mysqli_query($conexao, $select);
         $idEscola = $table['id'];
         $nome = $table['nomeEscola'];
         
-        echo"<tr><td class='py-4'>$nome</td>"
+        echo"<tr><td>$nome</td>"
             . "<td><button class='btn btn-light m-2 visualizar-escola' value='$idEscola'><img src='../../estilo/icones/eye.png' width=26px/></button></td>"
             . "<td><a class='btn btn-light m-2' href='verificar-escola.php?id=$idEscola&acao=atualizar'><img src='../../estilo/icones/edit.png' width=26px/></a></td>"
             . "<td><a class='btn btn-light m-2' href='estoque/estoque.php?id=$idEscola'><img src='../../estilo/icones/box.png' width=26px/></a></td>"
@@ -55,18 +55,19 @@ sectionBaixo();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body modalInfo">
                 <div>Nome: <span id="nomeEscola"></span></div>
                 <div>Endereço: <span id="endereco"></span></div>
                 <div>Número: <span id="numero"></span></div>
                 <div>CNPJ: <span id="cnpj"></span></div>
                 <div>E-Mail: <span id="email"></span></div>
                 <div>Telefone: <span id="telefone"></span></div>
-                <div>Numero de Alunos</div>
+                <div class="border-bottom mt-3 subTituloModal">Numero de Alunos</div>
                 <div>Ensino Infantil: <span id="infantil"></span></div>
                 <div>Ensino Fundamental: <span id="fundamental"></span></div>
+                <div class="border-bottom mt-3 subTituloModal">Secretários da Escola</div>
                 <div>Diretor: <span id="diretor"></span></div>
-                <div>Secretários: <span id="secretarios"></span></div>
+                <div class="row d-flex justify-content-center"><div class="col-3 mr-3">Secretários:</div> <span id="secretarios" class="col-6 pl-0" style="text-align-last: left"></span></div>
             </div>
         </div>
     </div>
@@ -82,10 +83,10 @@ sectionBaixo();
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div>Excluir a escola <span id="nomeExcluir" style="border-bottom: solid 1pt black"></span></div>
+            <div class="modal-body modalInfo">
+                <div class="my-2">Excluir a escola <span id="nomeExcluir" class="border-bottom"></span></div>
                 <input type="hidden" id="idEscola">
-                <button class="btn btn-danger my-2" id="excluirEscola">Excluir</button>
+                <button class="btn btn-danger mt-2" id="excluirEscola">Excluir</button>
             </div>
         </div>
     </div>

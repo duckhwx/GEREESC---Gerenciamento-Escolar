@@ -8,7 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body modalInfo">
                 <div>Nome: <span id="nomeNut"></span></div>
                 <div>CPF: <span id="cpfNut"></span></div>
                 <div>RG: <span id="rgNut"></span></div>
@@ -32,10 +32,10 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div>Excluir o Nutricionista <span id="nomeExcluirNut" style="border-bottom: solid 1pt black"></span></div>
+            <div class="modal-body modalInfo">
+                <div>Excluir o Nutricionista <span id="nomeExcluirNut" class="border-bottom"></span></div>
                 <input type="hidden" id="idNut">
-                <button class="btn btn-danger" id="excluirNutricionista">Excluir</button>
+                <button class="btn btn-danger mt-2" id="excluirNutricionista">Excluir</button>
             </div>
         </div>
     </div>

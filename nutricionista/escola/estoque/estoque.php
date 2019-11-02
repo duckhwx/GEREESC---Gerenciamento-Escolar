@@ -28,8 +28,6 @@ echo "<table class='table'>"
  . "<th scope='col'>Marca</th>"
  . "<th scope='col'>Peso</th>"
  . "<th scope='col'>Quantidade</th>"
- . "<th scope='col'></th>"
- . "<th scope='col'></th>"
  . "</tr>"
  . "</thead>"
  . "<tbody>";
