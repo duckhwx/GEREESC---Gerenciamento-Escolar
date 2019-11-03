@@ -74,7 +74,7 @@ create table Estoque (
     quantAlterada int,
     data datetime,
     usuario_id int,
-    tipoUsuario enum('SecEdu', 'SecEsc', 'Nut', 'Aluno'),
+    tipoUsuario enum('SecEdu', 'SecEsc', 'Nut'),
     acao enum('Adicionado', 'Retirado', 'TransfRed', 'TransfAdd'),
     status boolean
 );

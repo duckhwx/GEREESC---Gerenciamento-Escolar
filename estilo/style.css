@@ -18,10 +18,14 @@ a:link{
     cursor: pointer;
 }
 
-input, td{
+input, td, tr{
     text-align: center;
     vertical-align: middle !important;
     font-weight: 400;
+}
+
+.table thead th{
+    vertical-align: middle !important;
 }
 
 /*Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
@@ -306,12 +310,12 @@ input, td{
     }
     
 /*Estilo que lida com a página de historico de movimentações do estoque*/
-    .historico:hover{
+    .tableRowHistorico:hover{
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0.35);
     }
     
-    .historico{
+    .tableRowHistorico{
         opacity: 0.9;
         width: 100%;
         height: 50px;

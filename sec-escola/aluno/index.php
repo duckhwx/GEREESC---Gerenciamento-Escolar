@@ -25,7 +25,7 @@ while($table = mysqli_fetch_array($query)){
         $nome = $table['nomeAluno'];
         
         echo "<tr>"
-            . "<td class='py-4'>$nome</td>"
+            . "<td>$nome</td>"
             . "<td><button class='btn btn-light m-2 visualizar-aluno' value='$idAluno'><img src='../../estilo/icones/eye.png' width='26px' /></button></td>"
             . "<td><a href='validar-aluno.php?acao=atualizar&id=$idAluno'class='btn btn-light m-2'><img src='../../estilo/icones/edit.png' width='26px' /></a></td>"
             . "<td><button class='btn btn-light m-2 excluir-aluno' value='$idAluno'><img src='../../estilo/icones/delete.png' width='26px' /></button></td>"

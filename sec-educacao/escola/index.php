@@ -65,9 +65,10 @@ sectionBaixo();
                 <div class="border-bottom mt-3 subTituloModal">Numero de Alunos</div>
                 <div>Ensino Infantil: <span id="infantil"></span></div>
                 <div>Ensino Fundamental: <span id="fundamental"></span></div>
-                <div class="border-bottom mt-3 subTituloModal">Secretários da Escola</div>
-                <div>Diretor: <span id="diretor"></span></div>
-                <div class="row d-flex justify-content-center"><div class="col-3 mr-3">Secretários:</div> <span id="secretarios" class="col-6 pl-0" style="text-align-last: left"></span></div>
+                <div class='border-bottom mt-3 subTituloModal'>Diretor</div>
+                <span id="diretor"></span>
+                <div class='border-bottom mt-3 subTituloModal'>Secretários</div>
+                <div><span id="secretarios"></span></div>
             </div>
         </div>
     </div>

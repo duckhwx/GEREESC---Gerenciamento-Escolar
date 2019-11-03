@@ -18,7 +18,7 @@ sectionTop();
     <?php
     while ($tbl = mysqli_fetch_array($query)) {
 
-        echo "<tr><td class='py-4'>"
+        echo "<tr><td>"
         . "" . $tbl['nome'] . ""
         . "</td>"
         . "<td>"

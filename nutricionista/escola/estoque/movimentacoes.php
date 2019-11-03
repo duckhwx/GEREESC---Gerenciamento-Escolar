@@ -3,7 +3,7 @@ require_once "../../../funcoes-de-cabecalho.php";
 require_once "../../../conexao.php";
 session_start();
 
-cabecalhoSecEdu('../../../estilo/style.css', 'Movimentações', '../../escola/', '../../usuarios/cadastrar-usuarios.php', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
+cabecalhoNutricionista('../../../estilo/styleNutricionista.css', 'Movimentações', '../', '../../relatorio',  '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
 sectionTop();
 
 $selectEstoque = "select Produto.nomeProduto, Estoque.estoque_id, Estoque.quantidade, Estoque.quantAlterada, Estoque.acao from Estoque "

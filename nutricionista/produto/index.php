@@ -29,7 +29,7 @@ $row = 1;
             ?>
             <tr>
                 <th scope="row" class="py-4"><?php echo $row; ?></th>
-                <td class="py-4"><?php echo $nome; ?></td>
+                <td><?php echo $nome; ?></td>
                 <td><button class="btn btn-light button-visualizar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/65/65000.svg' width=26px/></button></td>
                 <td><button class="btn btn-light button-alterar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/1001/1001371.svg' width=26px/></button></td>
                 <td><button class="btn btn-light button-deletar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/32/32178.svg' width=26px/></button></td>

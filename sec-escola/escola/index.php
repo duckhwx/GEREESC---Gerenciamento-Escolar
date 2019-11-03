@@ -56,17 +56,17 @@ $query = mysqli_query($conexao, "select * from escola where id=" . $_SESSION['id
                 . "<div class=' mt-3 border-bottom subTitulos'>Numero de Alunos</div>"
                 . "<div>Ensino Infantil: <span>$alunosEnsInfantil</span></div>"
                 . "<div>Ensino Fundamental: <span>$alunosEnsFundamental</span></div>"
-                 . "<div class=' mt-3 border-bottom subTitulos'>Secretários</div>";
+                 . "<div class=' mt-3 border-bottom subTitulos'>Diretor</div>";
                     if(!empty($diretor)){
-                        echo "<div>Diretor: <span>$diretor</span></div>";
+                        echo "<div><span>$diretor</span></div>";
                     } else {
-                        echo "<div>Diretor: <span>---</span></div>";
+                        echo "<div><span>---</span></div>";
                     }
 
-             echo "<div>Secretários: ";
+             echo "<div class=' mt-3 border-bottom subTitulos'>Secretários</div>";
                     if(!empty($secretarios)){
                         foreach ($secretarios as $secretario) {
-                            echo "<span>".$secretario['nome']."</span>";
+                            echo "<div>".$secretario['nome']."</div>";
                         }
                     } else {
                         echo "<span>---</span>";

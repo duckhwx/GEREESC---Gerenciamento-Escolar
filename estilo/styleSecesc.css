@@ -26,10 +26,14 @@ input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-input, td{
+input, td, tr{
     text-align: center;
     vertical-align: middle !important;
     font-weight: 400;
+}
+
+.table thead th{
+    vertical-align: middle !important;
 }
 
 /*Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
