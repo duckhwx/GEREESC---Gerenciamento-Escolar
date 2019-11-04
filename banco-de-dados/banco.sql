@@ -129,7 +129,7 @@ create table Itens (
 
 -- Inserts e afins --
 
-insert into SecEdu values(default, "Secretário da Educação", "secEdu", "123");
+insert into SecEdu values(default, "Marcelo", "secEdu", "123");
 
 insert into TipoDePeso values
 (default, "g"),
@@ -140,3 +140,103 @@ insert into TipoDePeso values
 insert into AnoEscolar values
 (default, "Ensino Infantil"),
 (default, "Ensino Fundamental");
+
+insert into Escola values
+(default, 'EMEB Senador Francisco Benjamin Gallotti', 'Bairro Oficinas', '22365986459', 'gallotti@gmail.com', '42', '99659896', '400', '320'),
+(default, 'EEB Doutor Otto Feuerschuette', 'Capivari de Baixo', '66532659862', 'otto@gmail.com', '669', '33652369', '200', '500'),
+(default, 'Arino Bressan', 'Bairro Oficinas', '56523656941', 'arino@gmail.com', '95', '6656986', '300', '320');
+
+insert into SecEsc values
+(default, 'Anna Lucia', 'esc1', '123', '12536655325', '2236325', 'Rua Paulo Orlandi', 'anna@gmail.com', '1990-10-10', '52', '236565639', 'Diretor', 1),
+(default, 'Marcia Lucia', 'esc1Sec', '123', '65986532654', '6598659', 'Rua Paulo Sergio', 'marcia@gmail.com', '1970-10-10', '63', '365964851', 'Secretario', 1),
+(default, 'Paulo henrique', 'esc2', '123', '54845965299', '4566548', 'Avenida jarves', 'paulo@gmail.com', '1988-10-10', '49', '659865986', 'Diretor', 2);
+
+insert into Aluno values
+(default, 'Jose Almeida', 'aluno1', '123', '2007-10-11', 1, 1),
+(default, 'Antonio Bras', 'aluno2', '123', '2007-03-11', 1, 1),
+(default, 'Priscila Freitas', 'aluno3', '123', '2004-05-12', 2, 1),
+(default, 'Carlos da Silva', 'aluno4', '123', '2004-04-03', 2, 2),
+(default, 'Rogerio Skylab', 'aluno5', '123', '2007-12-09', 1, 2),
+(default, 'Vinicius Dias', 'aluno6', '123', '2005-07-07', 2, 3);
+
+insert into TipoDeProduto values
+(default, 'Tempero'),
+(default, 'Carne'),
+(default, 'Fruta'),
+(default, 'Cereal'),
+(default, 'Massa'),
+(default, 'Peixe');
+
+insert into Produto values
+(default, 'Pao', 'forma 10', 300, 1, 5),
+(default, 'Cereal integral', 'Sucrilhos', 50, 1, 4),
+(default, 'Macarrao Espaguetti', 'Filler', 900, 1, 5),
+(default, 'Alcatra', 'Friboi', 2, 2, 2),
+(default, 'Tilapia', 'Fine Fish', 1, 2, 6),
+(default, 'Maca', 'Big Fruit', 3, 2, 3),
+(default, 'Acucar', 'Uniao', 2, 2, 1);
+
+select * from Produto;
+
+Insert into Refeicao values
+(default, 'Pao com Frango'),
+(default, 'Pao com Presunto e Queijo'),
+(default, 'Pao com Margarina'),
+(default, 'Pao com Geleia'),
+(default, 'Macarronada'),
+(default, 'Peixe Empanado'),
+(default, 'Bife a Milanesa'),
+(default, 'Suco de Uva'),
+(default, 'Suco de Caju'),
+(default, 'Bolacha');
+
+insert into Cardapio_Refeicao values
+(default, '2019-11-01', 1, 1),
+(default, '2019-11-01', 1, 9),
+(default, '2019-11-04', 1, 5),
+(default, '2019-11-04', 1, 2),
+(default, '2019-11-05', 1, 6),
+(default, '2019-11-06', 1, 3),
+(default, '2019-11-07', 1, 7),
+(default, '2019-11-08', 1, 10),
+(default, '2019-11-11', 1, 1),
+(default, '2019-11-12', 1, 4),
+(default, '2019-11-13', 1, 6),
+(default, '2019-11-14', 1, 3),
+(default, '2019-11-15', 1, 10),
+(default, '2019-11-18', 1, 9),
+(default, '2019-11-18', 1, 3),
+(default, '2019-11-19', 1, 6),
+(default, '2019-11-19', 1, 8),
+(default, '2019-11-20', 1, 4),
+(default, '2019-11-21', 1, 5),
+(default, '2019-11-22', 1, 7),
+(default, '2019-11-22', 1, 8),
+(default, '2019-11-25', 1, 2),
+(default, '2019-11-26', 1, 1),
+(default, '2019-11-27', 1, 4),
+(default, '2019-11-27', 1, 9),
+(default, '2019-11-28', 1, 3),
+(default, '2019-11-29', 1, 10),
+(default, '2019-11-01', 2, 1),
+(default, '2019-11-01', 2, 9),
+(default, '2019-11-04', 2, 5),
+(default, '2019-11-04', 2, 2),
+(default, '2019-11-05', 2, 6),
+(default, '2019-11-06', 2, 3),
+(default, '2019-11-07', 2, 7),
+(default, '2019-11-08', 2, 10),
+(default, '2019-11-11', 2, 1),
+(default, '2019-11-12', 2, 4),
+(default, '2019-11-13', 2, 6),
+(default, '2019-11-14', 2, 3),
+(default, '2019-11-15', 2, 10),
+(default, '2019-11-18', 2, 9);
+
+insert into Estoque values
+(default, 1, 3, NULL, 30, 30, '2019-11-04 12:47:18', 1, 'SecEdu', 'Adicionado', 0),
+(default, 1, 3, NULL, 40, 10, '2019-11-04 12:48:18', 1, 'SecEdu', 'Adicionado', 0),
+(default, 1, 3, NULL, 35, 5, '2019-11-04 12:49:18', 1, 'SecEsc', 'Retirado', 1),
+(default, 1, 5, NULL, 50, 50, '2019-11-04 12:50:18', 1, 'Nut', 'Adicionado', 0),
+(default, 1, 5, 6, 10, 40, '2019-11-04 12:51:18', 1, 'Nut', 'TransfRed', 1),
+(default, 2, 3, 5, 40, 40, '2019-11-04 12:52:18', 1, 'Nut', 'TransfAdd', 1);
