@@ -46,7 +46,7 @@ if ($acao == "adicionado" or $acao == "retirado"){
     }
     
     array_push($table, $nomeUser);
-    
+
     echo json_encode($table);
                 
         

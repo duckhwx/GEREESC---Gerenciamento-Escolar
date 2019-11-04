@@ -1,8 +1,10 @@
 <?php
 require_once "../../../funcoes-de-cabecalho.php";
 require_once "../../../conexao.php";
+require_once '../../../login/funcoesdelogin.php';
 
-session_start();
+autenticar('../../../index.php');
+
 date_default_timezone_set('America/Sao_Paulo');
 
 cabecalhoNutricionista('../../../estilo/styleNutricionista.css', 'Estoque', '../', '../../relatorio', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');

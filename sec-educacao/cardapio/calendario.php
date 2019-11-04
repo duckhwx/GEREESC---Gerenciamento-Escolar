@@ -1,8 +1,10 @@
 <?php
 require_once '../../conexao.php';
 require_once '../../funcoes-de-cabecalho.php';
+require_once '../../login/funcoesdelogin.php';
 
-session_start();
+autenticar('../../index.php');
+
     $_SESSION['id_anoEscolar'] = $_GET['id'];
 
     cabecalhoSecEdu('../../estilo/style.css', 'Cardápio', '../escola/', '../usuarios/cadastrar-usuarios.php', '../produto/', '../refeicao/', 'index.php','../../login/logOut.php');

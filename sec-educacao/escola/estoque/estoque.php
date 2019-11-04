@@ -1,8 +1,10 @@
 <?php
 require_once "../../../funcoes-de-cabecalho.php";
 require_once "../../../conexao.php";
+require_once '../../../login/funcoesdelogin.php';
 
-session_start();
+autenticar('../../../index.php');
+
 date_default_timezone_set('America/Sao_Paulo');
 
 cabecalhoSecEdu('../../../estilo/style.css', 'Estoque', '../../escola/', '../../usuarios/cadastrar-usuarios.php', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');

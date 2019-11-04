@@ -32,7 +32,7 @@ create table SecEsc (
     dataDeNascimento date,
     numero varchar(8),
     celular varchar(15),
-    cargo enum('Diretor', 'Secretario');
+    cargo enum('Diretor', 'Secretario'),
     escola_id int references Escola(id)
 );
 
@@ -129,7 +129,7 @@ create table Itens (
 
 -- Inserts e afins --
 
-insert into SecEdu values(default, "adm", "adm", "123");
+insert into SecEdu values(default, "Secretário da Educação", "secEdu", "123");
 
 insert into TipoDePeso values
 (default, "g"),
@@ -140,14 +140,3 @@ insert into TipoDePeso values
 insert into AnoEscolar values
 (default, "Ensino Infantil"),
 (default, "Ensino Fundamental");
-
-insert into Escola values
-(default, 'Escola 01', 'Rua 01', '010101', 'escola01@gmail', '01', '01011010', '300', '250'),
-(default, 'Escola 02', 'Rua 02', '020202', 'escola02@gmail', '02', '02022020', '100', '150');
-
-insert into Nutricionista values
-(default, 'Nutricionista', 'nut', '123', '12181281221', '21214', 'rua tun', 'nut@gmail.com', '1990-09-09', '42', '44546325');
-
-insert into SecEsc values
-(default, 'SecEsc01', 'esc1', '123', '111111111', '11111', 'rua 11', 'secesc1@gmail.com', '1990-09-09', '11', '11111111', 'Diretor', 1),
-(default, 'SecEsc02', 'esc2', '123', '222222222', '22222', 'rua 22', 'secesc2@gmail.com', '1990-09-09', '22', '22222222', 'Diretor', 2);

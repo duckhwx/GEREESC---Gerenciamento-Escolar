@@ -34,7 +34,7 @@ $(document).ready(function () {
     });
 
 //Função retira os dados colocados no modal apos ele ser fechado
-    $('#modalVisualizar').on('hide.bs.modal', function () {
-        $('span').remove('.secretario');
+    $('.modal').on('hide.bs.modal', function () {
+        $('.secretario').remove();
     });
 });

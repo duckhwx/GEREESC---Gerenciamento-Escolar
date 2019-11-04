@@ -1,6 +1,8 @@
 <?php 
 require_once '../../funcoes-de-cabecalho.php';
-session_start();
+require_once '../../login/funcoesdelogin.php';
+
+autenticar('../../index.php');
 
 $_SESSION['id_anoEscolar'] = null;
 

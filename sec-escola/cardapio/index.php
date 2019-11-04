@@ -1,7 +1,9 @@
 <?php
 require_once '../../conexao.php';
+require_once '../../login/funcoesdelogin.php';
 require_once '../../funcoes-de-cabecalho.php';
 
+autenticar('../../index.php');
 
 cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Cardápio', '../aluno/', '../escola/', '../estoque/', '.','../../login/logOut.php');
 sectionTop();

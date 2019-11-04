@@ -192,7 +192,13 @@ $(document).ready(function () {
             success: function(data){
                 $('#produto').html(data.nomeProduto);
                 $('#escola').html(data.nomeEscola);
-                $('#tipoUsuario').html(data.tipoUsuario);
+                if (data.tipoUsuario === "Nut") {
+                    $('#tipoUsuario').html("Nutricionista");
+                } else if (data.tipoUsuario === "SecEsc") {
+                    $('#tipoUsuario').html("Secretário da Escola");
+                } else if (data.tipoUsuario === "SecEdu") {
+                    $('#tipoUsuario').html("Secretário da Educação");
+                }
                 $('#usuario').html(data[9]);
                 $('#acao').html(data.acao);
                 $('#data').html(data.data);
@@ -230,9 +236,15 @@ $(document).ready(function () {
                 //Definindo os dados da escola base
                 $('#produtoTransf').html(data.nomeProduto);
                 $('#escolaBase').html(data.nomeEscola);
-                $('#tipoUsuarioTransf').html(data.tipoUsuario);
-                $('#usuarioTransf').html(data[9]);
-                $('#acaoTransf').html(data.acao);
+                if(data.tipoUsuario === "Nut"){
+                    $('#tipoUsuarioTransf').html("Nutricionista");
+                } else if (data.tipoUsuario === "SecEsc") {
+                    $('#tipoUsuarioTransf').html("Secretário da Escola");
+                } else if (data.tipoUsuario === "SecEdu") {
+                    $('#tipoUsuarioTransf').html("Secretário da Educação");
+                }
+                $('#usuarioTransf').html(data[10]);
+                $('#acaoTransf').html("Trasnferido");
                 $('#dataTransf').html(data.data);
                 
                 $('#quantAtualBase').html(data.quantidade);

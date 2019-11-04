@@ -1,6 +1,9 @@
 <?php
 require_once '../../funcoes-de-cabecalho.php';
 require_once '../../conexao.php';
+require_once '../../login/funcoesdelogin.php';
+
+autenticar('../../index.php');
 
 cabecalhoSecEdu('../../estilo/style.css', 'Usuarios', '../escola/', 'cadastrar-usuarios.php', '../produto/', '../refeicao/', '../cardapio/', '../../login/logOut.php');
 sectionTop();

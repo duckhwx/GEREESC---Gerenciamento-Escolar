@@ -1,6 +1,10 @@
 <?php
 require_once '../../conexao.php';
 require_once '../../funcoes-de-cabecalho.php';
+require_once '../../login/funcoesdelogin.php';
+
+autenticar('../../index.php');
+
 
 cabecalhoAluno('../../estilo/styleAluno.css', 'Cardápio', '../escola/', '../cardapio/calendario.php','../../login/logOut.php');
 

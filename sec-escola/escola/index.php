@@ -3,6 +3,7 @@ require_once '../../conexao.php';
 require_once '../../login/funcoesdelogin.php';
 require_once '../../funcoes-de-cabecalho.php';
 
+autenticar('../../index.php');
 
 cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Escola', '../aluno/', '.', '../estoque/', '../cardapio/', '../../login/logOut.php');
 sectionTop();

@@ -1,8 +1,11 @@
 <?php
     require_once '../conexao.php';
     require_once '../funcoes-de-cabecalho.php';
+    require_once '../login/funcoesdelogin.php';
+
+    autenticar('../index.php');
+
     
-    session_start();
     $idEscola = $_SESSION['id'];
     
     $query1 = mysqli_query($conexao, "select * from Aluno where id='$idEscola'");

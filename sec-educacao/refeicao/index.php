@@ -1,6 +1,9 @@
 <?php
 require_once '../../conexao.php';
 require_once '../../funcoes-de-cabecalho.php';
+require_once '../../login/funcoesdelogin.php';
+
+autenticar('../../index.php');
 
 cabecalhoSecEdu('../../estilo/style.css', 'Refeições', "../escola/", "../usuarios/cadastrar-usuarios.php", "../produto/", ".", "../cardapio/", '../../login/logOut.php');
 
