@@ -5,11 +5,11 @@ require_once '../../login/funcoesdelogin.php';
 
 autenticar('../../index.php');
 
-cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Alunos', '.', '../escola/', '../estoque/', '../cardapio/', '../../login/logOut.php');
+cabecalhoSecEsc('../../estilo/style.css', 'Alunos', '.', '../escola/', '../estoque/', '../cardapio/', '../../login/logOut.php');
 
 sectionTop();
 
-//Seleção de todas os Alunos cadastradas
+//Seleção de todos os Alunos cadastrados
 $select = "select * from Aluno";
 $query = mysqli_query($conexao, $select);
 

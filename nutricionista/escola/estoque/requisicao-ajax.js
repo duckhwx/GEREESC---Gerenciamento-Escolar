@@ -197,6 +197,14 @@ $(document).ready(function () {
                 $('#acao').html(data.acao);
                 $('#data').html(data.data);
                 
+                if(data.tipoUsuario === "Nut"){
+                    $('#tipoUsuario').html("Nutricionista");
+                } else if (data.tipoUsuario === "SecEdu"){
+                    $('#tipoUsuario').html("Secretário da Educação");
+                } else if (data.tipoUsuario === "SecEsc"){
+                    $('#tipoUsuario').html("Secretário da Escola");
+                }
+                
                 $('#quantAtual').html(data.quantidade);
                 if (data.acao === "Adicionado") {
                     $('#quantMov').html('+' + data.quantAlterada);
@@ -230,9 +238,17 @@ $(document).ready(function () {
                 //Definindo os dados da escola base
                 $('#produtoTransf').html(data.nomeProduto);
                 $('#escolaBase').html(data.nomeEscola);
-                $('#tipoUsuarioTransf').html(data.tipoUsuario);
-                $('#usuarioTransf').html(data[9]);
-                $('#acaoTransf').html(data.acao);
+                
+                if(data.tipoUsuario === "Nut"){
+                    $('#tipoUsuarioTransf').html("Nutricionista");
+                } else if (data.tipoUsuario === "SecEdu"){
+                    $('#tipoUsuarioTransf').html("Secretário da Educação");
+                } else if (data.tipoUsuario === "SecEsc"){
+                    $('#tipoUsuarioTransf').html("Secretário da Escola");
+                }
+                
+                $('#usuarioTransf').html(data[10]);
+                $('#acaoTransf').html("Transferido");
                 $('#dataTransf').html(data.data);
                 
                 $('#quantAtualBase').html(data.quantidade);

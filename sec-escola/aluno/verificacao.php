@@ -1,11 +1,11 @@
 <?php
 require_once '../../conexao.php';
 
+//Identifica se a ação veio por get (Ações em get não são em AJAX)
 if(!empty($_GET['acao'])){
     $acao = $_GET['acao'];
 
-//Condição que indica se o tipo de ação é cadastrar ou Atualizar, é nescessario pois apenas estas funções tem dados
-//a serem pegos por POST
+//Condição que indica se o tipo de ação é cadastrar ou Atualizar, é nescessario pois apenas estas funções tem dados a serem pegos por POST
         if($acao == 'cadastrar' or $acao == 'atualizar'){
 
             $nome = $_POST['nome']; 
@@ -15,6 +15,7 @@ if(!empty($_GET['acao'])){
             $anoEscolar = $_POST['anoEscolar']; 
             $escola = $_POST['escola'];
 
+//submissão dos dados ao banco caso a ação seja cadastrar
             if($acao == 'cadastrar'){
                 $insert = "insert into Aluno values (default, "
                         . "'$nome', "
@@ -30,6 +31,8 @@ if(!empty($_GET['acao'])){
                 } else{
                     header("Location: validar-aluno.php?acao=cadastrar");
                 }
+                
+//Submissão dos dados ao banco caso a ação seja atualizar
             } else if($acao == 'atualizar'){
                 $idAluno = $_GET['id'];
 
@@ -49,9 +52,12 @@ if(!empty($_GET['acao'])){
             }
     }
 }
+
+//identifica se a ação veio por POST (Ações em POST são AJAX) 
 else if (!empty($_POST['acao'])){
     $acao = $_POST['acao'];
     
+//Ação que retorna os dados de um aluno com base no ID
     if ($acao == 'getById') {
         $id = $_POST['idAluno'];
 
@@ -62,6 +68,7 @@ else if (!empty($_POST['acao'])){
         
         $numRows = mysqli_num_rows($query);
         
+//condição que identifica se o aluno selecionado tem uma escola alocada ou não
         if($numRows == 1){
             $table = mysqli_fetch_array($query);
         } else {
@@ -72,8 +79,9 @@ else if (!empty($_POST['acao'])){
         }
 
         echo json_encode($table);
-        
     }
+
+//Ação que retorna os dados basicos do aluno
     else if ($acao == 'getDataAluno') {
         $id = $_POST['idAluno'];
 
@@ -83,6 +91,8 @@ else if (!empty($_POST['acao'])){
 
         echo json_encode($table);
     }
+    
+//Ação que submete ao banco a exclusão de um Aluno
     else if ($acao == 'excluir') {
         $id = $_POST['idAluno'];
 

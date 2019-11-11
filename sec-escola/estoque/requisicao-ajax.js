@@ -1,7 +1,9 @@
 $(document).ready(function(){
+    
+//Requisição dos dados em ajax e disparo do modal ao clicar no butão de Reduzir
    $('.reduzir-produto').on('click', function(){
      var idEstoque = $(this).val();
-     
+ 
      $.ajax({
         method: 'post',
         url: 'reduzir.php',
@@ -19,9 +21,11 @@ $(document).ready(function(){
             $('#modalTitulo').html('Dar baixa em '+data.nomeProduto);
         }
      });
-     
+
      $('#modalReduzir').modal('show');
    });
+   
+// Identificação de quando o formulário é confirmado e submissão dos dados
     $('#formReduzir').submit(function () {
         event.preventDefault();
         $.ajax({
@@ -38,7 +42,7 @@ $(document).ready(function(){
         });
     });
     
-//Função que limpa todos os campos dos inputs toda vez que o modal de cadastro/atualização é fechado
+//Função que limpa todos os campos dos inputs toda vez que o modal é fechado
     $('.modal').on('hide.bs.modal', function () {
         $('form input').val("");
     });

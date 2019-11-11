@@ -6,7 +6,7 @@ autenticar('../../index.php');
 
 $_SESSION['id_anoEscolar'] = null;
 
-cabecalhoNutricionista('../../estilo/styleNutricionista.css', 'Cardápio', '../escola/', '../relatorio/', '../produto/', '../refeicao/', '.', '../../login/logOut.php');
+cabecalhoNutricionista('../../estilo/style.css', 'Cardápio', '../escola/', '../relatorio/', '../produto/', '../refeicao/', '.', '../../login/logOut.php');
 sectionTop();
 ?>
 <h3>Cardápio</h3>

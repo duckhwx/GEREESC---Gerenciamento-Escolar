@@ -8,7 +8,6 @@
                     eventLimit: true,
 //Método que pega os dados do banco e os exibe no calendário
                     eventSources: [{
-//a pagina que pega os dados e o retorna em JSON
                         url: 'listar_refeicoes.php',
                         color: '#2C3E50',
                         textColor: 'white',

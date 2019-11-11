@@ -190,6 +190,7 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function(data){
+                console.log(data);
                 $('#produto').html(data.nomeProduto);
                 $('#escola').html(data.nomeEscola);
                 if (data.tipoUsuario === "Nut") {
@@ -244,7 +245,7 @@ $(document).ready(function () {
                     $('#tipoUsuarioTransf').html("Secretário da Educação");
                 }
                 $('#usuarioTransf').html(data[10]);
-                $('#acaoTransf').html("Trasnferido");
+                $('#acaoTransf').html("Transferido");
                 $('#dataTransf').html(data.data);
                 
                 $('#quantAtualBase').html(data.quantidade);

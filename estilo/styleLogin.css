@@ -1,3 +1,17 @@
+    body{
+        font-family: Times New Roman, Sans-serif;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        position: relative;
+        text-align-last: center;
+    }
+
+    .container-fluid{
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
 /*Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
 @media (max-width: 575.98px) {
     body{
@@ -207,6 +221,7 @@
         position: relative;
         text-align-last: center;
     }
+    
     #Login{
         background: white center;
         opacity: 0.5;
@@ -220,6 +235,7 @@
         border: solid 3px rgb(26, 26, 26);
         text-align: center;
     }
+    
     #Login>input, #Login>h4{
         margin: inherit;
     }
@@ -228,14 +244,14 @@
         background: url("https://image.flaticon.com/icons/png/128/149/149452.png") no-repeat;
         width: 150px;
         height: 150px;
-        margin-top: 17px;
-        margin-left: 27%;
-
+        margin: 15px auto 10px auto;
     }
+    
     header{
         background-color: #323A45;
         opacity: 0.8;
     }
+    
     #Titulo{
         text-align: center;
         color: White;
@@ -283,13 +299,11 @@
     }
 
     #avatar{
-        width: 150px;
-        height: 150px;
-        margin: 20px auto 0px auto;
+        margin: 15px auto 0 auto;
     }
-
+    
     .textInput{
-        font-size: 22px;
+        font-size: 27px;
         margin: 5px auto 0px auto;
     }
 
@@ -306,4 +320,66 @@
         font-family: Times New Roman, Sans-serif;
         font-size: 28px;
     }
+}
+
+@media (min-width: 1920px) and (min-height: 1080px){
+    
+    body{
+        background: url('backgrounds/imagem.jpg') no-repeat;
+    }
+
+    #Login{
+        background: white center;
+        opacity: 0.5;
+        width: 480px;
+        height: 572px;
+        margin-top: 150px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        position: relative;
+        border: solid 3px rgb(26, 26, 26);
+        text-align: center;
+    }
+
+    #Login>input, #Login>h4{
+        margin: inherit;
+    }
+
+    #avatar img{
+        height: 200px;
+        margin: 20px auto 20px auto;
+    }
+
+    .textInput{
+        font-size: 33px;
+        margin: 15px auto 0px auto;
+    }
+    
+    .form-control{
+        font-size: 22px;
+        text-align: center;
+        height: 50px;
+    }
+
+    #buttonLogin{
+        font-size: 25px;
+        margin: auto;
+    }
+    
+    #cabecalho{
+        background-color: #323A45;
+        opacity: 0.8;
+        font-size: 28px;
+        height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .Titulo{
+        text-align: center;
+        color: White;
+    }
+    
 }

@@ -5,7 +5,7 @@ require_once '../../funcoes-de-cabecalho.php';
 
 autenticar('../../index.php');
 
-cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Escola', '../aluno/', '.', '../estoque/', '../cardapio/', '../../login/logOut.php');
+cabecalhoSecEsc('../../estilo/style.css', 'Escola', '../aluno/', '.', '../estoque/', '../cardapio/', '../../login/logOut.php');
 sectionTop();
 
 
@@ -14,8 +14,10 @@ $query = mysqli_query($conexao, "select * from escola where id=" . $_SESSION['id
 
     echo "<h3>Escola</h3>"
     . "<hr>";
+//Identificação para caso exista uma escola cadastrada
     if (mysqli_num_rows($query) == 1) {
 
+//Requisição e geração dos dados na escola e secretários nela atribuidos
         $table = mysqli_fetch_array($query);
         $nome = $table['nomeEscola'];
         $endereco = $table['endereco'];

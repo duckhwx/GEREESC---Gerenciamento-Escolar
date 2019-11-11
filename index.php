@@ -6,36 +6,27 @@
     <title>GEREESC - Gerenciamento de Estoque Escolar</title>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
-
-                </div>
-                <div class="col-8">
-                    <h1 id="Titulo">GEREESC <br> Sistema de Gerenciamento de Estoque</h1>
-                </div>
-                <div class="col-2">
-
-                </div>
-            </div>
-        </div>
-    </header>
-    
-    <section>
-        <div id="Login">
-            <form method="post" class="px-3" action="login/verificacao.php">
+    <div class="container-fluid">
+        <!--Cabeçalho titulo-->
+        <header id="cabecalho">
+            <h1 id="Titulo">GEREESC <br> Sistema de Gerenciamento de Estoque</h1>
+        </header>
+        <!--Bloco de Login-->
+        <section>
+            <div id="Login">
                 <div id="avatar"><img src="estilo/icones/user.png"></div>
-                
-                <label class="textInput">Usuário</label>
-                <input type="text" class="form-control" required maxlength="64" name="login">
 
-                <label class="textInput">Senha</label>
-                <input type="password" class="form-control" required maxlength="64" name="senha">
+                <form method="post" class="px-3" action="login/verificacao.php">
+                    <label class="textInput">Usuário</label>
+                    <input type="text" class="form-control" required maxlength="64" name="login">
 
-                <input type="submit" class="btn btn-dark m-3" value="Logar">
-            </form>
-        </div>
-    </section>
+                    <label class="textInput">Senha</label>
+                    <input type="password" class="form-control" required maxlength="64" name="senha">
+
+                    <input type="submit" id="buttonLogin" class="btn btn-dark m-3" value="Logar">
+                </form>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

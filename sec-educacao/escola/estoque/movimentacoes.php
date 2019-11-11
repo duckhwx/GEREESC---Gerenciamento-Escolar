@@ -14,7 +14,6 @@ $selectEstoque = "select Produto.nomeProduto, Estoque.estoque_id, Estoque.quanti
         . "where escola_id = ".$_SESSION["idEscola"]." "
         . "order by Estoque.data desc";
 $queryEstoque = mysqli_query($conexao, $selectEstoque);
-
     echo "<table class='table my-0'>"
         . "<thead class='thead-dark'>"
         . "<tr>"
@@ -73,7 +72,7 @@ sectionBaixo();
 
 <!--Modal Adicionar/Reduzir--> 
 <div class="modal fade" id="modalAddRed" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-lg estoqueHistorico" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Historico</h5>
@@ -83,7 +82,7 @@ sectionBaixo();
             </div>
             <div class="modal-body modalInfo">
                 
-                <div>Especificações</div>
+                <h5>Especificações</h5>
                 <table class="table">
                     <thead>
                         <tr class="table-active">
@@ -105,7 +104,7 @@ sectionBaixo();
                     </tbody>
                 </table>
                 
-                <div>Quantidades</div>
+                <h5>Quantidades</h5>
                 <table class="table" id="tableQuant">
                     <tr class="table-active">
                         <th>Escola</th>
@@ -127,7 +126,7 @@ sectionBaixo();
 
 <!--Modal Transferir--> 
 <div class="modal fade" id="modalTransf" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-lg estoqueHistorico" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Historico</h5>
@@ -137,7 +136,7 @@ sectionBaixo();
             </div>
             <div class="modal-body modalInfo">
                 
-                <div>Especificações</div>
+                <h5>Especificações</h5>
                 <table class="table">
                     <thead>
                         <tr class="table-active">
@@ -159,7 +158,7 @@ sectionBaixo();
                     </tbody>
                 </table>
                 
-                <div>Quantidades</div>
+                <h5>Quantidades</h5>
                 <table class="table" id="tableQuant">
                     <tr class="table-active">
                         <th colspan="2">Escola</th>

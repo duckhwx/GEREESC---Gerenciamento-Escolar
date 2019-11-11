@@ -7,7 +7,7 @@ autenticar('../../index.php');
 
 $acao = $_GET['acao'];
 
-//Identifica a ação para mudar adaptar os campos para a atualização ou cadastro
+//Identifica a ação para adaptar os campos para a atualização ou cadastro de aluno
 if ($acao == 'cadastrar') {
     $acaoHTML = "Cadastrar";
     
@@ -33,12 +33,13 @@ $selectAnosEscolares =  "select AnoEscolar.id, AnoEscolar.nomeAnoEscolar from An
 $queryEscolas = mysqli_query($conexao, $selectEscolas);
 $queryAnosEscolares = mysqli_query($conexao, $selectAnosEscolares);
 
-cabecalhoSecEsc("../../estilo/styleSecesc.css", "$acaoHTML Aluno", "index.php", "../escola/", "../estoque/", "../cardapio/", "../../login/logOut.php");
+cabecalhoSecEsc("../../estilo/style.css", "$acaoHTML Aluno", "index.php", "../escola/", "../estoque/", "../cardapio/", "../../login/logOut.php");
 sectionTop();
 ?>
 <h3><?php echo $acaoHTML?> Aluno</h3>
 <hr>
 
+<!--Formulário de cadastro/Atualização-->
     <form method="post" action="verificacao.php?acao=<?php
         if (!empty($id) and $acao == "atualizar") {
             echo $acao . "&id=$id";
@@ -77,6 +78,8 @@ sectionTop();
         
         <label  class="d-flex justify-content-center">Ano Escolar</label>
             <?php
+            
+//função que gera dinamicamente o Select com os anos escolares Existentes
                 echo "<select name='anoEscolar' class='custom-select'>";
                 while($tableAnosEscolares = mysqli_fetch_array($queryAnosEscolares)){
                     $idAnoEscolar = $tableAnosEscolares['id'];
@@ -93,6 +96,8 @@ sectionTop();
         
         <label  class="d-flex justify-content-center">Escola</label>
             <?php
+            
+//função que gera dinamicamente o Select com as escolas existentes
                 echo "<select name='escola' class='custom-select'>";
                     while($tableEscolas = mysqli_fetch_array($queryEscolas)){
                         $idEscola = $tableEscolas['id'];

@@ -5,7 +5,7 @@ require_once '../../../login/funcoesdelogin.php';
 
 autenticar('../../../index.php');
 
-cabecalhoNutricionista('../../../estilo/styleNutricionista.css', 'Tipo de Produto', '../../escola/', '../../relatorio/', '../', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
+cabecalhoNutricionista('../../../estilo/style.css', 'Tipo de Produto', '../../escola/', '../../relatorio/', '../', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
 sectionTop();
 
 $select = "select * from TipoDeProduto";

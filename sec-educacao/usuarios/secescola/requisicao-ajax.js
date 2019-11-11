@@ -1,10 +1,9 @@
 $(document).ready(function () {
 
-//Identifica se o usuário aperta o button de visualizar
+//Requisição dos dados do Secretário selecionado, atribuição destes dados e disparo do modal.
     $('.visualizar-secEsc').on('click', function () {
         var secEscId = $(this).val();
 
-//Requisição dos dados do SecEsc Selecionado
         $.ajax({
             method: 'post',
             url: 'secescola/verificacao.php',
@@ -38,7 +37,6 @@ $(document).ready(function () {
             }
         });
 
-//Invocação do modal de visualização do SecEsc
         $('#modalVisualizarSecEsc').modal('show');
     });
 
@@ -47,10 +45,10 @@ $(document).ready(function () {
         $('span').empty();
     });
 
-//Identifica se o usuário aperta o button de excluir
+//Requisição dos dados do Secretário selecionado, atribuição destes dados e disparo do modal referente a exclusão deste usuário.
     $('.excluir-secEsc').on('click', function () {
         var idSecEsc = $(this).val();
-//Requisição dos dados do SecEsc Selecionado
+
         $.ajax({
             method: 'post',
             url: 'secescola/verificacao.php',
@@ -60,14 +58,15 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (data) {
-//Atribuição do nome do usuário a ser excluido no modal de confimação  de exclusão
                 $('#nomeExcluirSecEsc').html(data.nomeSecEsc);
                 $('#idSecEsc').val(data.id);
             }
         });
-//Exibição do modal de confirmação de exclusão do SecEsc   
+
         $('#modalExcluirSecEsc').modal('show');
     });
+    
+//Submissão da exclusão de um Secretário caso a confirmação seja clicada
     $('#excluirSecEsc').on('click', function () {
         var idSecEsc = $('#idSecEsc').val();
         $.ajax({

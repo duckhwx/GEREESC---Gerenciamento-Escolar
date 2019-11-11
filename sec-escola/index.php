@@ -5,9 +5,10 @@ require_once '../conexao.php';
 
 autenticar('../index.php');
 
-cabecalhoSecEsc('../estilo/styleSecesc.css', 'Inicio', 'aluno/index.php', 'escola/', 'estoque/', 'cardapio/', '../login/logOut.php');
+cabecalhoSecEsc('../estilo/style.css', 'Inicio', 'aluno/index.php', 'escola/', 'estoque/', 'cardapio/', '../login/logOut.php');
 rodape();
 
+//Função que define o id da escola no qual o Secretário é alocado para ser usado em outras páginas
     $select = "select escola_id from SecEsc where id=".userid();
     $query = mysqli_query($conexao, $select);
     $table = mysqli_fetch_array($query);

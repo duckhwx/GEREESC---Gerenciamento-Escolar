@@ -5,7 +5,7 @@
 
     autenticar('../../index.php');
     
-cabecalhoSecEsc('../../estilo/styleSecesc.css', 'Estoque', '../aluno/', '../escola/', '.', '../cardapio/', '../../login/logOut.php');
+cabecalhoSecEsc('../../estilo/style.css', 'Estoque', '../aluno/', '../escola/', '.', '../cardapio/', '../../login/logOut.php');
 sectionTop();
 
 //Requisição dos dados do estoque ao Banco de Dados
@@ -16,11 +16,15 @@ sectionTop();
                     ."where escola_id =".$_SESSION["idEscola"]." and status = 1";
     $queryEstoque = mysqli_query($conexao, $selectEstoque);
     
+//Identificação que caso não exista itens no estoque exiba outra informação
     if(mysqli_num_rows($queryEstoque) == 0){
+        
         echo "<h3>Estoque</h3>"
            . "<hr>"
            . "<div class='font-weight-normal my-3'>Nenhum produto alocado</div>";
+        
     } else {
+        
         echo "<table class='table'>"
             . "<thead class='thead-dark'>"
             . "<tr>"
@@ -57,9 +61,9 @@ sectionTop();
       echo "</tbody>"
       . "</table>";  
     }
-?>
-<?php
+    
 sectionBaixo();
+
 ?>
 <script src="requisicao-ajax.js"></script>
 

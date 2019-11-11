@@ -6,7 +6,7 @@ require_once '../../login/funcoesdelogin.php';
 autenticar('../../index.php');
 
 
-cabecalhoAluno('../../estilo/styleAluno.css', 'Cardápio', '../escola/', '../cardapio/calendario.php','../../login/logOut.php');
+cabecalhoAluno('../../estilo/style.css', 'Cardápio', '../escola/', '../cardapio/calendario.php','../../login/logOut.php');
 
 ?>
 <!--FullCalendar Links -->

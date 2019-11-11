@@ -1,6 +1,6 @@
 <!-- Modal Visualizar-->
 <div class="modal fade" id="modalVisualizarNut" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modalNut" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="tituloModal">Visualizar Nutricionista</h5>
@@ -24,7 +24,7 @@
 
 <!-- Modal Confirmação de Excluir usuário-->
 <div class="modal fade" id="modalExcluirNut" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modalDelete" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="tituloModal">Excluir Nutricionista</h5>

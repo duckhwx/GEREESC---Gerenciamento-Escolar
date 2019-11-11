@@ -14,6 +14,6 @@
     $_SESSION['escola_id'] = $table['escola_id'];
     $_SESSION['anoEscolar_id'] = $table['anoEscolar_id'];
 
-    cabecalhoAluno('../estilo/styleAluno.css', 'Inicio', 'escola/', 'cardapio/calendario.php','../login/logOut.php');
+    cabecalhoAluno('../estilo/style.css', 'Inicio', 'escola/', 'cardapio/calendario.php','../login/logOut.php');
     rodape();
     

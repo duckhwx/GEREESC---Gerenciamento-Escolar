@@ -30,10 +30,10 @@ $query = mysqli_query($conexao, $select);
         $nome = $table['nomeEscola'];
         
         echo"<tr><td>$nome</td>"
-            . "<td><button class='btn btn-light m-2 visualizar-escola' value='$idEscola'><img src='../../estilo/icones/eye.png' width=26px/></button></td>"
-            . "<td><a class='btn btn-light m-2' href='verificar-escola.php?id=$idEscola&acao=atualizar'><img src='../../estilo/icones/edit.png' width=26px/></a></td>"
-            . "<td><a class='btn btn-light m-2' href='estoque/estoque.php?id=$idEscola'><img src='../../estilo/icones/box.png' width=26px/></a></td>"
-            . "<td><button class='btn btn-light m-2 excluir-escola' value='$idEscola'><img src='../../estilo/icones/delete.png' width=26px/></button></td>"
+            . "<td><button class='btn btn-light visualizar-escola my-1' value='$idEscola'><img src='../../estilo/icones/eye.png' width=26px/></button></td>"
+            . "<td><a class='btn btn-light my-1' href='verificar-escola.php?id=$idEscola&acao=atualizar'><img src='../../estilo/icones/edit.png' width=26px/></a></td>"
+            . "<td><a class='btn btn-light my-1' href='estoque/estoque.php?id=$idEscola'><img src='../../estilo/icones/box.png' width=26px/></a></td>"
+            . "<td><button class='btn btn-light excluir-escola my-1' value='$idEscola'><img src='../../estilo/icones/delete.png' width=26px/></button></td>"
             . "</tr>";
             
     }
@@ -41,7 +41,7 @@ $query = mysqli_query($conexao, $select);
 </tbody>
 </table>
 
-<a href="verificar-escola.php?acao=cadastrar" class="btn btn-dark m-2 cadastrar-escola buttonLink">Cadastrar Escola</a>
+<a href="verificar-escola.php?acao=cadastrar" class="btn btn-dark cadastrar-escola buttonLink">Cadastrar Escola</a>
 
 <script src="requisicao-ajax.js"></script>
 <?php 
@@ -49,7 +49,7 @@ sectionBaixo();
 ?>
 <!-- Modal Visualizar Escola-->
 <div class="modal fade" id="modalVisualizar" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modalEscola" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="tituloModal">Visualizar Escola</h5>
@@ -78,7 +78,7 @@ sectionBaixo();
 
 <!-- Modal Confirmação de Excluir usuário-->
 <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modalDelete" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="tituloModal">Excluir Escola</h5>

@@ -7,7 +7,7 @@ autenticar('../../../index.php');
 
 date_default_timezone_set('America/Sao_Paulo');
 
-cabecalhoNutricionista('../../../estilo/styleNutricionista.css', 'Estoque', '../', '../../relatorio', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
+cabecalhoNutricionista('../../../estilo/style.css', 'Estoque', '../', '../../relatorio', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
 
 sectionTop();
 
@@ -146,7 +146,7 @@ sectionBaixo();
                         <label class="pt-2">Quantidade</label>
                         <input type="number" required name="quantidadeTransferida" min="0" class="form-control">
                         <input type="hidden" id="idEstoqueTransferir">
-                    <button type="submit" class="btn btn-dark mt-3">Transferir</button>
+                    <button type="submit" id="buttonTransferir" class="btn btn-dark mt-3">Transferir</button>
                 </form>
             </div>
         </div>

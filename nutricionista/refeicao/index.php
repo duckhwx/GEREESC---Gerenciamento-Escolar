@@ -5,7 +5,7 @@ require_once '../../login/funcoesdelogin.php';
 
 autenticar('../../index.php');
 
-cabecalhoNutricionista("../../estilo/styleNutricionista.css", "Refeições", "../escola/", "../relatorio/", "../produto/", ".", "../cardapio/", "../../login/logOut.php");
+cabecalhoNutricionista("../../estilo/style.css", "Refeições", "../escola/", "../relatorio/", "../produto/", ".", "../cardapio/", "../../login/logOut.php");
 
 $select = "select * from Refeicao";
 $query = mysqli_query($conexao, $select);

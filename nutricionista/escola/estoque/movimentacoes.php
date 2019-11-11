@@ -5,7 +5,7 @@ require_once '../../../login/funcoesdelogin.php';
 
 autenticar('../../../index.php');
 
-cabecalhoNutricionista('../../../estilo/styleNutricionista.css', 'Movimentações', '../', '../../relatorio',  '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
+cabecalhoNutricionista('../../../estilo/style.css', 'Movimentações', '../', '../../relatorio',  '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
 sectionTop();
 
 $selectEstoque = "select Produto.nomeProduto, Estoque.estoque_id, Estoque.quantidade, Estoque.quantAlterada, Estoque.acao from Estoque "
@@ -73,7 +73,7 @@ sectionBaixo();
 
 <!--Modal Adicionar/Reduzir--> 
 <div class="modal fade" id="modalAddRed" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-lg estoqueHistorico" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Historico</h5>
@@ -127,7 +127,7 @@ sectionBaixo();
 
 <!--Modal Transferir--> 
 <div class="modal fade" id="modalTransf" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-lg estoqueHistorico" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Historico</h5>

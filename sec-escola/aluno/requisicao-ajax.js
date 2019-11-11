@@ -1,10 +1,9 @@
 $(document).ready(function() {
     
-//Identifica se o usuário aperta o button de visualizar
+//Requisita os dados do aluno, atribui ao modal e o dispara ao clicar no botão de visualizar aluno
     $('.visualizar-aluno').on('click', function () {
         var idAluno = $(this).val();
 
-//Requisição dos dados do aluno Selecionado
         $.ajax({
             method: 'post',
             url: 'verificacao.php',
@@ -27,15 +26,14 @@ $(document).ready(function() {
             }
         });
 
-//Invocação do modal de visualização do aluno
         $('#modalVisualizar').modal('show');
     });
     
     
-//Identifica se o usuário aperta o button de excluir
+//Requisita os dados do aluno, atribui ao modal e o dispara ao clicar no botão de Excluir aluno
     $('.excluir-aluno').on('click', function () {
         var idAluno = $(this).val();
-//Requisição dos dados do Aluno Selecionado
+
         $.ajax({
             method: 'post',
             url: 'verificacao.php',
@@ -45,14 +43,14 @@ $(document).ready(function() {
             },
             dataType: 'json',
             success: function (data) {
-//Atribuição do nome do usuário a ser excluido no modal de confimação  de exclusão
                 $('#nomeExcluir').html(data.nomeAluno);
                 $('#idAluno').val(data.id);
             }
         });
-//Exibição do modal de confirmação de exclusão do Aluno   
+
         $('#modalExcluir').modal('show');
     });
+//Identifica se o usuário confirma a exclusão de um aluno e submete a ação ao banco de dados
     $('#excluir').on('click', function () {
         var idAluno = $('#idAluno').val();
         $.ajax({

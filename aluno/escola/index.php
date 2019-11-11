@@ -5,7 +5,7 @@ require_once '../../funcoes-de-cabecalho.php';
 
 autenticar('../../index.php');
 
-    cabecalhoAluno('../../estilo/styleAluno.css', 'Escola', '../escola/', '../cardapio/calendario.php','../../login/logOut.php');
+    cabecalhoAluno('../../estilo/style.css', 'Escola', '../escola/', '../cardapio/calendario.php','../../login/logOut.php');
     sectionTop();
 
 //Seleção dos dados da escola selecionada no index

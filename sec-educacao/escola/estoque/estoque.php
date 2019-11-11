@@ -146,7 +146,7 @@ sectionBaixo();
                         <label class="pt-2">Quantidade</label>
                         <input type="number" required name="quantidadeTransferida" min="0" class="form-control">
                         <input type="hidden" id="idEstoqueTransferir">
-                    <button type="submit" class="btn btn-dark mt-3">Transferir</button>
+                    <button type="submit" class="btn btn-dark mt-3" id="buttonTransferir">Transferir</button>
                 </form>
             </div>
         </div>

@@ -5,7 +5,7 @@ require_once '../../login/funcoesdelogin.php';
 
 autenticar('../../index.php');
 
-cabecalhoNutricionista('../../estilo/styleNutricionista.css', 'Relatório', '../escola/', '.', '../produto/', '../refeicao/', '../cardapio/','../../login/logOut.php');
+cabecalhoNutricionista('../../estilo/style.css', 'Relatório', '../escola/', '.', '../produto/', '../refeicao/', '../cardapio/','../../login/logOut.php');
 sectionTop();
 ?>
 <BR>

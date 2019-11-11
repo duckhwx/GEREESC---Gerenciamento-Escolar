@@ -38,6 +38,8 @@ sectionTop();
 ?>
 <h3><?php echo $acaoHTML ?> Secretário da Escola</h3>
 <hr>
+
+<!--formulário de Cadastro/Atualização-->
 <form method="post" action="verificacao.php?acao=<?php
     if (!empty($id) and $acao == "atualizar") {
         echo $acao . "&id=$id";
@@ -108,6 +110,8 @@ sectionTop();
         </select>
     <label class="d-flex justify-content-center">Escola</label>
     <?php
+    
+//Geração dinâmica do Select das escolas cadastradas
         $selectEscolas = "select * from Escola";
         $queryEscolas = mysqli_query($conexao, $selectEscolas);
         echo "<select name='escola' class='custom-select'>";

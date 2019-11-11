@@ -8,7 +8,7 @@ autenticar('../../index.php');
 $_SESSION["idEscola"] = NULL;
 
 
-cabecalhoNutricionista('../../estilo/styleNutricionista.css', 'Escola', '.', '../relatorio/', '../produto/', '../refeicao/', '../cardapio/', '../../login/logOut.php');
+cabecalhoNutricionista('../../estilo/style.css', 'Escola', '.', '../relatorio/', '../produto/', '../refeicao/', '../cardapio/', '../../login/logOut.php');
 
 sectionTop();
 

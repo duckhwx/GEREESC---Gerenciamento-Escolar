@@ -2,11 +2,11 @@
 
 require_once '../../../conexao.php';
 
+//Condição que identifica se a ação veio por GET (Ações em GET nao são feitas pelo AJAX)
 if(!empty($_GET['acao'])){
     $acao = $_GET['acao'];
     
-//Condição que indica se o tipo de ação é cadastrar ou Atualizar, é nescessario pois apenas estas funções tem dados
-//a serem pegos por POST
+//Condição que indica se o tipo de ação é cadastrar ou Atualizar, é nescessario pois apenas estas funções tem dado a serem pegos por POST
     if($acao == 'cadastrar' or $acao == 'atualizar') {
 
     $nome = $_POST['nome'];
@@ -22,6 +22,7 @@ if(!empty($_GET['acao'])){
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
+//Submissão dos dados caso a ação seja cadastrar
         if($acao == 'cadastrar') {
             $insert = "insert into SecEsc values (default, "
                 . "'$nome', "
@@ -45,8 +46,10 @@ if(!empty($_GET['acao'])){
                     header("Location: validar-secesc.php?acao=cadastrar");
                 }
         } 
+        
+//Submissão dos dados caso a ação seja Atualizar
         else if ($acao == 'atualizar') {
-            $idEscola = $_GET['id'];
+            $idSecEsc = $_GET['id'];
             $update = "update SecEsc set nomeSecEsc='$nome',"
             . " login='$login',"
             . " senha='$senha',"
@@ -58,22 +61,24 @@ if(!empty($_GET['acao'])){
             . " numero='$numero',"
             . " celular='$celular',"
             . " cargo='$cargo',"
-            . " escola_id=$escola where id=$idEscola";
+            . " escola_id=$escola where id=$idSecEsc";
 
             $query = mysqli_query($conexao, $update);
 
             if ($query) {
-                header('Location: ../cadastrar-usuarios.php');
+                header("Location: ../cadastrar-usuarios.php");
             } else {
-                header('Location: validar-secesc.php');
+                header("Location: validar-secesc.php?acao=cadastrar&id=$idSecEsc");
             }
         }
     }
 }
 
+//Condição que identifica se a ação veio por POST (Ações em POST são feitas pelo AJAX)
 else if (!empty($_POST['acao'])) {
     $acao = $_POST['acao'];
 
+//Retorna os dados do secretário Selecionado
     if ($acao == 'getById') {
         $id = $_POST['idSecEsc'];
 
@@ -93,6 +98,8 @@ else if (!empty($_POST['acao'])) {
 
         echo json_encode($table);
     }
+    
+//Retorna os dados basicos do Secretário selecionado
     else if ($acao == 'getDataSecEsc') {
         $id = $_POST['idSecEsc'];
 
@@ -102,6 +109,8 @@ else if (!empty($_POST['acao'])) {
 
         echo json_encode($table);
     }
+    
+//Submete ao banco a exclusão de um secretário
     else if ($acao == 'excluir') {
         $id = $_POST['idSecEsc'];
 
