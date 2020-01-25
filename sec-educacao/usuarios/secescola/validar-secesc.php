@@ -33,7 +33,7 @@ if ($acao == 'cadastrar') {
     $senha = $table['senha'];
 }
 
-cabecalhoSecEdu("../../../estilo/style.css", "$acaoHTML Secretário da Escola", "../../escola/", "../cadastrar-usuarios.php", "../../produto/", "../../refeicao/", "../../cardapio/", "../../../login/logOut.php");
+cabecalhoSecEdu("../../../estilo/style.css", "$acaoHTML Secretário da Escola", "../../escola/", "../cadastrar-usuarios.php", "../../produto/", "../../refeicao/", "../../cardapio/", "../../perfil/", "../../../login/logOut.php");
 sectionTop();
 ?>
 <h3><?php echo $acaoHTML ?> Secretário da Escola</h3>

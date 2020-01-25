@@ -8,10 +8,15 @@ autenticar('../../index.php');
 $_SESSION["idEscola"] = NULL;
 
 
-cabecalhoSecEdu('../../estilo/style.css', 'Escolas', '.', '../usuarios/cadastrar-usuarios.php', '../produto/', '../refeicao/', '../cardapio/', '../../login/logOut.php');
+cabecalhoSecEdu('../../estilo/style.css', 'Escolas', '.', '../usuarios/cadastrar-usuarios.php', '../produto/', '../refeicao/', '../cardapio/', '../perfil/', '../../login/logOut.php');
     
-sectionTop();?>
+sectionTop();
+?>
+<div>
 <h3>Escolas</h3>
+<a href="verificar-escola.php?acao=cadastrar" class="btn btn-dark cadastrar-escola buttonLink">Cadastrar Escola</a>
+</div>
+
 <?php
 
 //Seleção de todas as escolas cadastradas
@@ -19,7 +24,11 @@ $select = "select * from Escola";
 $query = mysqli_query($conexao, $select);
 
 //Exibição dinamica de todas as escolas
+if(mysqli_num_rows($query) == 0){
+    echo "<hr>";
+}
 ?>
+
 <table class="table">
 <thead>
 </thead>
@@ -30,18 +39,16 @@ $query = mysqli_query($conexao, $select);
         $nome = $table['nomeEscola'];
         
         echo"<tr><td>$nome</td>"
-            . "<td><button class='btn btn-light visualizar-escola my-1' value='$idEscola'><img src='../../estilo/icones/eye.png' width=26px/></button></td>"
-            . "<td><a class='btn btn-light my-1' href='verificar-escola.php?id=$idEscola&acao=atualizar'><img src='../../estilo/icones/edit.png' width=26px/></a></td>"
-            . "<td><a class='btn btn-light my-1' href='estoque/estoque.php?id=$idEscola'><img src='../../estilo/icones/box.png' width=26px/></a></td>"
-            . "<td><button class='btn btn-light excluir-escola my-1' value='$idEscola'><img src='../../estilo/icones/delete.png' width=26px/></button></td>"
+            . "<td><button class='btn btn-light visualizar-escola my-1' value='$idEscola'><div class='eyeIcon icons'></div></td>"
+            . "<td><a class='btn btn-light my-1' href='verificar-escola.php?id=$idEscola&acao=atualizar'><div class='editIcon icons'></div></a></td>"
+            . "<td><a class='btn btn-light my-1' href='estoque/estoque.php?id=$idEscola'><div class='boxIcon icons'></div></a></td>"
+            . "<td><button class='btn btn-light excluir-escola my-1' value='$idEscola'><div class='deleteIcon icons'></div></button></td>"
             . "</tr>";
             
     }
 ?>
 </tbody>
 </table>
-
-<a href="verificar-escola.php?acao=cadastrar" class="btn btn-dark cadastrar-escola buttonLink">Cadastrar Escola</a>
 
 <script src="requisicao-ajax.js"></script>
 <?php 

@@ -5,20 +5,24 @@ require_once '../../login/funcoesdelogin.php';
 
 autenticar('../../index.php');
 
-cabecalhoNutricionista("../../estilo/style.css", "Refeições", "../escola/", "../relatorio/", "../produto/", ".", "../cardapio/", "../../login/logOut.php");
+cabecalhoNutricionista("../../estilo/tableStyle.css", "Refeições", "../escola/", "../produto/", ".", "../cardapio/", "../../login/logOut.php");
 
 $select = "select * from Refeicao";
 $query = mysqli_query($conexao, $select);
 
 sectionTop();
-?>
-<!--Table com exibição dinamica das Refeições cadastradas-->
-<table class="table">
-    <thead class="thead-dark">
-        <th scope="col" colspan="3">Refeição</th>
-    </thead>
-<tbody>
-    <?php
+
+if($query == true and mysqli_num_rows($query) > 0){
+
+    echo "<table class='table'>"
+            . "<thead class='thead-dark'>"
+                . "<th>Refeição</th>"
+                . "<th colspan='2'>"
+                    . "<button class='btn btn-dark m-2 buttonTop' id='button-cadastro'>Cadastrar Refeição</button>"
+                . "</th>"
+            . "</thead>"
+            . "<tbody>";
+
     while ($tbl = mysqli_fetch_array($query)) {
 
         echo "<tr><td>"
@@ -26,22 +30,28 @@ sectionTop();
         . "</td>"
         . "<td>"
         . "<button class='btn btn-light button-atualizar' value='" . $tbl['id'] . "'>"
-        . "<img src='https://image.flaticon.com/icons/svg/1001/1001371.svg' height='27px'>"
+        . "<div class='editIcon icons'></div>"
         . "</button>"
         . "</td>"
         . "<td>"
         . "<button class='btn btn-light button-excluir' value='" . $tbl['id'] . "'>"
-        . "<img src='https://image.flaticon.com/icons/svg/32/32178.svg' height='27px'>"
+        . "<div class='deleteIcon icons'></div>"
         . "</button>"
         . "</td>"
         . "</tr>";
     }
+
+} else {
+
+    echo "<h3>Refeições</h3>"
+        ."<hr>"
+        ."<button class='btn btn-dark m-3 buttonTop' id='button-cadastro'>Cadastrar Refeição</button>";
+}
     ?>
 </tbody>
 </table>
 
 <script src="requisicao-ajax.js"></script>
-<button class="btn btn-dark m-2" id="button-cadastro">Cadastrar Refeição</button>
 
 <?php 
 sectionBaixo();

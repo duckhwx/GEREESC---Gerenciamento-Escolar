@@ -5,7 +5,7 @@
     
     autenticar('../index.php');
     
-    cabecalhoNutricionista('../estilo/style.css', 'Inicio', 'escola/', 'relatorio/', 'produto/', 'refeicao/', 'cardapio/', '../login/logOut.php');
+    cabecalhoNutricionista('../estilo/style.css', 'Inicio', 'escola/', 'produto/', 'refeicao/', 'cardapio/', '../login/logOut.php');
 ?>
 
 <?php

@@ -15,7 +15,7 @@ $query = mysqli_query($conexao, "select * from escola where id=" . $_SESSION['id
     echo "<h3>Escola</h3>"
     . "<hr>";
 //Identificação para caso exista uma escola cadastrada
-    if (mysqli_num_rows($query) == 1) {
+    if ($query == true and mysqli_num_rows($query) == 1) {
 
 //Requisição e geração dos dados na escola e secretários nela atribuidos
         $table = mysqli_fetch_array($query);
@@ -48,7 +48,6 @@ $query = mysqli_query($conexao, "select * from escola where id=" . $_SESSION['id
             }  
         }
         
-        
          echo "<div id='escola' class='m-4'>"
                 . "<div>Nome: <span>$nome</span></div>"
                 . "<div>Endereço: <span>$endereco</span></div>"
@@ -78,7 +77,7 @@ $query = mysqli_query($conexao, "select * from escola where id=" . $_SESSION['id
             . "</div>";
          
     } else {
-        echo "<h3 class='font-weight-normal'> Nenhuma Escola alocada a este secretário</h3>";
+        echo "<div class='font-weight-normal my-3'> Nenhuma Escola alocada a este secretário</div>";
     }
     
 sectionBaixo();

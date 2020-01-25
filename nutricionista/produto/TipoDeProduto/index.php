@@ -5,38 +5,47 @@ require_once '../../../login/funcoesdelogin.php';
 
 autenticar('../../../index.php');
 
-cabecalhoNutricionista('../../../estilo/style.css', 'Tipo de Produto', '../../escola/', '../../relatorio/', '../', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
+cabecalhoNutricionista('../../../estilo/tableStyle.css', 'Tipo de Produto', '../../escola/', '../', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
 sectionTop();
 
 $select = "select * from TipoDeProduto";
 $query = mysqli_query($conexao, $select);
-?>
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col" width=60%>Nome</th>
-            <th scope="col" colspan="3"></th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
+
+if ($query == true and mysqli_num_rows($query) > 0){
+
+    echo "<table class='table'>"
+            . "<thead class='thead-dark'>"
+                . "<tr>"
+                    . "<th>Nome</th>"
+                    . "<th colspan='2'>"
+                    . "<button class='btn btn-dark m-2 buttonTop' id='button-cadastro'>Cadastrar Tipo de Produto</button>"
+                    . "</th>"
+                . "</tr>"
+            . "</thead>"
+            . "<tbody>";
+
             while ($table = mysqli_fetch_array($query)) {
                 $idTipoProduto = $table['id'];
                 $nome = $table['nomeTipoProduto'];
 
                 echo "<tr>"
                 . "<td class='py-4'>$nome</td>"
-                . "<td><button class='btn btn-light button-atualizar' value='$idTipoProduto' ><img src='https://image.flaticon.com/icons/svg/1001/1001371.svg' width=26px/></button></td>"
-                . "<td><button class='btn btn-light button-deletar' value='$idTipoProduto' ><img src='https://image.flaticon.com/icons/svg/32/32178.svg' width=26px/></button></td>"
+                . "<td><button class='btn btn-light button-atualizar' value='$idTipoProduto' ><div class='editIcon icons'></div></button></td>"
+                . "<td><button class='btn btn-light button-deletar' value='$idTipoProduto' ><div class='deleteIcon icons'></div></button></td>"
                 . "</tr>";
             }
+} else {
+
+    echo "<h3>Tipo de Produto</h3>"
+        . "<hr>"
+        . "<button class='btn btn-dark m-2 buttonTop' id='button-cadastro'>Cadastrar Tipo de Produto</button>";
+}
+
         ?>
     </tbody>
 </table>   
 
 <script src="requisicao-ajax.js"></script>
-<button class='btn btn-dark m-2' id='button-cadastro'>Cadastrar Tipo de Produto</button>
-
 
 <?php
 sectionBaixo();

@@ -5,7 +5,7 @@ require_once '../../../login/funcoesdelogin.php';
 
 autenticar('../../../index.php');
 
-cabecalhoSecEdu('../../../estilo/style.css', 'Movimentações', '../../escola/', '../../usuarios/cadastrar-usuarios.php', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
+cabecalhoSecEdu('../../../estilo/tableStyle.css', 'Movimentações', '../../escola/', '../../usuarios/cadastrar-usuarios.php', '../../produto/', '../../refeicao/', '../../cardapio/', '../../perfil/', '../../../login/logOut.php');
 sectionTop();
 
 $selectEstoque = "select Produto.nomeProduto, Estoque.estoque_id, Estoque.quantidade, Estoque.quantAlterada, Estoque.acao from Estoque "

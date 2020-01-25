@@ -5,48 +5,53 @@ require_once '../../login/funcoesdelogin.php';
 
 autenticar('../../index.php');
 
-cabecalhoNutricionista('../../estilo/style.css', 'Produtos', '../escola/', '../relatorio/', '.', '../refeicao/', '../cardapio/', '../../login/logOut.php');
+cabecalhoNutricionista('../../estilo/tableStyle.css', 'Produtos', '../escola/', '.', '../refeicao/', '../cardapio/', '../../login/logOut.php');
 
 sectionTop();
 
 $select = "select * from Produto";
 $query = mysqli_query($conexao, $select);
-$row = 1;
-?>
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col"></th>
-            <th scope="col" width=60%>Nome</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
 
-        <?php
+if($query == true and mysqli_num_rows($query) > 0){
+
+    echo "<table class='table'>"
+            . "<thead class='thead-dark'>"
+                . "<tr>"
+                    . "<th>Nome</th>"
+                    . "<th colspan='3'>"
+                        . "<button class='btn btn-dark buttonTop m-1' id='button-cadastro'>Cadastrar Produto</button>"
+                        . "<a href='TipoDeProduto/index.php' class='btn btn-dark buttonTop m-1'>Tipo de Produto</a>"
+                    . "</th>"
+                . "</tr>"
+            . "</thead>"
+            . "<tbody>";
+
         while ($table = mysqli_fetch_array($query)) {
             $idProduto = $table['id'];
             $nome = $table['nomeProduto'];
             ?>
             <tr>
-                <th scope="row" class="py-4"><?php echo $row; ?></th>
                 <td><?php echo $nome; ?></td>
-                <td><button class="btn btn-light button-visualizar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/65/65000.svg' width=26px/></button></td>
-                <td><button class="btn btn-light button-alterar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/1001/1001371.svg' width=26px/></button></td>
-                <td><button class="btn btn-light button-deletar" value="<?php echo $idProduto; ?>" ><img src='https://image.flaticon.com/icons/svg/32/32178.svg' width=26px/></button></td>
+                <td><button class="btn btn-light button-visualizar" value="<?php echo $idProduto; ?>" ><div class="eyeIcon icons"></div></button></td>
+                <td><button class="btn btn-light button-alterar" value="<?php echo $idProduto; ?>" ><div class="editIcon icons"></div></button></td>
+                <td><button class="btn btn-light button-deletar" value="<?php echo $idProduto; ?>" ><div class="deleteIcon icons"></div></button></td>
             </tr>
             
             <?php
-            $row += 1;
         }
+
+} else {
+
+    echo "<h3>Produtos</h3>"
+        . "<hr>"
+        . "<button class='btn btn-dark buttonTop m-3' id='button-cadastro'>Cadastrar Produto</button>"
+        . "<a href='TipoDeProduto/index.php' class='btn btn-dark buttonTop m-3'>Tipo de Produto</a>";
+}
+
         ?>
+
     </tbody>
 </table>
-
-<button class="btn btn-dark m-2" id="button-cadastro">Cadastrar Produto</button>
-<a href="TipoDeProduto/index.php" class="btn btn-dark m-2 buttonLink">Tipo de Produto</a>
 
 <script src="requisicao-ajax.js"></script>
 <?php

@@ -1,0 +1,321 @@
+/*Estilos Gerais*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
+
+body{
+    background-color: #052537 !important;
+    text-decoration: none;
+    background-size: cover;
+    position: relative;
+    text-align-last: center;
+    text-align: center;
+}
+
+.container-fluid{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.buttonLink{
+    color: white !important;
+}
+
+/*Estilos de Icones*/
+.icons{
+    background-repeat: no-repeat;
+    background-size: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+#userIcon{
+    background-image: url("icones/logout.png");
+}
+
+.eyeIcon{
+    background-image: url("icones/eye.png");
+}
+
+.editIcon{
+    background-image: url("icones/edit.png");
+}
+
+.boxIcon{
+    background-image: url("icones/box.png");
+}
+
+.deleteIcon{
+    background-image: url("icones/delete.png");
+}
+
+.addIcon{
+    background-image: url("icones/add.png");
+}
+
+.reduceIcon{
+    background-image: url("icones/reduce.png");
+}
+
+.transferIcon{
+    background-image: url("icones/transfer.png");
+}
+
+.buttonTop{
+    color: white;
+    background-color: #292F33;
+}
+
+/*Estilo referente ao NavBar de todas as páginas*/
+#navbar{
+    background-color: #03474F;
+    opacity: 0.8;
+    font-family: Roboto, sans-serif;
+}
+
+#navbar a{
+    color: white;
+}
+
+#navbar a:hover{
+    color: #c4c4c4;
+}
+
+a:link{
+    text-decoration: none !important;
+}
+
+/*Estilo geral que os inputs e tabelas levam*/
+input, td, tr{
+    text-align: center;
+    vertical-align: middle !important;
+    font-weight: 400;
+}
+
+.table thead th{
+    vertical-align: middle !important;
+}
+
+.fc-content{
+    cursor: pointer;
+}
+
+/*Estilo da Box*/
+#Box{
+    background: white center;
+    opacity: 0.8;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    border: solid 3px rgb(26, 26, 26);
+    box-sizing: content-box;
+}
+
+/*Estilo referente a Mudanças na estrutura de inputs*/
+[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input::-webkit-datetime-edit{
+    min-width: 100%;
+    width: 100%;
+}
+
+/*Estilo que lida com a página de historico de movimentações do estoque*/
+.tableRowHistorico:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.tableRowHistorico{
+    opacity: 0.9;
+    width: 100%;
+    height: 50px;
+    margin: 15px auto;
+    font-weight: 400;
+}
+
+.adicionado{
+    background-color: rgba(129, 237, 155, 0.33);
+}
+
+.retirado{
+    background-color: rgba(255, 0, 0, 0.20);
+}
+
+.transferido{
+    background-color: rgba(0, 188, 255, 0.20);
+}
+
+@media (max-width: 768px) {
+
+    #navbar{
+        align-items: center;
+    }
+
+    #userIcon{
+        display: inline-block;
+        position: absolute;
+        right: 5px;
+        top: 10px;
+    }
+
+    #navbar>a{
+        font-size: 1.2rem;
+                display: block;
+    }
+
+    #navbar>a{
+        height: 50px;
+        padding-top: 1.5%;
+    }
+
+    #navbar>a:hover{
+        background-color: #033C42;
+    }
+
+/*icones*/
+    .icons{
+        background-size: 22px;
+        width: 22px;
+        height: 22px;
+    }
+
+/*Box e textos*/
+    h3{
+        margin-top: 15px;
+        font-size: 25px;
+    }
+
+    .buttonLink{
+        font-size: 14px;
+        margin: 15px 0;
+    } 
+
+    input{
+        margin-bottom: 10px;
+    }
+
+    .buttonTop{
+        font-size: 12px;
+    }
+
+/*Tables*/
+    td{
+        font-size: 13px;
+    }
+
+    tr{
+        font-size: 14px;
+    }
+
+    table{
+        margin: 0px !important;
+    }
+}
+
+/*Dispositivos extra large (desktops grandes com 1200px ou mais)*/
+@media (min-width: 768px) {    
+    
+    #navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 15%;
+        font-size: 1.1rem;
+    }
+    
+/*Tamanho dos elementos da Box*/
+    #Box{
+        font-weight: 500;
+        width: 68%;
+        height: 80%;
+        margin-top: 50px;
+        margin-bottom: 0px;
+        font-size: 24px;
+    }
+
+/*Estilo envolvendo os conteudos do Modal na parte de Visualização de dados*/
+    .modalInfo div{
+        font-size: 22px;
+        margin: 3px 0px;
+    }
+    
+    .modalInfo label{
+        font-size: 20px;
+    }
+    
+    span{
+        font-size: 20px !important;
+    }
+    
+    .subTituloModal{
+        font-size: 25px !important;
+    }
+    
+/*Estilo que lida com a página de historico de movimentações do estoque*/
+    .tableRowHistorico:hover{
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.35);
+    }
+    
+    .tableRowHistorico{
+        opacity: 0.9;
+        width: 100%;
+        height: 50px;
+        margin: 15px auto;
+        font-weight: 400;
+    }
+    
+    .adicionado{
+        background-color: rgba(129, 237, 155, 0.33);
+    }
+    
+    .retirado{
+        background-color: rgba(255, 0, 0, 0.20);
+    }
+    
+    .transferido{
+        background-color: rgba(0, 188, 255, 0.20);
+    }
+    
+/*Estilo referente a navbar*/
+    #navbar{
+        height: 50px;
+    }
+    
+/*Estilos referentes a exibição da Escola na Box*/
+    #escola div{
+        font-size: 22px;
+        font-weight: 400;
+        margin: 5px;
+        
+    }
+    
+    .subTitulos{
+        font-size: 25px !important;
+    }
+    
+    .buttonLink{
+        margin: 10px auto;
+    }
+/*Estilos referentes a alinhamentos e formatações dos modais*/
+    form{
+        margin: 3% 8% 2% 8%;
+    }
+    
+    label{
+        margin: 1% 0 0 0;
+    }
+
+/*Estilo referente a tamanhos e espaçamentos de atributos gerais*/
+    tr td{
+        font-size: 20px;
+    }
+    
+    h3{
+        margin: 3% 3%;
+    }
+}

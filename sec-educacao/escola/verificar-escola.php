@@ -30,12 +30,12 @@ if($acao == "cadastrar"){
     $alunosEnsFundamental = $table['alunosEnsFundamental'];
 }
 
-cabecalhoSecEdu("../../estilo/style.css", " $acaoHTML Escola", "../escola/", "../usuarios/cadastrar-usuarios.php", "../produto/", "../refeicao/", "../cardapio/", "../../login/logOut.php");
+cabecalhoSecEdu('../../estilo/style.css', ' $acaoHTML Escola', '../escola/', '../usuarios/cadastrar-usuarios.php', '../produto/', '../refeicao/', '../cardapio/', '../../login/logOut.php');
     
 sectionTop();
 ?>
 <h3><?php echo $acaoHTML ?> Escola</h3>
-
+<hr>
 <form method="post" action="verificacao.php?acao=<?php
     if (!empty($id) and $acao == "atualizar") {
         echo $acao . "&id=$id";
@@ -86,7 +86,8 @@ sectionTop();
         }
     ?>>
     
-    <div class="mt-3">Numero de Alunos:</div>
+    <div class="mt-3">Numero de Alunos</div>
+    <hr>
     <label>Ensino Infantil</label>
     <input type="number" class="form-control" maxlength="4" name="alunosEnsInfantil" <?php
         if(!empty($alunosEnsInfantil)){

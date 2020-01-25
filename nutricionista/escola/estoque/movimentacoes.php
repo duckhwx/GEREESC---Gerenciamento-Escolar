@@ -5,7 +5,7 @@ require_once '../../../login/funcoesdelogin.php';
 
 autenticar('../../../index.php');
 
-cabecalhoNutricionista('../../../estilo/style.css', 'Movimentações', '../', '../../relatorio',  '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
+cabecalhoNutricionista('../../../estilo/tableStyle.css', 'Movimentações', '../', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
 sectionTop();
 
 $selectEstoque = "select Produto.nomeProduto, Estoque.estoque_id, Estoque.quantidade, Estoque.quantAlterada, Estoque.acao from Estoque "

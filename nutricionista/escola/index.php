@@ -8,38 +8,43 @@ autenticar('../../index.php');
 $_SESSION["idEscola"] = NULL;
 
 
-cabecalhoNutricionista('../../estilo/style.css', 'Escola', '.', '../relatorio/', '../produto/', '../refeicao/', '../cardapio/', '../../login/logOut.php');
+cabecalhoNutricionista('../../estilo/tableStyle.css', 'Escola', '.', '../produto/', '../refeicao/', '../cardapio/', '../../login/logOut.php');
 
 sectionTop();
 
 //Seleção de todas as escolas cadastradas
 $select = "select Escola.id, Escola.nomeEscola from Escola";
 $query = mysqli_query($conexao, $select);
-?>
 
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">Nome</th>
-            <th scope="col" colspan="2"></th>
-        </tr>
-    </thead>
-    <tbody>
+if($query == true and mysqli_num_rows($query) > 0){
 
-        <?php
+    echo "<table class='table'>
+            <thead class='thead-dark'>
+                <tr>
+                    <th scope='col'>Nome</th>
+                    <th scope='col' colspan='2'></th>
+                </tr>
+            </thead>
+            <tbody>";
+
 //Exibição dinamica de todas as escolas
         while ($table = mysqli_fetch_array($query)) {
             $idEscola = $table['id'];
             $nome = $table['nomeEscola'];
-            ?>
+        ?>
 
             <tr>
                 <td><?php echo $nome; ?></td>
-                <td><button class="btn btn-light m-2 visualizar-escola" value="<?php echo $idEscola; ?>"><img src='https://image.flaticon.com/icons/svg/65/65000.svg' width=26px/></button></td>
-                <td><a href="estoque/estoque.php?id=<?php echo $idEscola; ?>" ><button class="btn btn-light m-2"><img src='../../estilo/icones/box.png' width=26px/></button></a></td>
+                <td><button class="btn btn-light m-2 visualizar-escola" value="<?php echo $idEscola; ?>"><div class="eyeIcon icons"></div></button></td>
+                <td><a href="estoque/estoque.php?id=<?php echo $idEscola; ?>" ><button class="btn btn-light m-2"><div class="boxIcon icons"></div></button></a></td>
             </tr>
             <?php
         }
+
+} else {
+
+    echo "<div class='font-weight-normal my-3'>Nenhuma escola cadastrada</div>";
+}
         ?>
     </tbody>
 </table>

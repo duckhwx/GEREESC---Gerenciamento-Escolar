@@ -7,7 +7,7 @@ autenticar('../../index.php');
 
 $_SESSION['id_anoEscolar'] = $_GET['id'];
 
-    cabecalhoNutricionista('../../estilo/style.css', 'Cardápio', '../escola/', '../relatorio/', '../produto/', '../refeicao/', 'index.php','../../login/logOut.php');
+    cabecalhoNutricionista('../../estilo/style.css', 'Cardápio', '../escola/', '../produto/', '../refeicao/', 'index.php','../../login/logOut.php');
     
 ?>
 <!--FullCalendar Links -->

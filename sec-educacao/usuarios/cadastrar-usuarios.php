@@ -5,7 +5,7 @@ require_once '../../login/funcoesdelogin.php';
 
 autenticar('../../index.php');
 
-cabecalhoSecEdu('../../estilo/style.css', 'Usuarios', '../escola/', 'cadastrar-usuarios.php', '../produto/', '../refeicao/', '../cardapio/', '../../login/logOut.php');
+cabecalhoSecEdu('../../estilo/style.css', 'Usuarios', '../escola/', 'cadastrar-usuarios.php', '../produto/', '../refeicao/', '../cardapio/', '../perfil/', '../../login/logOut.php');
 sectionTop();
 
 //Seleção do nutricionista
@@ -41,9 +41,9 @@ $querySemEscola = mysqli_query($conexao, $selectSemEscola);
 
                     echo "<tr>"
                         . "<td>$nome</td>"
-                        . "<td><button class='btn btn-light m-1 visualizar-nutricionista' value='$idNut'><img src='../../estilo/icones/eye.png' width='26px' /></button></td>"
-                        . "<td><a class='btn btn-light m-1 atualizar-nutricionista' href='nutricionista/validar-nutricionista.php?acao=atualizar&id=$idNut'><img src='../../estilo/icones/edit.png' width='26px' /></a></td>"
-                        . "<td><button class='btn btn-light m-1 deletar-nutricionista' value='$idNut'><img src='../../estilo/icones/delete.png' width='26px' /></button></td>"
+                        . "<td><button class='btn btn-light m-1 visualizar-nutricionista' value='$idNut'><div class='eyeIcon icons'></div></button></td>"
+                        . "<td><a class='btn btn-light m-1 atualizar-nutricionista' href='nutricionista/validar-nutricionista.php?acao=atualizar&id=$idNut'><div class='editIcon icons'></div></a></td>"
+                        . "<td><button class='btn btn-light m-1 deletar-nutricionista' value='$idNut'><div class='deleteIcon icons'></div></button></td>"
                      . "</tr>";
                 } else {
                  
@@ -57,12 +57,12 @@ $querySemEscola = mysqli_query($conexao, $selectSemEscola);
     </table>
 </div>
     
-<div class="m-5">
     <!--Tabela dos secretários das escolas-->
 <table class="table my-4">
     <thead>
         <tr>
-            <th colspan="5">Secretários das Escolas</th>
+            <th colspan="2">Secretários das Escolas</th>
+            <th colspan="3"><a class="btn btn-dark buttonLink" href="secescola/validar-secesc.php?acao=cadastrar">Cadastrar</a></th>
         </tr>
     </thead>
     
@@ -77,9 +77,9 @@ $querySemEscola = mysqli_query($conexao, $selectSemEscola);
                 echo "<tr>"
                     . "<td>$secEscNome</td>"
                     . "<td>$escolaNome</td>"
-                    . "<td><button class='btn btn-light visualizar-secEsc' value='$secEscId'><img src='../../estilo/icones/eye.png' width='28px'></button></td>"
-                    . "<td><a href='secescola/validar-secesc?idSecEsc=$secEscId&acao=atualizar' class='btn btn-light atualizar-secEsc' value='$secEscId'><img src='../../estilo/icones/edit.png' width='28px'></a></td>"
-                    . "<td><button class='btn btn-light excluir-secEsc' value='$secEscId'><img src='../../estilo/icones/delete.png' width='28px'></button></td>"
+                    . "<td><button class='btn btn-light visualizar-secEsc' value='$secEscId'><div class='eyeIcon icons'></div></button></td>"
+                    . "<td><a href='secescola/validar-secesc?idSecEsc=$secEscId&acao=atualizar' class='btn btn-light atualizar-secEsc' value='$secEscId'><div class='editIcon icons'></div></a></td>"
+                    . "<td><button class='btn btn-light excluir-secEsc' value='$secEscId'><div class='deleteIcon icons'></div></button></td>"
                 . "</tr>";
             }
             
@@ -91,17 +91,14 @@ $querySemEscola = mysqli_query($conexao, $selectSemEscola);
                 echo "<tr>"
                     . "<td>$secEscNome</td>"
                     . "<td>---</td>"
-                    . "<td><button class='btn btn-light visualizar-secEsc' value='$secEscId'><img src='../../estilo/icones/eye.png' width='28px'></button></td>"
-                    . "<td><a href='secescola/validar-secesc?idSecEsc=$secEscId&acao=atualizar' class='btn btn-light atualizar-secEsc' value='$secEscId'><img src='../../estilo/icones/edit.png' width='28px'></a></td>"
-                    . "<td><button class='btn btn-light excluir-secEsc' value='$secEscId'><img src='../../estilo/icones/delete.png' width='28px'></button></td>"
+                    . "<td><button class='btn btn-light visualizar-secEsc' value='$secEscId'><div class='eyeIcon icons'></div></button></td>"
+                    . "<td><a href='secescola/validar-secesc?idSecEsc=$secEscId&acao=atualizar' class='btn btn-light atualizar-secEsc' value='$secEscId'><div class='editIcon icons'></div></a></td>"
+                    . "<td><button class='btn btn-light excluir-secEsc' value='$secEscId'><div class='deleteIcon icons'></div></button></td>"
                 . "</tr>";
             }
         ?>
     </tbody>
 </table>
-</div>
-
-<a class="btn btn-dark buttonLink" href="secescola/validar-secesc.php?acao=cadastrar">Cadastrar Secretário da Escola</a>
 
 <script src="secescola/requisicao-ajax.js"></script>
 <script src="nutricionista/requisicao-ajax.js"></script>

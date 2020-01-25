@@ -7,7 +7,7 @@ autenticar('../../../index.php');
 
 date_default_timezone_set('America/Sao_Paulo');
 
-cabecalhoNutricionista('../../../estilo/style.css', 'Estoque', '../', '../../relatorio', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
+cabecalhoNutricionista('../../../estilo/tableStyle.css', 'Estoque', '../', '../../produto/', '../../refeicao/', '../../cardapio/', '../../../login/logOut.php');
 
 sectionTop();
 
@@ -33,7 +33,14 @@ if(mysqli_num_rows($queryEstoque) >= 1){
      . "<th>Marca</th>"
      . "<th>Peso</th>"
      . "<th>Quantidade</th>"
-     . "<th colspan='3'></th>"
+     . "<th>"
+     . "<button class='btn btn-dark buttonTop m-1' id='buttonAdicionar'>Alocar Produto</button>";
+
+         if(mysqli_num_rows($queryEstoque) >= 1){
+             echo "<a class='btn btn-dark buttonTop m-1' href='movimentacoes.php' id='buttonHistorico'>Historico</a>";
+         }
+
+     echo "</th>"
      . "</tr>"
      . "</thead>"
      . "<tbody>";
@@ -54,26 +61,22 @@ if(mysqli_num_rows($queryEstoque) >= 1){
         . "<td>$marca</td>"
         . "<td>$peso $nomeTipoPeso</td>"
         . "<td>$quantidade</td>"
-        . "<td><button class='btn btn-light alocar-produto' value='$idEstoque'><img src='../../../estilo/icones/add.png' width='25px'/></button></td>"
-        . "<td><button class='btn btn-light reduzir-produto' value='$idEstoque'><img src='../../../estilo/icones/reduce.png' width='25px'/></button></td>"
-        . "<td><button class='btn btn-light transferir-produto' value='$idEstoque'><img src='../../../estilo/icones/transfer.png' width='25px'/></button></td>"
+        . "<td><button class='btn btn-light alocar-produto mx-2' value='$idEstoque'><div class='addIcon icons'></div></button>"
+        . "<button class='btn btn-light reduzir-produto mx-2' value='$idEstoque'><div class='reduceIcon icons'></div></button>"
+        . "<button class='btn btn-light transferir-produto mx-2' value='$idEstoque'><div class='transferIcon icons'></div></button></td>"
         . "</tr>";
     }
 
     echo "</tbody>"
      . "</table>";
+
 } else {
     echo "<h3>Estoque</h3>"
     . "<hr>"
-    . "<div class='my-2'>Nenhum produto alocado ao Estoque</div>";
+    . "<button class='btn btn-dark buttonTop m-1' id='buttonAdicionar'>Alocar Produto</button>";
 }
 ?>
-<button class="btn btn-dark m-3" id="buttonAdicionar">Alocar Produto</button>
-<?php
-    if(mysqli_num_rows($queryEstoque) >= 1){
-        echo "<a class='btn btn-dark m-2 buttonLink' href='movimentacoes.php' id='buttonHistorico'>Historico</a>";
-    }
-?>
+
 <script src="requisicao-ajax.js"></script>
 <?php
 sectionBaixo();

@@ -7,7 +7,7 @@ autenticar('../../index.php');
 
     $_SESSION['id_anoEscolar'] = $_GET['id'];
 
-    cabecalhoSecEdu('../../estilo/style.css', 'Cardápio', '../escola/', '../usuarios/cadastrar-usuarios.php', '../produto/', '../refeicao/', 'index.php','../../login/logOut.php');
+    cabecalhoSecEdu('../../estilo/style.css', 'Cardápio', '../escola/', '../usuarios/cadastrar-usuarios.php', '../produto/', '../refeicao/', 'index.php', '../perfil/', '../../login/logOut.php');
     
 ?>
 <!--FullCalendar Links -->

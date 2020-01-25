@@ -5,7 +5,7 @@
 
     autenticar('../../index.php');
     
-cabecalhoSecEsc('../../estilo/style.css', 'Estoque', '../aluno/', '../escola/', '.', '../cardapio/', '../../login/logOut.php');
+cabecalhoSecEsc('../../estilo/tableStyle.css', 'Estoque', '../aluno/', '../escola/', '.', '../cardapio/', '../../login/logOut.php');
 sectionTop();
 
 //Requisição dos dados do estoque ao Banco de Dados
@@ -14,54 +14,63 @@ sectionTop();
                     ."inner join TipoDePeso on Produto.tipoDePeso_id = TipoDePeso.id "
                     ."inner join TipoDeProduto on Produto.tipoDeProduto_id = TipoDeProduto.id "
                     ."where escola_id =".$_SESSION["idEscola"]." and status = 1";
-    $queryEstoque = mysqli_query($conexao, $selectEstoque);
-    
-//Identificação que caso não exista itens no estoque exiba outra informação
-    if(mysqli_num_rows($queryEstoque) == 0){
-        
-        echo "<h3>Estoque</h3>"
-           . "<hr>"
-           . "<div class='font-weight-normal my-3'>Nenhum produto alocado</div>";
-        
+
+    $queryEstoque = mysqli_query($conexao, $selectEstoque);  
+
+    if($queryEstoque == false){
+
+      echo "<h3>Estoque</h3>"
+          . "<hr>"
+          . "<div class='font-weight-normal my-3'>Nenhuma Escola alocada a este secretário</div>";
+
     } else {
-        
-        echo "<table class='table'>"
-            . "<thead class='thead-dark'>"
-            . "<tr>"
-                    . "<th scope='col'>Nome</th>"
-                    . "<th scope='col'>Tipo</th>"
-                    . "<th scope='col'>Marca</th>"
-                    . "<th scope='col'>Peso</th>"
-                    . "<th scope='col'>Quantidade</th>"
-                    . "<th scope='col'></th>"
-            . "</tr>"
-            . "</thead>"
-            . "<tbody>";
-//Imprimir os dados dinamicamente em tabelas do estoque 
-      while($table = mysqli_fetch_array($queryEstoque)){
-          $idEstoque = $table['estoque_id'];
-          $idProduto = $table['id'];
-          $nomeProduto = $table['nomeProduto'];
-          $nomeTipoProduto = $table['nomeTipoProduto'];
-          $marca = $table['marca'];
-          $peso = $table['peso'];
-          $nomeTipoPeso = $table['nomeTipoPeso'];
-          $quantidade = $table['quantidade'];
 
-          echo "<tr>"
-             . "<td>$nomeProduto</td>"
-             . "<td>$nomeTipoProduto</td>"
-             . "<td>$marca</td>"
-             . "<td>$peso $nomeTipoPeso</td>"
-             . "<td>$quantidade</td>"
-             . "<td><button class='btn btn-light reduzir-produto' value='$idEstoque'><img src='../../estilo/icones/reduce.png' width='25px'/></button></td>"
-             . "</tr>";
+//Identificação que caso não exista itens no estoque exiba outra informação
+      if(mysqli_num_rows($queryEstoque) == 0){
+          
+          echo "<h3>Estoque</h3>"
+            . "<hr>"
+            . "<div class='font-weight-normal my-3'>Nenhum produto alocado</div>";
+          
+      } else {
+          
+          echo "<table class='table'>"
+              . "<thead class='thead-dark'>"
+              . "<tr>"
+                      . "<th scope='col'>Nome</th>"
+                      . "<th scope='col'>Tipo</th>"
+                      . "<th scope='col'>Marca</th>"
+                      . "<th scope='col'>Peso</th>"
+                      . "<th scope='col'>Quantidade</th>"
+                      . "<th scope='col'></th>"
+              . "</tr>"
+              . "</thead>"
+              . "<tbody>";
+  //Imprimir os dados dinamicamente em tabelas do estoque 
+        while($table = mysqli_fetch_array($queryEstoque)){
+            $idEstoque = $table['estoque_id'];
+            $idProduto = $table['id'];
+            $nomeProduto = $table['nomeProduto'];
+            $nomeTipoProduto = $table['nomeTipoProduto'];
+            $marca = $table['marca'];
+            $peso = $table['peso'];
+            $nomeTipoPeso = $table['nomeTipoPeso'];
+            $quantidade = $table['quantidade'];
+
+            echo "<tr>"
+              . "<td>$nomeProduto</td>"
+              . "<td>$nomeTipoProduto</td>"
+              . "<td>$marca</td>"
+              . "<td>$peso $nomeTipoPeso</td>"
+              . "<td>$quantidade</td>"
+              . "<td><button class='btn btn-light reduzir-produto' value='$idEstoque'><div class='reduceIcon icons'></div></button></td>"
+              . "</tr>";
+        }
+
+        echo "</tbody>"
+        . "</table>";  
       }
-
-      echo "</tbody>"
-      . "</table>";  
     }
-    
 sectionBaixo();
 
 ?>

@@ -5,7 +5,7 @@ require_once '../../login/funcoesdelogin.php';
 
 autenticar('../../index.php');
 
-cabecalhoSecEsc('../../estilo/style.css', 'Alunos', '.', '../escola/', '../estoque/', '../cardapio/', '../../login/logOut.php');
+cabecalhoSecEsc('../../estilo/tableStyle.css', 'Alunos', '.', '../escola/', '../estoque/', '../cardapio/', '../../login/logOut.php');
 
 sectionTop();
 
@@ -14,31 +14,42 @@ $select = "select * from Aluno";
 $query = mysqli_query($conexao, $select);
 
 //Exibição dinamica de todas os Alunos
-?>
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th colspan="4">Alunos</th>
-        </tr>
-    </thead>
-    <tbody>
-<?php
-while($table = mysqli_fetch_array($query)){
-        $idAluno = $table['id'];
-        $nome = $table['nomeAluno'];
-        
-        echo "<tr>"
-            . "<td>$nome</td>"
-            . "<td><button class='btn btn-light m-2 visualizar-aluno' value='$idAluno'><img src='../../estilo/icones/eye.png' width='26px' /></button></td>"
-            . "<td><a href='validar-aluno.php?acao=atualizar&id=$idAluno'class='btn btn-light m-2'><img src='../../estilo/icones/edit.png' width='26px' /></a></td>"
-            . "<td><button class='btn btn-light m-2 excluir-aluno' value='$idAluno'><img src='../../estilo/icones/delete.png' width='26px' /></button></td>"
-            . "</tr>";
-    }
+
+if($query == true and mysqli_num_rows($query) > 0){
+
+    echo "<table class='table'>"
+            ."<thead class='thead-dark'>"
+                ."<tr>"
+                    ."<th>Alunos</th>"
+                    ."<th colspan='3'>"
+                    ."<a class='btn btn-dark m-2 cadastrar-aluno buttonTop' href='validar-aluno.php?acao=cadastrar'>Cadastrar Aluno</a>"
+                    ."</th>"
+                ."</tr>"
+            ."</thead>"
+            ."<tbody>";
+
+
+    while($table = mysqli_fetch_array($query)){
+            $idAluno = $table['id'];
+            $nome = $table['nomeAluno'];
+            
+            echo "<tr>"
+                . "<td>$nome</td>"
+                . "<td><button class='btn btn-light m-2 visualizar-aluno' value='$idAluno'><div class='eyeIcon icons'></div></button></td>"
+                . "<td><a href='validar-aluno.php?acao=atualizar&id=$idAluno'class='btn btn-light m-2'><div class='editIcon icons'></div></a></td>"
+                . "<td><button class='btn btn-light m-2 excluir-aluno' value='$idAluno'><div class='deleteIcon icons'></div></button></td>"
+                . "</tr>";
+        }
+} else {
+
+    echo "<h3>Alunos</h3>"
+        . "<hr>"
+        ."<a class='btn btn-dark m-2 cadastrar-aluno buttonTop' href='validar-aluno.php?acao=cadastrar'>Cadastrar Aluno</a>";
+}
 ?>
     </tbody>
 </table>
 
-<a class="btn btn-dark m-2 cadastrar-aluno buttonLink" href="validar-aluno.php?acao=cadastrar">Cadastrar Aluno</a>
 <script src="requisicao-ajax.js"></script>
 <?php
 sectionBaixo();
